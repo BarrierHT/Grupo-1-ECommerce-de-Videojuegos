@@ -33,7 +33,9 @@
     En cuanto a mis habilidades tengo un stack formado en Java y MySQL como Back-end, y el Front-end de toda la vida solo que agregando a Angular como Framework, fuera de eso tambien una tecnicatura en Artes Visuales orientado al diseño, que si bien es mas regional, siempre me interese en el diseño digital, realzando distintos trabajos creando logos, ilustracionesm etc... y remontandonos a la actualidad diseño web con figma para distintos consumidores.   
     Y para finalizar un poco mas sobre mi, me encanta la musica, escucho muchos generos y forme parte de una "banda" regional folcklorica tocando el charango, la zampoña y la quena. Soy Fan del deporte motor F1, indycar, Dakar. Mi comida favorita MILANESAS SIEMPRE... pero nada, espero poder completar este desafio con todo el equipo y llegar a la meta con grandes experiencias!
 
-- Integrante#4:
+- Torrejon Rocio Aldana:
+  Tengo 19 años y y me interesa mucho el desarrollo web. Mi pasión por la tecnología y el diseño me ha llevado a sumergirme en el mundo del desarrollo web, donde he adquirido habilidades sólidas en lenguajes de programación como HTML, CSS, JavaScript y C++, así como en frameworks como Angular. Mi objetivo es construir sitios web y aplicaciones que sean no solo visualmente atractivos, sino también altamente funcionales y receptivos en diferentes dispositivos.Soy una persona simpática y energetica, que le gusta ayudar a los demás, espero poder aportar mis conocimientos e ideas, y contribuir al equipo lo máximo posible.
+
 - Integrante#5:
 - Integrante#6:
 - Integrante#7:
