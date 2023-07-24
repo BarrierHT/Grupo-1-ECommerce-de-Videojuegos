@@ -36,6 +36,11 @@
 - Torrejon Rocio Aldana:
   Tengo 19 años y me interesa mucho el desarrollo web. Mi pasión por la tecnología y el diseño me ha llevado a sumergirme en el mundo del desarrollo web, donde he adquirido habilidades sólidas en lenguajes de programación como HTML, CSS, JavaScript y C++, así como en frameworks como Angular. Mi objetivo es construir sitios web y aplicaciones que sean no solo visualmente atractivos, sino también altamente funcionales y receptivos en diferentes dispositivos.Soy una persona simpática y energetica, que le gusta ayudar a los demás, espero poder aportar mis conocimientos e ideas, y contribuir al equipo lo máximo posible.
 
-- Integrante#5:
+- Morales Mateo Miguel: 
+  Tengo 19 años y desde muy joven me ha interesado la tecnología y la informática. Este es mi primer acercamiento a la programación, además de mis estudios superiores enfocados en el desarrollo de software. Mi objetivo es adquirir conocimientos en cada tecnología y convertirme en un programador profesional. Para lograrlo, también estoy cursando estudios en un Instituto de Inglés.
+  Espero llevar a cabo con éxito este proyecto en grupo y alcanzar el nivel de conocimiento necesario para desarrollar una página web. Estoy emocionado por esta oportunidad de crecimiento y aprendizaje en el campo de la programación.
+
 - Integrante#6:
+
+
 - Integrante#7:
