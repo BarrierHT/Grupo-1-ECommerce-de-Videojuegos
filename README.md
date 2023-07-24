@@ -44,3 +44,11 @@
 
 
 - Integrante#7:
+  
+## Nuestro WireFrame  
+
+Accede a nuestro proyecto colaborativo realizado en figma, y descubre nuestra propuesta mas a fondo!  
+[Entra Aqui!](https://www.figma.com/file/mQe6Zvcn3IKpp5753jdoDo/WireFrame-Sprint-01-DH?type=design&node-id=0%3A1&mode=design&t=ulDNN8UalFfke9XA-1)  
+
+![Captura de pantalla (112)](https://github.com/BarrierHT/grupo_1_DigitalGaming/assets/114126710/60cb9f6c-ebfe-4c7c-9eed-c2069fc89a32)
+
