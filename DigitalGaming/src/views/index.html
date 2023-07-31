@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <img src="../resources/vectors/span.svg" class="h-100 span-home" alt="span">
     <header class="w-100 header-home text-white flex align-center cenrter">
         <nav class="w-100 nav-proj mg-lat-1 flex align-center j-content-space-betwen">
             <div class="flex align-center w-35 j-content-around">
@@ -52,14 +53,19 @@
             </div>
         </div>
     </header>
-    <main class="main bg-dkblue text-white">
+    <main class="main text-white">
         <section class="home-section">
-            <h3>home</h3>
+            <div class="child-home w-100 h-100 flex">
+                <h1>home</h1>
+            </div>
+            <div class="present-view-section w-100 h-100">
+                <h1>prev</h1>
+            </div>
+            <video class="h-100 video_main" muted autoplay loop>
+                <source src="../resources/videos/main-sinpeso.mp4">
+            </video>
         </section>
-        <section class="present-view-section">
-            <h3>preview</h3>
-        </section>
-        <section class="recomendados-section">
+        <section class="recomendados-section w-100 h-100 bg-dkblue">
             <h3>recomendados</h3>
         </section>
         <section class="caract-section">
@@ -78,6 +84,7 @@
     <footer>
 
     </footer>
+    <script src="../public/js/home.js"></script>
     <script src="../public/js/main.js"></script>
 </body>
 </html>

@@ -75,6 +75,7 @@
     height: 9vh;
 	position: fixed;
 	background: transparent;
+	z-index: 2;
 }
 .nav-proj{
     gap: 1vh;
@@ -117,7 +118,7 @@
     right: 0;
     transform: translateX(100%);
     transition: transform 0.3s ease-out;
-    z-index: 2;
+    z-index: 3;
 }
 .menu-lat.activo {
     transform: translateX(0);
