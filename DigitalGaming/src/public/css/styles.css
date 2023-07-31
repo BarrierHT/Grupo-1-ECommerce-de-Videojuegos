@@ -10,6 +10,9 @@
 .text-center{
 	text-align: center;
 }
+.not-border{
+	border: none;
+}
 /*Colores de fondos*/
 .bg-dark{
 	background: rgba(23, 23, 23, 1);
@@ -61,6 +64,9 @@
 .w-100{
 	width: 100%;
 }
+.w-35{
+	width: 35vw;
+}
 .center{
 	margin: auto 0;
 }
@@ -81,6 +87,28 @@
     height: 6vh;
     width: 6vh;
 }
+.star-icon{
+	background: url('../../resources/vectors/star.svg') no-repeat;
+	background-size: cover;
+}
+.user-icon{
+	background: url('../../resources/vectors/Usuario.svg') no-repeat;
+	background-size: cover;
+}
+.reg-icon{
+	background: url('../../resources/img/bgbuttonreg.jpg') no-repeat;
+	background-size: cover;
+	height: 7vh;
+}
+.cart-icon{
+	background: url('../../resources/vectors/cart.svg') no-repeat;
+	background-size: cover;
+}
+.flag-icon{
+	background: url('../../resources/vectors/Pais.svg') no-repeat;
+	background-size: contain;
+	background-position: center;
+}
 .menu-lat {
     display: none;
     position: fixed;
@@ -95,13 +123,13 @@
     display: block;
 }
 .btn-menu{
-    background: url("../../resources/vectors/list.svg") no-repeat;
+    background: url('../../resources/vectors/list.svg') no-repeat;
     background-size: cover;
     border: none;
 }
 .btn-cls{
     float: right;
-    background: url("../../resources/vectors/x-lg.svg") no-repeat;
+    background: url('../../resources/vectors/x-lg.svg') no-repeat;
     background-size: cover;
     height: 5vh;
     width: 5vh;
@@ -110,4 +138,24 @@
 }
 main{
 	padding-top: 9vh;
+}
+/*Propiedades responsivas*/
+.not-mobile{
+	display: none;
+}
+.not-tablet{
+	display: none;
+}
+@media screen and (min-width:460px) {
+	.not-mobile{
+		display: unset;
+	}
+}
+@media screen and (min-width:770px) {
+	.not-tablet{
+		display: unset;
+	}
+	.search-input{
+		width: 30vw;
+	}
 }
