@@ -40,7 +40,3 @@
   Tengo 19 años y desde muy joven me ha interesado la tecnología y la informática. Este es mi primer acercamiento a la programación, además de mis estudios superiores enfocados en el desarrollo de software. Mi objetivo es adquirir conocimientos en cada tecnología y convertirme en un programador profesional. Para lograrlo, también estoy cursando estudios en un Instituto de Inglés.
   Espero llevar a cabo con éxito este proyecto en grupo y alcanzar el nivel de conocimiento necesario para desarrollar una página web. Estoy emocionado por esta oportunidad de crecimiento y aprendizaje en el campo de la programación.
 
-- Integrante#6:
-
-
-- Integrante#7:
