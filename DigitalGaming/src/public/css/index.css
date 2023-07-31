@@ -1,3 +1,14 @@
 .header-home{
-    height: 10vh;
+    height: 9vh;
+}
+.nav-proj{
+    gap: 1vh;
+}
+.search-input{
+    width: 50vw;
+    height: 5vh;
+}
+.logo{
+    height: 6vh;
+    width: 6vh;
 }

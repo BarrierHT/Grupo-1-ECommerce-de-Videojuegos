@@ -36,6 +36,9 @@
 .j-content-betwen{
     justify-content: space-between;
 }
+.j-content-around{
+    justify-content: space-around;
+}
 .f-direction-column{
     flex-direction: column;
 }
@@ -44,4 +47,14 @@
 }
 .wrap{
 	flex-wrap: wrap;
+}
+/*Margenes y anchos*/
+.mg-lat-1{
+	margin: 0 1vh;
+}
+.w-100{
+	width: 100%;
+}
+.center{
+	margin: auto 0;
 }
