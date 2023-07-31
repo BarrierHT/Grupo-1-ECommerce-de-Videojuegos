@@ -65,6 +65,18 @@
 	margin: auto 0;
 }
 /*Propiedades del menu Nav*/
+.header-home{
+    height: 9vh;
+	position: fixed;
+	background: transparent;
+}
+.nav-proj{
+    gap: 1vh;
+}
+.search-input{
+    width: 50vw;
+    height: 5vh;
+}
 .logo{
     height: 6vh;
     width: 6vh;
@@ -95,4 +107,7 @@
     width: 5vh;
     border: none;
     margin: 2vh 2vh;
+}
+main{
+	padding-top: 9vh;
 }
