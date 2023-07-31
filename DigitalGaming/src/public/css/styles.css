@@ -99,6 +99,7 @@
 	background: url('../../resources/img/bgbuttonreg.jpg') no-repeat;
 	background-size: cover;
 	height: 7vh;
+	opacity: .5;
 }
 .cart-icon{
 	background: url('../../resources/vectors/cart.svg') no-repeat;
