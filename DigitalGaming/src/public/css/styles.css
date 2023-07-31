@@ -3,9 +3,15 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-body {
-	background-color: blue;
+.bg-dark{
+	background: rgba(23, 23, 23, 1);
 }
-main{
-	background: blue;
+.bg-dkblue{
+	background: rgba(1, 0, 72, 1);
+}
+.bg-limagreen{
+	background: rgba(78, 205, 33, 1);
+}
+.bg-purple{
+	background: rgba(142, 0, 191, 1);
 }
