@@ -7,6 +7,9 @@
 .antiancor{
     text-decoration: none;
 }
+.text-center{
+	text-align: center;
+}
 /*Colores de fondos*/
 .bg-dark{
 	background: rgba(23, 23, 23, 1);
@@ -52,9 +55,44 @@
 .mg-lat-1{
 	margin: 0 1vh;
 }
+.h-100{
+	height: 100vh;
+}
 .w-100{
 	width: 100%;
 }
 .center{
 	margin: auto 0;
+}
+/*Propiedades del menu Nav*/
+.logo{
+    height: 6vh;
+    width: 6vh;
+}
+.menu-lat {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    z-index: 2;
+}
+.menu-lat.activo {
+    transform: translateX(0);
+    display: block;
+}
+.btn-menu{
+    background: url("../../resources/vectors/list.svg") no-repeat;
+    background-size: cover;
+    border: none;
+}
+.btn-cls{
+    float: right;
+    background: url("../../resources/vectors/x-lg.svg") no-repeat;
+    background-size: cover;
+    height: 5vh;
+    width: 5vh;
+    border: none;
+    margin: 2vh 2vh;
 }
