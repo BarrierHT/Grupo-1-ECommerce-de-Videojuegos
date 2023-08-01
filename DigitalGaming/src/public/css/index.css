@@ -24,23 +24,49 @@
     z-index: 1;
   }
   /*Seccion de previsualizacion*/
+.logo-prec{
+  height: 57vh;
+  align-items: flex-end;
+}
+.sub-msj{
+  height: 39vh;
+  margin: 2vh;
+}
+.sub-msj p{
+  font-size: 3.5vh;
+  font-weight: 400;
+}
+.sub-msj h2{
+  font-weight: 500;
+  font-size: 7vh;
+  width: 30vw;
+}
 .present-view-section{
   position: relative;
   z-index: 3;
 }
-.prev-zone{
-  width: 70vw;
-}
 .product-prev{
   width: 51.5vw;
   clip-path: polygon(27% 0, 100% 0, 100% 100%, 0% 100%);
+  transition: width 2s;
 }
 .product-prev_2{
   width: 40vw;
   clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
+  transition: width 2s;
 }
 .product-prev_3{
   width: 25vw;
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+  transition: width 2s;
 }
-
+.product-prev:hover{
+  width: 100vw;
+}
+.product-prev_2:hover{
+  width: 100vw;
+}
+.product-prev_3:hover{
+  width: 100vw;
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+}
