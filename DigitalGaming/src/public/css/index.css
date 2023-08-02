@@ -92,20 +92,31 @@
   position: relative;
   z-index: 3;
 }
-.product-prev{
-  width: 51.5vw;
-  clip-path: polygon(27% 0, 100% 0, 100% 100%, 0% 100%);
+.polig-sect{
   transition: width 2s;
+  align-items: flex-end;
+  width: 100%;
+}
+.product-prev{
+  transition: width 2s;
+  width: 51.5vw;
+  background: url('/vectors/poligone.svg') no-repeat;
+  background-size: cover;
+ 	background-position: center;
 }
 .product-prev_2{
   width: 40vw;
-  clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
+  background: url('/vectors/poligtwo.svg') no-repeat;
   transition: width 2s;
+  background-size: cover;
+ 	background-position: center;
 }
 .product-prev_3{
   width: 25vw;
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+  background: url('/vectors/poligthree.svg') no-repeat;
   transition: width 2s;
+  background-size: cover;
+ 	background-position: center;
 }
 .product-prev:hover{
   width: 100vw;
@@ -115,5 +126,17 @@
 }
 .product-prev_3:hover{
   width: 100vw;
-  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.size-per{
+  width: 20vw;
+  height: 75vh;
+}
+.messi{
+  z-index: -1;
+}
+.master-ch{
+  z-index: -2;
+}
+.kratos{
+  z-index: .3;
 }
