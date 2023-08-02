@@ -1,32 +1,50 @@
 .main {
-    position: relative;
+  position: relative;
   }
   
 .home-section {
-    position: relative;
+  position: relative;
   }
 .video_main {
-    position: fixed;
-    left: 0;
-    width: 75%;
-    object-fit: cover;
-    z-index: -1;
-  }
-  .video-container {
-    left: 0;
-    height: 200vh;
-    background-color: rgba(0, 0, 0, 0.5); 
-  }
-  .span-home{
-    width: 50vw;
-    float: right;
-    object-fit: cover;
-    z-index: 1;
-  }
-  .child-home{
-    padding-top: 9vh;
-    position: relative;
-  }
+  position: fixed;
+  left: 0;
+  width: 75%;
+  object-fit: cover;
+  z-index: -1;
+}
+.video-container {
+  left: 0;
+  height: 200vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+.span-home{
+  width: 50vw;
+  float: right;
+  object-fit: cover;
+  z-index: 1;
+}
+.child-home{
+  padding-top: 1vh;
+  position: relative;
+  width: 55vw;
+}
+.logo__home{
+  height: 20vh;
+  width: 20vw;
+}
+.dh-title{
+  width: 30vw;
+  font-size: 10vh;
+  font-weight: 300;
+  font-family: 'Sunflower', sans-serif;
+}
+.sub-tl{
+  width: 40vw;
+}
+  .menu-select{
+  font-size: 4vh;
+}
+.select
   /*Seccion de previsualizacion*/
 .logo-prec{
   height: 57vh;
