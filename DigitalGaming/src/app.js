@@ -1,33 +1,27 @@
 const path = require('path');
 
 const express = require('express');
+const authController = require('./controllers/auth');
+const shopController = require('./controllers/shop');
+
 require('dotenv').config();
 
 const app = express();
 
-app.use(express.static(__dirname+'/'));
+// app.use(express.static(__dirname + '/'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'resources')));
+// app.use(express.static(path.join(__dirname, 'resources')));
+
 app.set(process.env.PORT);
 
-app.get('/', (req, res, next) => {
-	res.sendFile(path.join(__dirname, 'views', 'index.html'));
-});
+app.get('/', shopController.getIndex);
 
-app.get('/login', (req, res, next) => {
-	res.sendFile(path.join(__dirname, 'views', 'login.html'));
-});
+app.get('/login', authController.getLogin);
 
-app.get('/productCart', (req, res, next) => {
-	res.sendFile(path.join(__dirname, 'views', 'productCart.html'));
-});
+app.get('/productCart', shopController.getCart);
 
-app.get('/productDetail', (req, res, next) => {
-	res.sendFile(path.join(__dirname, 'views', 'productDetail.html'));
-});
+app.get('/productDetail', shopController.getDetailCart);
 
-app.get('/register', (req, res, next) => {
-	res.sendFile(path.join(__dirname, 'views', 'register.html'));
-});
+app.get('/register', authController.getSignUp);
 
 app.listen(app.get(process.env.PORT) || 3000);

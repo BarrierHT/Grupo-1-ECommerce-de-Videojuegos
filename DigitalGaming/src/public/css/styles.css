@@ -4,13 +4,13 @@
 	box-sizing: border-box;
 	font-family: 'Archivo', sans-serif;
 }
-.antiancor{
-    text-decoration: none;
+.antiancor {
+	text-decoration: none;
 }
-.text-center{
+.text-center {
 	text-align: center;
 }
-.not-border{
+.not-border {
 	border: none;
 }
 .absolute{
@@ -23,100 +23,100 @@
 	right: 0;
 }
 /*Colores de fondos*/
-.bg-dark{
+.bg-dark {
 	background: rgba(23, 23, 23, 1);
 }
-.bg-dkblue{
+.bg-dkblue {
 	background: rgba(1, 0, 72, 1);
 }
-.bg-limagreen{
+.bg-limagreen {
 	background: rgba(78, 205, 33, 1);
 }
-.bg-purple{
+.bg-purple {
 	background: rgba(142, 0, 191, 1);
 }
-.text-white{
+.text-white {
 	color: #ffffff;
 }
 /*Properties FLEX*/
-.flex{
-    display: flex;
+.flex {
+	display: flex;
 }
-.j-content-center{
-    justify-content: center;
+.j-content-center {
+	justify-content: center;
 }
-.j-content-space-betwen{
-    justify-content: space-between;
+.j-content-space-betwen {
+	justify-content: space-between;
 }
-.j-content-betwen{
-    justify-content: space-between;
+.j-content-betwen {
+	justify-content: space-between;
 }
-.j-content-around{
-    justify-content: space-around;
+.j-content-around {
+	justify-content: space-around;
 }
-.f-direction-column{
-    flex-direction: column;
+.f-direction-column {
+	flex-direction: column;
 }
-.align-center{
-    align-items: center;
+.align-center {
+	align-items: center;
 }
-.wrap{
+.wrap {
 	flex-wrap: wrap;
 }
 /*Margenes y anchos*/
-.mg-lat-1{
+.mg-lat-1 {
 	margin: 0 1vh;
 }
-.h-100{
+.h-100 {
 	height: 100vh;
 }
-.w-100{
+.w-100 {
 	width: 100%;
 }
-.w-35{
+.w-35 {
 	width: 35vw;
 }
-.center{
+.center {
 	margin: auto 0;
 }
 /*Propiedades del menu Nav*/
-.header-home{
-    height: 9vh;
+.header-home {
+	height: 9vh;
 	position: fixed;
 	background: transparent;
 	z-index: 4;
 }
-.nav-proj{
-    gap: 1vh;
+.nav-proj {
+	gap: 1vh;
 }
-.search-input{
-    width: 50vw;
-    height: 5vh;
+.search-input {
+	width: 50vw;
+	height: 5vh;
 }
-.logo{
-    height: 6vh;
-    width: 6vh;
+.logo {
+	height: 6vh;
+	width: 6vh;
 }
-.star-icon{
-	background: url('../../resources/vectors/star.svg') no-repeat;
+.star-icon {
+	background: url('/vectors/star.svg') no-repeat;
 	background-size: cover;
 }
-.user-icon{
-	background: url('../../resources/vectors/Usuario.svg') no-repeat;
+.user-icon {
+	background: url('/vectors/Usuario.svg') no-repeat;
 	background-size: cover;
 }
-.reg-icon{
-	background: url('../../resources/img/bgbuttonreg.jpg') no-repeat;
+.reg-icon {
+	background: url('/img/bgbuttonreg.jpg') no-repeat;
 	background-size: cover;
 	height: 7vh;
-	opacity: .5;
+	opacity: 0.5;
 }
-.cart-icon{
-	background: url('../../resources/vectors/cart.svg') no-repeat;
+.cart-icon {
+	background: url('/vectors/cart.svg') no-repeat;
 	background-size: cover;
 }
-.flag-icon{
-	background: url('../../resources/vectors/Pais.svg') no-repeat;
+.flag-icon {
+	background: url('/vectors/Pais.svg') no-repeat;
 	background-size: contain;
 	background-position: center;
 }
@@ -131,37 +131,37 @@
 .menu-lat.activo {
     display: block;
 }
-.btn-menu{
-    background: url('../../resources/vectors/list.svg') no-repeat;
-    background-size: cover;
-    border: none;
+.btn-menu {
+	background: url('/vectors/list.svg') no-repeat;
+	background-size: cover;
+	border: none;
 }
-.btn-cls{
-    float: right;
-    background: url('../../resources/vectors/x-lg.svg') no-repeat;
-    background-size: cover;
-    height: 5vh;
-    width: 5vh;
-    border: none;
-    margin: 2vh 2vh;
+.btn-cls {
+	float: right;
+	background: url('/vectors/x-lg.svg') no-repeat;
+	background-size: cover;
+	height: 5vh;
+	width: 5vh;
+	border: none;
+	margin: 2vh 2vh;
 }
 /*Propiedades responsivas*/
-.not-mobile{
+.not-mobile {
 	display: none;
 }
-.not-tablet{
+.not-tablet {
 	display: none;
 }
-@media screen and (min-width:460px) {
-	.not-mobile{
+@media screen and (min-width: 460px) {
+	.not-mobile {
 		display: unset;
 	}
 }
-@media screen and (min-width:770px) {
-	.not-tablet{
+@media screen and (min-width: 770px) {
+	.not-tablet {
 		display: unset;
 	}
-	.search-input{
+	.search-input {
 		width: 30vw;
 	}
 }
