@@ -120,8 +120,20 @@
 .reg-icon {
 	background: url('/img/bgbuttonreg.jpg') no-repeat;
 	background-size: cover;
+	border: none;
+	opacity: .5;
 	height: 7vh;
-	opacity: 0.5;
+	font-weight: 800;
+	width: 10vw;
+	font-size: 2vh;
+    cursor: pointer;
+	text-transform: uppercase;
+  	letter-spacing: 2px;
+    color: transparent;
+	text-shadow: 0 0 4px #000;
+}
+.reg-icon span{
+	z-index: 1;
 }
 .cart-icon {
 	background: url('/vectors/cart.svg') no-repeat;
