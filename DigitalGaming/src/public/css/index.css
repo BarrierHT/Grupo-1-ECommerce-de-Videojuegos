@@ -29,6 +29,9 @@
   position: relative;
   width: 55vw;
 }
+.marca-present{
+  padding-top: 25vh;
+}
 .logo__home{
   height: 20vh;
   width: 20vw;
@@ -44,6 +47,7 @@
 }
 .menu-select{
   font-size: 3.5vh;
+  gap: 1vh;
 }
 .icon-cont{
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
