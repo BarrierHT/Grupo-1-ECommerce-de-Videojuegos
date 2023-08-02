@@ -14,7 +14,7 @@
   }
   .video-container {
     left: 0;
-    height: 210vh;
+    height: 200vh;
     background-color: rgba(0, 0, 0, 0.5); 
   }
   .span-home{
@@ -22,6 +22,10 @@
     float: right;
     object-fit: cover;
     z-index: 1;
+  }
+  .child-home{
+    padding-top: 9vh;
+    position: relative;
   }
   /*Seccion de previsualizacion*/
 .logo-prec{
