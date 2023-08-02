@@ -23,6 +23,7 @@
   object-fit: cover;
   z-index: 1;
 }
+/*Selectores del home para redirigir segun la consola*/
 .child-home{
   padding-top: 1vh;
   position: relative;
@@ -55,10 +56,15 @@
 }
 .select{
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-  background-color: black;
   width: 25vw;
   padding: 1vh;
   border: solid 1px grey;
+  transition: all .5s;
+}
+.select:hover{
+  background: black;
+  width: 26vw;
+  border-color: rgb(195, 0, 255);
 }
   /*Seccion de previsualizacion*/
 .logo-prec{
