@@ -94,7 +94,6 @@
 }
 .polig-sect{
   transition: width 2s;
-  align-items: flex-end;
   width: 100%;
 }
 .product-prev{
@@ -105,38 +104,56 @@
  	background-position: center;
 }
 .product-prev_2{
-  width: 40vw;
+  width: 42vw;
   background: url('/vectors/poligtwo.svg') no-repeat;
   transition: width 2s;
   background-size: cover;
  	background-position: center;
 }
 .product-prev_3{
-  width: 25vw;
+  width: 30vw;
   background: url('/vectors/poligthree.svg') no-repeat;
   transition: width 2s;
   background-size: cover;
  	background-position: center;
 }
+.content-prev{
+  width: 30vw;
+  height: 70vh;
+  visibility: hidden;
+}
 .product-prev:hover{
   width: 100vw;
+  gap: 10vw;
+}
+.product-prev:hover .content-prev{
+  visibility: visible;
+}
+.product-prev:hover .size-per{
+  left: 10vw;
 }
 .product-prev_2:hover{
   width: 100vw;
+  gap: 15vw;
+}
+.product-prev_2:hover .content-prev{
+  visibility: visible;
+}
+.product-prev_2:hover .size-per{
+  left: 10vw;
 }
 .product-prev_3:hover{
   width: 100vw;
+  gap: 20vw;
+}
+.product-prev_3:hover .content-prev{
+  visibility: visible;
+}
+.product-prev_3:hover .size-per{
+  left: 10vw;
 }
 .size-per{
   width: 20vw;
   height: 75vh;
-}
-.messi{
-  z-index: -1;
-}
-.master-ch{
-  z-index: -2;
-}
-.kratos{
-  z-index: .3;
+  position: relative;
 }

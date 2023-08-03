@@ -66,6 +66,9 @@
 .j-content-around {
 	justify-content: space-around;
 }
+.j-content-evenly{
+	justify-content: space-evenly;
+}
 .f-direction-column {
 	flex-direction: column;
 }
