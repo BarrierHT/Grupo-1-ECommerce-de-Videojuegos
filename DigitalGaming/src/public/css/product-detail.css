@@ -1,0 +1,24 @@
+.no-mobile{
+    display: none;
+}
+.no-tablet{
+    display: none;
+}
+.no-desktop{
+    display: none;
+}
+@media screen and (min-width:361px) {
+    .no-mobile{
+        display: initial;
+    }
+}
+@media screen and (min-width:780px){
+    .no-tablet{
+        display: initial;
+    }
+}
+@media screen and (min-width:1000px){
+    .no-desktop{
+        display: initial;
+    }
+}
