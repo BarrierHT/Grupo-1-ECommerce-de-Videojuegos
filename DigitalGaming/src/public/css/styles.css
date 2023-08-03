@@ -4,6 +4,14 @@
 	box-sizing: border-box;
 	font-family: 'Archivo', sans-serif;
 }
+.btn-generic{
+	padding: 2vh 6vw;
+	border: none;
+	clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+.fw-bold{
+	font-weight: bold;
+}
 .pointer{
 	cursor: pointer;
 }

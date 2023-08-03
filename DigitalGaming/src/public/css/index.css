@@ -117,10 +117,8 @@
   background-size: cover;
  	background-position: center;
 }
-.content-prev{
-  width: 30vw;
-  height: 70vh;
-  visibility: hidden;
+.not-padd{
+  padding: 0;
 }
 .product-prev:hover{
   width: 100vw;
@@ -139,12 +137,15 @@
 .product-prev_2:hover .content-prev{
   visibility: visible;
 }
+.product-prev_2:hover .ban-cont__halo{
+  width: 30vw;
+}
 .product-prev_2:hover .size-per{
   left: 10vw;
 }
 .product-prev_3:hover{
   width: 100vw;
-  gap: 20vw;
+  gap: 30vw;
 }
 .product-prev_3:hover .content-prev{
   visibility: visible;
@@ -152,8 +153,33 @@
 .product-prev_3:hover .size-per{
   left: 10vw;
 }
+.product-prev_3:hover .ban-gow{
+  width: 30vw;
+}
+.product-prev_3:hover .not-padd{
+  padding: 2vh 6vw;
+}
 .size-per{
   width: 20vw;
   height: 75vh;
   position: relative;
+}
+.content-prev{
+  width: 30vw;
+  height: 80vh;
+  visibility: hidden;
+  gap: 5vh;
+}
+.ban-cont{
+  width: 30vw;
+  height: 25vh;
+  object-position: top;
+  object-fit: cover;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+.ban-gow{
+  width: 2vw;
+}
+.ban-cont__halo{
+  width: 10vw;
 }
