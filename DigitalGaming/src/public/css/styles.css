@@ -112,9 +112,32 @@
 .nav-proj {
 	gap: 1vh;
 }
+input[type="text"] {
+    text-align: center;
+}
+.cont-barfind{
+	position: relative;
+}
 .search-input {
 	width: 50vw;
 	height: 5vh;
+	background: #ffffff2c;
+	border: 1px solid rgb(53, 53, 53);
+	border-radius: 2px;
+	padding-right: 30px;
+}
+.search-input:focus{
+	border: none;
+}
+.lupa {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	transform: translateY(-50%);
+}
+.lupa img{
+	height: 3vh;
+	width: 3vw;
 }
 .logo {
 	height: 6vh;
@@ -132,19 +155,15 @@
 	background: url('/img/bgbuttonreg.jpg') no-repeat;
 	background-size: cover;
 	border: none;
-	opacity: .5;
-	height: 7vh;
+	height: 6vh;
+	width: 11vw;
 	font-weight: 800;
-	width: 10vw;
-	font-size: 2vh;
-    cursor: pointer;
-	text-transform: uppercase;
-  	letter-spacing: 2px;
-    color: transparent;
-	text-shadow: 0 0 4px #000;
-}
-.reg-icon span{
-	z-index: 1;
+	font-size: 2.5vh;
+	color: transparent;
+	display: inline-block;
+	vertical-align: middle; 
+	line-height: 45px;
+	-webkit-text-stroke:.5px white;
 }
 .cart-icon {
 	background: url('/vectors/cart.svg') no-repeat;
