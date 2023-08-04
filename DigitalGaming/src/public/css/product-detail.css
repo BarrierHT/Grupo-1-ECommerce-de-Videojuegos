@@ -1,3 +1,26 @@
+.detail-product{
+    
+}
+.poligon-detail{
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    height: 90vh;
+}
+.detail-portada{
+    position: relative;
+    z-index: 2;
+}
+.detail-portada img{
+    height: 50vh;
+    width: 70vw;
+}
+.detail-info{
+    position: relative;
+    z-index: 2;
+}
+
 .no-mobile{
     display: none;
 }
