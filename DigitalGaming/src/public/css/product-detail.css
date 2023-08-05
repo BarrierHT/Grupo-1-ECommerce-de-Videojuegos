@@ -33,8 +33,9 @@
     z-index: 2;
 }
 .detail-format{
-    padding: 1vh;
-    width: 60vw;
+    padding: 1vh 5vh;
+    width: 65vw;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
 }
 .price-format{
     float: right;
@@ -42,7 +43,7 @@
 .medio-pago{
     background-color: white;
     width: 60vw;
-    padding: 1vh;
+    padding: 0.5vh 2vh;
 }
 .icon-pago{
     background-position: center;
