@@ -28,6 +28,13 @@
     position: relative;
     z-index: 2;
 }
+.detail-format{
+    padding: 1vh;
+    width: 60vw;
+}
+.price-format{
+    float: right;
+}
 .medio-pago{
     background-color: white;
     width: 60vw;

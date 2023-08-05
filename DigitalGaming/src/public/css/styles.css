@@ -21,6 +21,9 @@
 .text-center {
 	text-align: center;
 }
+.not-link{
+	text-decoration: none;
+}
 .not-border {
 	border: none;
 }
@@ -49,6 +52,9 @@
 .bg-dkblue {
 	background: rgba(1, 0, 72, 1);
 }
+.bg-white{
+	background: #ffffff;
+}
 .bg-limagreen {
 	background: rgba(78, 205, 33, 1);
 }
@@ -57,6 +63,9 @@
 }
 .text-white {
 	color: #ffffff;
+}
+.text-dark{
+	color: rgb(39, 39, 39);
 }
 /*Properties FLEX*/
 .flex {
