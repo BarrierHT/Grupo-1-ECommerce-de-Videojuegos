@@ -8,6 +8,14 @@
     clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
     height: 90vh;
 }
+.poligon-detail__black{
+    height: 40vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    clip-path: polygon(6% 0, 100% 0, 100% 100%, 0% 100%);
+}
 .detail-portada{
     position: relative;
     z-index: 2;
@@ -20,7 +28,34 @@
     position: relative;
     z-index: 2;
 }
-
+.medio-pago{
+    background-color: white;
+    width: 60vw;
+    padding: 1vh;
+}
+.icon-pago{
+    background-position: center;
+    background-size: cover;
+    height: 1.3rem;
+    width: 2rem;
+}
+.visa{
+    background: url('/img/visa.png') no-repeat;
+}
+.mastercard{
+    background: url('/img/mastercard.png') no-repeat;
+}
+.card-icon{
+    background: url('/vectors/credit-card.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.hsbc{
+    background: url('/img/hsbc.png') no-repeat;
+    width: 3rem;
+    background-position: center;
+    background-size: contain;
+}
 .no-mobile{
     display: none;
 }
