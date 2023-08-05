@@ -1,6 +1,10 @@
 .detail-product{
     
 }
+.detail-art{
+    gap: 2vh;
+    padding-top: 6vh;
+}
 .poligon-detail{
     position: absolute;
     top: 10vh;
