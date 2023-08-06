@@ -119,6 +119,9 @@
     .no-mobile{
         display: initial;
     }
+    .first-table{
+        background: red;
+    }
 }
 @media screen and (min-width:780px){
     .no-tablet{
