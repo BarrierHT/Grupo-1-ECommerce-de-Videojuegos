@@ -9,6 +9,10 @@
 	border: none;
 	clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
 }
+/*Estilos generales par los textos (tamaños, decoraciones, etc)*/
+.tamano-title{
+	font-size: 4vh;
+}
 .fw-bold{
 	font-weight: bold;
 }
@@ -24,9 +28,16 @@
 .not-link{
 	text-decoration: none;
 }
+.text-white {
+	color: #ffffff;
+}
+.text-dark{
+	color: rgb(39, 39, 39);
+}
 .not-border {
 	border: none;
 }
+/*Positions*/
 .absolute{
 	position: absolute;
 }
@@ -60,12 +71,6 @@
 }
 .bg-purple {
 	background: rgba(142, 0, 191, 1);
-}
-.text-white {
-	color: #ffffff;
-}
-.text-dark{
-	color: rgb(39, 39, 39);
 }
 /*Properties FLEX*/
 .flex {
