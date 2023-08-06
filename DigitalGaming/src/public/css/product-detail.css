@@ -1,4 +1,112 @@
-.no-mobile{
+.detail-art{
+    gap: 2vh;
+    padding-top: 6vh;
+}
+.poligon-detail{
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%);
+    /* clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); */
+    height: 90vh;
+    padding-top: 5vh;
+}
+.poligon-detail__black{
+    height: 46vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    clip-path: polygon(0% 0, 85% 0%, 100% 100%, 0% 100%);
+    /* clip-path: polygon(6% 0, 100% 0, 100% 100%, 0% 100%); */
+}
+.detail-portada{
+    position: relative;
+    z-index: 2;
+}
+.detail-portada img{
+    padding-top: 3vh;
+    height: 45vh;
+    width: 65vw;
+}
+.detail-info{
+    position: relative;
+    z-index: 2;
+    gap: 1vh;
+}
+.div-game-title{
+    padding: 0 3vh;
+}
+.detail-format{
+    padding: 1vh 5vh;
+    width: 65vw;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+}
+.formato{
+    height: 4vh;
+}
+.price-format{
+    float: right;
+    height: 4vh;
+}
+.medio-pago{
+    background-color: white;
+    width: 60vw;
+    padding: 0.5vh 2vh;
+}
+.icon-pago{
+    background-position: center;
+    background-size: cover;
+    height: 1.3rem;
+    width: 2rem;
+}
+.visa{
+    background: url('/img/visa.png') no-repeat;
+}
+.mastercard{
+    background: url('/img/mastercard.png') no-repeat;
+}
+.card-icon{
+    background: url('/vectors/credit-card.svg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.hsbc{
+    background: url('/img/hsbc.png') no-repeat;
+    width: 3rem;
+    background-position: center;
+    background-size: contain;
+}
+.detail-video{
+    height: 40vh;
+    width: 100vw;
+}
+.article-desc{
+    width: 90vw;
+    gap: 1vh;
+}
+.title-req{
+    height: 10vh;
+}
+.title-req h1{
+    padding-left: 4vw;
+}
+.span-req{
+    height: 10vh;
+    width: 30vw;
+}
+.tablas-req{
+    padding-top: 5vh;
+}
+.minimo-req{
+    padding: 5vh 2.5vw;
+}
+.req-max{
+    background: url('/img/portada-unbound.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/* .no-mobile{
     display: none;
 }
 .no-tablet{
@@ -6,19 +114,93 @@
 }
 .no-desktop{
     display: none;
-}
+} */
 @media screen and (min-width:361px) {
     .no-mobile{
         display: initial;
+    }
+    .detail-portada img{
+        padding-top: 3vh;
+        height: 14rem;
+        width: 10rem;
+    }
+    .formato{
+        width: 35vw;
+    }
+    .detail-description{
+        gap: 5vh;
+    }
+    .requisitos{
+        gap: 5vh;
     }
 }
 @media screen and (min-width:780px){
     .no-tablet{
         display: initial;
     }
+    .detail-portada img {
+        height: 20rem;
+        width: 15rem;
+    }
+    .detail-art{
+        flex-direction: row;
+    }
+    .detail-info{
+        width: 50vw;
+        gap: 2vh;
+        padding-left: 5vw;
+    }
+    .detail-format{
+        width: 40vw;
+    }
+    .medio-pago{
+        width:30vw;
+    }
+    .formato{
+        width: 25vw;
+    }
+    .poligon-detail{
+        /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%); */
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+        height: 90vh;
+        padding-top: 5vh;
+    }
+    .poligon-detail__black{
+        width: 55vw;
+        height: 90vh;
+        z-index: 1;
+        /* clip-path: polygon(0% 0, 85% 0%, 100% 100%, 0% 100%); */
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .detail-description{
+        flex-direction: row;
+        height: 70vh;
+    }
+    .article-desc{
+        padding-left: 2vw;
+    }
+    .detail-video{
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+        width: 45vw;
+    }
+    .minimo-req{
+        gap: 5vh;
+        width: 50vw;
+    }
+    .tablas-req{
+        flex-direction: row;
+        height: 80vh;
+    }
 }
 @media screen and (min-width:1000px){
     .no-desktop{
         display: initial;
+    }
+    .detail-portada img {
+        height: 25rem;
+        width: 19rem;
+    }
+    .detail-info{
+        padding-left: 15vw;
     }
 }
