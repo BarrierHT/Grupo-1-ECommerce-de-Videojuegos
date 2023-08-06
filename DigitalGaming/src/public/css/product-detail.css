@@ -85,6 +85,16 @@
     width: 90vw;
     gap: 1vh;
 }
+.title-req{
+    height: 10vh;
+}
+.title-req h1{
+    padding-left: 4vw;
+}
+.span-req{
+    height: 10vh;
+    width: 30vw;
+}
 .no-mobile{
     display: none;
 }
