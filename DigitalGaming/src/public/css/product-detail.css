@@ -43,10 +43,11 @@
     clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
 }
 .formato{
-    padding: 1vh;
+    height: 4vh;
 }
 .price-format{
     float: right;
+    height: 4vh;
 }
 .medio-pago{
     background-color: white;
@@ -75,6 +76,14 @@
     width: 3rem;
     background-position: center;
     background-size: contain;
+}
+.detail-video{
+    height: 40vh;
+    width: 100vw;
+}
+.article-desc{
+    width: 90vw;
+    gap: 1vh;
 }
 .no-mobile{
     display: none;

@@ -31,6 +31,9 @@
 .text-white {
 	color: #ffffff;
 }
+.text-subtitle{
+	color: #acacac;
+}
 .text-dark{
 	color: rgb(39, 39, 39);
 }
