@@ -95,6 +95,17 @@
     height: 10vh;
     width: 30vw;
 }
+.tablas-req{
+    padding-top: 5vh;
+}
+.minimo-req{
+    padding: 5vh 2.5vw;
+}
+.req-max{
+    background: url('/img/portada-unbound.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 .no-mobile{
     display: none;
 }
