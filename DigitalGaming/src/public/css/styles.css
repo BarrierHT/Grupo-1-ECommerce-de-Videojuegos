@@ -126,6 +126,9 @@
 	background: transparent;
 	z-index: 4;
 }
+.header-home.scroll{
+	background: #2c2c2c;
+}
 .nav-proj {
 	gap: 1vh;
 }
@@ -145,6 +148,7 @@ input[type="text"] {
 }
 .search-input:focus{
 	border: none;
+	outline: none;
 }
 .lupa {
 	position: absolute;
