@@ -125,9 +125,10 @@
 	position: fixed;
 	background: transparent;
 	z-index: 4;
+	transition: .5s all;
 }
 .header-home.scroll{
-	background: #2c2c2c;
+	background: #131313d2;
 }
 .nav-proj {
 	gap: 1vh;
