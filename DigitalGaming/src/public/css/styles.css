@@ -131,7 +131,7 @@
 	transition: linear .5s;
 }
 .header-home.scroll{
-	background: #131313d2;
+	background: #131313da;
 }
 .nav-proj {
 	gap: 1vh;
@@ -207,23 +207,27 @@ input[type="text"] {
 }
 .categ-nav{
 	height: 7vh;
+	transition: height 2s;
 }
 .despcat{
-	padding-top: 9vh;
-	display: initial;
-	position: fixed;
-	height: 40vh;
-	width: 100vw;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
 	background: red;
+	width: 100%;
+	z-index: -1;
+	visibility: hidden;
+	height: 50vh;
 }
-.despcat.mostrar{
-	padding-top: 9vh;
-	display: initial;
-	position: fixed;
-	height: 40vh;
-	width: 100vw;
-	background: red;
+.content-cat{
+	margin-top: 9vh;
+	height: 41vh;
 }
+.categ-nav:hover .despcat{
+	visibility: visible;
+}
+
 .menu-lat {
     display: none;
     position: fixed;

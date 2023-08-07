@@ -120,6 +120,12 @@
 .not-padd{
   padding: 0;
 }
+.content-prev{
+  width: 30vw;
+  height: 80vh;
+  visibility: hidden;
+  gap: 5vh;
+}
 .product-prev:hover{
   width: 100vw;
   gap: 10vw;
@@ -163,12 +169,6 @@
   width: 20vw;
   height: 75vh;
   position: relative;
-}
-.content-prev{
-  width: 30vw;
-  height: 80vh;
-  visibility: hidden;
-  gap: 5vh;
 }
 .ban-cont{
   width: 30vw;
