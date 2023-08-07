@@ -13,6 +13,9 @@
 .tamano-title{
 	font-size: 4vh;
 }
+.size-font-parr{
+	font-size: 3vh;
+}
 .fw-bold{
 	font-weight: bold;
 }
@@ -125,7 +128,7 @@
 	position: fixed;
 	background: transparent;
 	z-index: 4;
-	transition: .5s all;
+	transition: linear .5s;
 }
 .header-home.scroll{
 	background: #131313d2;
@@ -196,6 +199,31 @@ input[type="text"] {
 	background-size: contain;
 	background-position: center;
 }
+.icon-double-bott{
+	background: url('/vectors/chevron-double-down.svg') no-repeat;
+	background-size: cover;
+	height: 1.5rem;
+	width: 1.5rem;
+}
+.categ-nav{
+	height: 7vh;
+}
+.despcat{
+	padding-top: 9vh;
+	display: initial;
+	position: fixed;
+	height: 40vh;
+	width: 100vw;
+	background: red;
+}
+.despcat.mostrar{
+	padding-top: 9vh;
+	display: initial;
+	position: fixed;
+	height: 40vh;
+	width: 100vw;
+	background: red;
+}
 .menu-lat {
     display: none;
     position: fixed;
@@ -235,7 +263,7 @@ input[type="text"] {
 }
 @media screen and (min-width: 770px) {
 	.not-tablet {
-		display: unset;
+		display: flex;
 	}
 	.search-input {
 		width: 30vw;
