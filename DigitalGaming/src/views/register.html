@@ -1,14 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-</body>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link rel="shortcut icon" href="/vectors/favicon.svg" type="image/x-icon">
+        <link rel="stylesheet" href="/css/reset.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/register.css">
+        <!--Sunflower font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
+        <!--Archivo font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+        <script defer src="/js/main.js"></script>
+        <script defer src="/js/header.js"></script>
+    </head>
+    <body class="bg-dkblue">
+        <header class="w-100 header-home text-white flex align-center center">
+            <nav class="w-100 nav-proj mg-lat-1 flex align-center j-content-space-betwen">
+                <div class="flex align-center w-35 j-content-around">
+                    <img src="/vectors/favicon.svg" alt="logo" class="logo">
+                    <div class="logo not-tablet flag-icon not-border"></div>
+                    <div class="logo not-mobile star-icon not-border"></div>
+                    <div class="categ-nav text-white not-tablet align-center pointer">
+                        <p class="size-font-parr">Categorias</p>
+                        <span class="flex icon-double-bott"></span>
+                        <section class="despcat bg-dark w-100">
+                            <div class="content-cat bg-limagreen w-100">
+                                <h2>Categorias</h2>
+                                <article class=""></article>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="cont-barfind">
+                    <input type="text" placeholder="Buscar" class="search-input text-white">
+                    <a href="" class="lupa pointer">
+                        <img src="/vectors/search.svg" alt="lupa">
+                    </a>
+                </div>
+                <div class="flex align-center w-35 j-content-around">
+                    <a href="" class="reg-icon antiancor text-center pointer not-tablet">REGISTRATE</a>
+                    <div class="logo not-mobile user-icon"></div>
+                    <button class="logo btn-menu"></button>
+                </div>
+            </nav>
+            <div class="menu-lat bg-dark w-100 h-100">
+                <button class="close btn-cls"></button>
+                <div class="text-center">
+                    <ul class="pointer text-white">
+                        <li class="menu-elem">Home</li>
+                        <li class="menu-elem">Catalogo</li>
+                        <li class="menu-elem">Categorias</li>
+                        <li class="menu-elem">Nosotros</li>
+                        <li class="menu-elem">Carrito</li>
+                        <li class="menu-elem">Contacto</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="input-container-register">
+                <div class="register">
+                    <h1>Registro</h1><br>
+                    <hr>
+                    <div class="form">
+                        <form action="/register" method="post" id="form">
+                        <label for="username">Apellido<img style="width: 30px;"
+                            src="https://s3-alpha-sig.figma.com/img/46bb/dba7/f73b81cfd5e792c7191b47bfc758659f?Expires=1692576000&Signature=jKMz-yIe-3S~HhfemrLTZUnaeyWuvASDDSokPgzl2AwgfDfl1kKH77KNH1IRBezayZO9Mwz9RvRaNQOysYrLYwDADukZc9LBpBCTrhMrovITsZX84Tqdmzmzi45Zs1bR3bJsWAQxijY4I3SzviLfIKXk9IaJ9dkozF5GdYEGy9DYmojgp2ZZKNcu-6XooSyak4WE5e1rvIxane-WQ8zu-19rVGpYj7sAgHAX78plH2hVgPFqktIzPeq05-zi4LR3y-35IPFLnukKvRn7hMKNM04fnvpVHZfiJrUnb~eqoVAOSP22bcpmR-S-dBC4nLEqVqt~xLPcIA1J0w6Vaza5yA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />: </label>
+                        <input type="text" id="lastname" name="lastname" required><br><hr>
+                        <label for="username">Nombre<img style="width: 30px;"
+                            src="https://s3-alpha-sig.figma.com/img/46bb/dba7/f73b81cfd5e792c7191b47bfc758659f?Expires=1692576000&Signature=jKMz-yIe-3S~HhfemrLTZUnaeyWuvASDDSokPgzl2AwgfDfl1kKH77KNH1IRBezayZO9Mwz9RvRaNQOysYrLYwDADukZc9LBpBCTrhMrovITsZX84Tqdmzmzi45Zs1bR3bJsWAQxijY4I3SzviLfIKXk9IaJ9dkozF5GdYEGy9DYmojgp2ZZKNcu-6XooSyak4WE5e1rvIxane-WQ8zu-19rVGpYj7sAgHAX78plH2hVgPFqktIzPeq05-zi4LR3y-35IPFLnukKvRn7hMKNM04fnvpVHZfiJrUnb~eqoVAOSP22bcpmR-S-dBC4nLEqVqt~xLPcIA1J0w6Vaza5yA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />:</label>
+                        <input type="text" id="username" name="username" required><br><hr>
+                        <label for="email">Correo Electronico<img style="width: 35px;"
+                            src="https://s3-alpha-sig.figma.com/img/ebbe/76ec/4ec84057dc73a950977c86d9e8c3c87c?Expires=1692576000&Signature=QRrXyGAIUxWcSbGniG~MtTm83uBhEhaORffDiYqTD9cEP3BGYQKijwG4bevTtXS5PBnmBDExAQY84YBhUsghRqo8GbAg5l6Yh4AROotxvwUTk07OO-4Wl3muk9TFQz9oES85SKYauLJ8tIcGDn-FL~A3PVZsTTlY9wJbLX-XBDdPM~h14zKfD3~LjR6BmK791nWm581CfjIhjPpo0~69QGwU4d1~k~WjhEtdqrmmwMW-1FW4CDo7TP1WrWV5QeICq5Op5PMVEbO0Keb8kvuERc5XuWruVBkS-77xBXmVsBe1Pv3MFwQzo5gu6cTGltDAJ046vjuaXV35fMy1z324BQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">:</label>
+                        <input type="email" id="email" name="email" required><br><hr>
+                        <label for="phone">Número de Telefono<img style="width: 35px;"
+                            src="https://s3-alpha-sig.figma.com/img/cf8d/7755/4c5a558cb6802dec0ff32fcc70f57685?Expires=1692576000&Signature=VVLWTXghiBCDoDX-WFrNfRb8wgNSZEGnh697aMVJgDmt2Kw2BLJmzMMYn5NWcAhbV7JJO9azOIs80Z0saKnzJnIhuScJG46efTED8Xuhb1JhSnZoNWcUkHkAWDMrH2JDSPmLwPKrVWCq~oCSLnJxQQrPZ8fCuKyvQt3zHxgvalLcDXucckE-kDbWLMdPvTRywru6Cf3ejPZJ-InOn1Z9vyvgL7JKzhnKDOD7gbyyexE--7aO68YLbqxUnghlF514nIw4iH7oPio1XfnYqk5IiBVeI2OJHQDuNO01HH5vyNJPjeo8kh09gkp2JGzJlrgj38QePi2ZeIVz265ts~jrzQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">:</label>
+                        <input type="number" id="phone" name="phone" required><br><hr>
+                        <label for="password">Contraseña<img style="width: 30px;"
+                            src="https://s3-alpha-sig.figma.com/img/4d45/ab37/ad513f3bd2da47f284aa3262eca50fad?Expires=1692576000&Signature=LiquzUxh5EBa5w2sujgINKa~dUM0lKvZKG2Oh~8RP0NPDcvII8ylm3FArjXAdPr46zrdjYQGzyAIFm7trZmDAMAPMLL0G~HDVLLYPyYR9By86rfCk6D3QlYuy1qhuBOL2w9se3TNisLfTlDHPCjkNOkuAbpWIwsK~G6VvH425FOCVWhUaIr88gAcWwQloLF~u59zl5knF3dOSoUY~E4pUjudQJsjx9aWV63MKKSaTzPBjRjE7O4Mbao6vyAqBB3~SkYn5j4VHWkXV61H3LpIGXw7QKQ1gDkcj5pNLQCi-6VQCKkI8Pt3S55Zk5TOL5j63RlOE1k54gXl373RLe81WA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />:</label>
+                        <input type="password" id="password" name="password" required><br><hr>
+                        <label for="password2">Confirmar Contraseña<img style="width: 30px;"
+                            src="https://s3-alpha-sig.figma.com/img/4d45/ab37/ad513f3bd2da47f284aa3262eca50fad?Expires=1692576000&Signature=LiquzUxh5EBa5w2sujgINKa~dUM0lKvZKG2Oh~8RP0NPDcvII8ylm3FArjXAdPr46zrdjYQGzyAIFm7trZmDAMAPMLL0G~HDVLLYPyYR9By86rfCk6D3QlYuy1qhuBOL2w9se3TNisLfTlDHPCjkNOkuAbpWIwsK~G6VvH425FOCVWhUaIr88gAcWwQloLF~u59zl5knF3dOSoUY~E4pUjudQJsjx9aWV63MKKSaTzPBjRjE7O4Mbao6vyAqBB3~SkYn5j4VHWkXV61H3LpIGXw7QKQ1gDkcj5pNLQCi-6VQCKkI8Pt3S55Zk5TOL5j63RlOE1k54gXl373RLe81WA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />:</label>
+                        <input type="password" id="password2" name="password2" required><hr><br>
+                        <button type="submit">Registrarse</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
 </html>
