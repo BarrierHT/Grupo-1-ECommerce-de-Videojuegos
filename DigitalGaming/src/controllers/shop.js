@@ -11,3 +11,8 @@ exports.getCart = (req, res, next) => {
 exports.getDetailCart = (req, res, next) => {
 	res.sendFile(path.join(__dirname, '..', 'views', 'productDetail.html'));
 };
+
+exports.getDetailCartstandart = (req, res, next) => {
+	res.sendFile(path.join(__dirname, '..', 'views', 'productDetail-standart.html'));
+};
+

@@ -4,30 +4,79 @@
 	box-sizing: border-box;
 	font-family: 'Archivo', sans-serif;
 }
+.btn-generic{
+	padding: 2vh 6vw;
+	border: none;
+	clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+/*Estilos generales par los textos (tamaños, decoraciones, etc)*/
+.tamano-title{
+	font-size: 4vh;
+}
+.size-font-parr{
+	font-size: 3vh;
+}
+.fw-bold{
+	font-weight: bold;
+}
+.pointer{
+	cursor: pointer;
+}
 .antiancor {
 	text-decoration: none;
 }
 .text-center {
 	text-align: center;
 }
+.not-link{
+	text-decoration: none;
+}
+.text-white {
+	color: #ffffff;
+}
+.text-subtitle{
+	color: #acacac;
+}
+.text-dark{
+	color: rgb(39, 39, 39);
+}
 .not-border {
 	border: none;
 }
+/*Positions*/
+.absolute{
+	position: absolute;
+}
+.top-0{
+	top: 0;
+}
+.rigth{
+	right: 0;
+}
 /*Colores de fondos*/
+.bg-blue{
+	background: blue;
+}
+.bg-yellow{
+	background: rgb(197, 197, 21);
+}
+.bg-red{
+	background: red;
+}
 .bg-dark {
 	background: rgba(23, 23, 23, 1);
 }
 .bg-dkblue {
 	background: rgba(1, 0, 72, 1);
 }
+.bg-white{
+	background: #ffffff;
+}
 .bg-limagreen {
 	background: rgba(78, 205, 33, 1);
 }
 .bg-purple {
 	background: rgba(142, 0, 191, 1);
-}
-.text-white {
-	color: #ffffff;
 }
 /*Properties FLEX*/
 .flex {
@@ -44,6 +93,9 @@
 }
 .j-content-around {
 	justify-content: space-around;
+}
+.j-content-evenly{
+	justify-content: space-evenly;
 }
 .f-direction-column {
 	flex-direction: column;
@@ -75,14 +127,42 @@
 	height: 9vh;
 	position: fixed;
 	background: transparent;
-	z-index: 2;
+	z-index: 4;
+	transition: linear .5s;
+}
+.header-home.scroll{
+	background: #131313da;
 }
 .nav-proj {
 	gap: 1vh;
 }
+input[type="text"] {
+    text-align: center;
+}
+.cont-barfind{
+	position: relative;
+}
 .search-input {
 	width: 50vw;
 	height: 5vh;
+	background: #ffffff2c;
+	border: 1px solid rgb(53, 53, 53);
+	border-radius: 2px;
+	padding-right: 30px;
+}
+.search-input:focus{
+	border: none;
+	outline: none;
+}
+.lupa {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	transform: translateY(-50%);
+}
+.lupa img{
+	height: 3vh;
+	width: 3vw;
 }
 .logo {
 	height: 6vh;
@@ -99,8 +179,16 @@
 .reg-icon {
 	background: url('/img/bgbuttonreg.jpg') no-repeat;
 	background-size: cover;
-	height: 7vh;
-	opacity: 0.5;
+	border: none;
+	height: 6vh;
+	width: 11vw;
+	font-weight: 800;
+	font-size: 2.5vh;
+	color: transparent;
+	display: inline-block;
+	vertical-align: middle; 
+	line-height: 45px;
+	-webkit-text-stroke:.5px white;
 }
 .cart-icon {
 	background: url('/vectors/cart.svg') no-repeat;
@@ -111,18 +199,47 @@
 	background-size: contain;
 	background-position: center;
 }
-.menu-lat {
-	display: none;
-	position: fixed;
+.icon-double-bott{
+	background: url('/vectors/chevron-double-down.svg') no-repeat;
+	background-size: cover;
+	height: 1.5rem;
+	width: 1.5rem;
+}
+.categ-nav{
+	height: 7vh;
+	transition: height 2s;
+}
+.despcat{
+	position: absolute;
+	left: 0;
 	top: 0;
-	right: 0;
-	transform: translateX(100%);
-	transition: transform 0.3s ease-out;
-	z-index: 3;
+	display: flex;
+	width: 100%;
+	z-index: -1;
+	visibility: hidden;
+	height: 45vh;
+	background: linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 34%, rgba(0,0,0,0.53) 100%);
+}
+.content-cat{
+	margin-top: 9vh;
+	height: 35vh;
+}
+.categ-nav:hover .despcat{
+	visibility: visible;
+}
+.menu-cont{
+	gap: 2vh;
+}
+.menu-lat {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: width 5s;
+    z-index: 3;
 }
 .menu-lat.activo {
-	transform: translateX(0);
-	display: block;
+    display: block;
 }
 .btn-menu {
 	background: url('/vectors/list.svg') no-repeat;
@@ -138,8 +255,24 @@
 	border: none;
 	margin: 2vh 2vh;
 }
-main {
-	padding-top: 9vh;
+/* Cards del nav con categorias */
+.content-cat{
+	gap: 2vw;
+}
+.card-caregorinav{
+	height: 10rem;
+	width: 11rem;
+}
+.card-caregorinav img{
+	width: 11rem;
+	height: 10rem;
+	object-fit: cover;
+	position: absolute;
+	opacity: .9;
+}
+.tlt-card{
+	width: 15rem;
+	z-index: 3;
 }
 /*Propiedades responsivas*/
 .not-mobile {
@@ -155,7 +288,7 @@ main {
 }
 @media screen and (min-width: 770px) {
 	.not-tablet {
-		display: unset;
+		display: flex;
 	}
 	.search-input {
 		width: 30vw;
