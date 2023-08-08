@@ -214,15 +214,15 @@ input[type="text"] {
 	left: 0;
 	top: 0;
 	display: flex;
-	background: red;
 	width: 100%;
 	z-index: -1;
 	visibility: hidden;
-	height: 50vh;
+	height: 45vh;
+	background: linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 34%, rgba(0,0,0,0.53) 100%);
 }
 .content-cat{
 	margin-top: 9vh;
-	height: 41vh;
+	height: 35vh;
 }
 .categ-nav:hover .despcat{
 	visibility: visible;
@@ -254,6 +254,25 @@ input[type="text"] {
 	width: 5vh;
 	border: none;
 	margin: 2vh 2vh;
+}
+/* Cards del nav con categorias */
+.content-cat{
+	gap: 2vw;
+}
+.card-caregorinav{
+	height: 10rem;
+	width: 11rem;
+}
+.card-caregorinav img{
+	width: 11rem;
+	height: 10rem;
+	object-fit: cover;
+	position: absolute;
+	opacity: .9;
+}
+.tlt-card{
+	width: 15rem;
+	z-index: 3;
 }
 /*Propiedades responsivas*/
 .not-mobile {
