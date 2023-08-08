@@ -227,7 +227,9 @@ input[type="text"] {
 .categ-nav:hover .despcat{
 	visibility: visible;
 }
-
+.menu-cont{
+	gap: 2vh;
+}
 .menu-lat {
     display: none;
     position: fixed;
