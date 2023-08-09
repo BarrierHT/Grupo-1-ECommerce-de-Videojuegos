@@ -69,6 +69,57 @@
   height: 23vh;
 }
 
+/*----Estilos del Footer----*/
+.polygono-footer {
+  position: absolute;
+  left: 30%;
+  width: 70%;
+  height: 40vh;
+  clip-path: polygon(65% 0, 100% 0, 100% 100%, 28% 100%);
+}
+.footer-section {
+  height: 40vh;
+  border-top: solid 1px;
+}
+.footer-section h4 {
+  position: relative;
+  text-align: center;
+  font-weight: 500;
+}
+.pieInfo {
+  height: 30vh;
+  justify-content: space-between;
+}
+.botones-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+}
+.pieInfo button {
+  display: block;
+  color: white;
+  height: 5vh;
+  width: 100%;
+
+  background-color: black;
+  border: double 2px white;
+  clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
+
+  transition: 0.5s;
+}
+.pieInfo button:hover {
+  background-color: gray;
+}
+.logoFooter {
+  position: relative;
+  top: 33%;
+  left: 11%;
+}
+.logoFooter img {
+  width: 40%;
+}
 @media screen and (min-width: 460px) {
   /*----MediaQueries de Categorias----*/
   .category-section {
@@ -98,6 +149,21 @@
   .polygono-categories {
     font-size: 2vh;
   }
+  /*----Media Queries del Footer----*/
+  .pieInfo button {
+    height: 6vh;
+    font-size: 3vw;
+  }
+  .footer-section h4 {
+    font-size: 3vw;
+  }
+  .logoFooter {
+    top: 29%;
+    left: 0%;
+  }
+  .logoFooter img {
+    width: 85%;
+  }
 }
 @media screen and (min-width: 900px) {
   .category-section {
@@ -125,5 +191,13 @@
   }
   .titles-categories {
     font-size: 3vh;
+  }
+  /*----Media Queries del Footer----*/
+  .pieInfo button {
+    height: 7vh;
+    font-size: 2vw;
+  }
+  .footer-section h4 {
+    font-size: 2vw;
   }
 }
