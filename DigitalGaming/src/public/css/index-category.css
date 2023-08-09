@@ -61,6 +61,12 @@
   height: 22vh;
   opacity: 1;
   object-fit: contain;
+  transition: linear 0.5s;
+}
+
+.img-categories img:hover {
+  width: 33vw;
+  height: 23vh;
 }
 
 @media screen and (min-width: 460px) {
