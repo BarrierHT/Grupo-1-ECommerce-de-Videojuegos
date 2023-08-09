@@ -1,10 +1,10 @@
 .main {
   position: relative;
-  }
-  
+}
+
 .home-section {
   position: relative;
-  }
+}
 .video_main {
   position: fixed;
   left: 0;
@@ -15,171 +15,447 @@
 .video-container {
   left: 0;
   height: 200vh;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.span-home{
+.span-home {
   width: 50vw;
   float: right;
   object-fit: cover;
   z-index: 1;
 }
+
+/*----Estilos para la SECTION "Recomendados"----*/
+.recomendados-section {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  z-index: 1;
+  gap: 6vh;
+}
+
+.recomendados {
+  position: relative;
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 9vh;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.recomendados h3 {
+  padding: 1vh 0;
+}
+
+.recomendados button {
+  font-size: 2vh;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  font-weight: bold;
+  color: white;
+}
+
+.titles {
+  width: 50vw;
+}
+
+.polygono {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40vw;
+  height: 120vh;
+  z-index: 0;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/*----Estilos de la Cards----*/
+.articles {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.products {
+  width: 85vw;
+}
+
+.products img {
+  position: absolute;
+  width: 85vw;
+  height: 23vh;
+  opacity: 0.8;
+}
+
+.share-img {
+  position: relative;
+}
+
+.info {
+  height: 5vh;
+  padding: 4.5vh 0;
+}
+
+.name-game {
+  gap: 1vh;
+}
+
+.name-game p {
+  color: rgb(154, 154, 154);
+}
+
+.precio {
+  font-weight: 600;
+  font-size: 2.5vh;
+}
+
+.portada {
+  align-items: flex-end;
+  height: 23vh;
+}
+
+.descuentos-span {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  width: 30vw;
+  height: 4vh;
+  padding: 2.2vh;
+  font-weight: 700;
+}
+
+.share-img img {
+  position: relative;
+  height: 5vh;
+  width: 5vw;
+}
+
+.share-img p {
+  width: 13vw;
+  font-size: 1.5vh;
+  font-weight: 600;
+}
+
+/*----Estilos de Seccion Caracteristicas----*/
+.caract-section {
+  height: 40vh;
+}
+.caract-div {
+  background-image: url('/img/bgGamer-mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 40vh;
+  width: 100%;
+}
+.caract-card {
+  width: 55vw;
+  height: 25vh;
+  gap: 3vh;
+}
+.caract-card img {
+  width: 21vw;
+  height: 10vh;
+}
+.caract-card h3 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 3vh;
+}
+
+@media screen and (min-width: 460px) {
+  /*----Media queries de Recomendados----*/
+  .titles h3 {
+    font-size: 2vh;
+  }
+  .titles p {
+    font-size: 1.8vh;
+  }
+  .products {
+    width: 40vw;
+  }
+  .products img {
+    width: 40vw;
+    height: 15vh;
+  }
+  .share-img img {
+    height: 4vh;
+    width: 4vw;
+  }
+  .articles {
+    width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5vw;
+  }
+  .portada {
+    height: 15vh;
+  }
+
+  .descuentos-span {
+    width: 15vw;
+    height: 2vh;
+    padding: 1.3vh;
+  }
+  .recomendados-section {
+    width: 100vw;
+    height: 100vh;
+  }
+  .polygono {
+    height: 100vh;
+  }
+  /*----Media queries de Caracteristicas----*/
+  .caract-div {
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .caract-card {
+    display: flex;
+    width: 22vw;
+    height: 17vh;
+    gap: 2vh;
+
+    border-radius: 2vh;
+    border: double 2px white;
+  }
+  .caract-card img {
+    height: 7vh;
+    width: 10vw;
+  }
+}
+@media screen and (min-width: 770px) {
+  /*----Media queries de Recomendados----*/
+  .recomendados-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    padding-top: 10vh;
+
+    width: 100%;
+    height: 100vh;
+  }
+  .portada {
+    width: 20vw;
+    height: 23vh;
+  }
+  .products {
+    width: 20vw;
+  }
+  .products img {
+    width: 20vw;
+    height: 23vh;
+  }
+  .share-img img {
+    height: 3.5vh;
+    width: 3.5vw;
+  }
+  .share-img p {
+    width: 9vw;
+    height: 4vh;
+    font-size: 2vh;
+  }
+  .articles {
+    width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+  }
+  .descuentos-span {
+    height: 3vh;
+    font-size: 1vw;
+  }
+  .polygono {
+    height: 100vh;
+  }
+  .titles h3 {
+    font-size: 3.5vh;
+  }
+  .titles p {
+    font-size: 3vh;
+  }
+  /*----Media queries de Caracteristicas----*/
+  .caract-div {
+    background-image: url('/img/bgGamer.jpg');
+    background-size: contain;
+    background-position: left;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .caract-card {
+    display: flex;
+    width: 10vw;
+    height: 40vh;
+    gap: 2vh;
+
+    border-radius: 0;
+    border: 0;
+  }
+  .caract-card img {
+    height: 5vh;
+    width: 4vw;
+  }
+}
 /*Selectores del home para redirigir segun la consola*/
-.child-home{
+.child-home {
   padding-top: 1vh;
   position: relative;
   width: 55vw;
 }
-.marca-present{
+.marca-present {
   padding-top: 25vh;
 }
-.logo__home{
+.logo__home {
   height: 20vh;
   width: 20vw;
 }
-.dh-title{
+.dh-title {
   width: 30vw;
   font-size: 10vh;
   font-weight: 300;
   font-family: 'Sunflower', sans-serif;
 }
-.sub-tl{
+.sub-tl {
   width: 40vw;
 }
-.menu-select{
+.menu-select {
   font-size: 3.5vh;
   gap: 1vh;
 }
-.icon-cont{
+.icon-cont {
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
   width: 7vw;
   height: 100%;
 }
-.icon-cont img{
+.icon-cont img {
   height: 3.5vh;
   width: 3.5vw;
 }
-.select{
+.select {
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
   width: 25vw;
   padding: 1vh;
   border: solid 1px grey;
-  transition: all .5s;
+  transition: all 0.5s;
 }
-.select:hover{
+.select:hover {
   background: black;
   width: 26vw;
   border-color: rgb(195, 0, 255);
 }
-  /*Seccion de previsualizacion*/
-.logo-prec{
+/*Seccion de previsualizacion*/
+.logo-prec {
   height: 57vh;
   align-items: flex-end;
 }
-.sub-msj{
+.sub-msj {
   height: 39vh;
   margin: 2vh;
 }
-.sub-msj p{
+.sub-msj p {
   font-size: 3.5vh;
   font-weight: 400;
 }
-.sub-msj h2{
+.sub-msj h2 {
   font-weight: 500;
   font-size: 7vh;
   width: 30vw;
 }
-.present-view-section{
+.present-view-section {
   position: relative;
   z-index: 3;
 }
-.polig-sect{
+.polig-sect {
   transition: width 2s;
   width: 100%;
 }
-.product-prev{
+.product-prev {
   transition: width 2s;
   width: 51.5vw;
   background: url('/vectors/poligone.svg') no-repeat;
   background-size: cover;
- 	background-position: center;
+  background-position: center;
 }
-.product-prev_2{
+.product-prev_2 {
   width: 42vw;
   background: url('/vectors/poligtwo.svg') no-repeat;
   transition: width 2s;
   background-size: cover;
- 	background-position: center;
+  background-position: center;
 }
-.product-prev_3{
+.product-prev_3 {
   width: 30vw;
   background: url('/vectors/poligthree.svg') no-repeat;
   transition: width 2s;
   background-size: cover;
- 	background-position: center;
+  background-position: center;
 }
-.not-padd{
+.not-padd {
   padding: 0;
 }
-.content-prev{
+.content-prev {
   width: 30vw;
   height: 80vh;
   visibility: hidden;
   gap: 5vh;
 }
-.product-prev:hover{
+.product-prev:hover {
   width: 100vw;
   gap: 10vw;
 }
-.product-prev:hover .content-prev{
+.product-prev:hover .content-prev {
   visibility: visible;
 }
-.product-prev:hover .size-per{
+.product-prev:hover .size-per {
   left: 10vw;
 }
-.product-prev_2:hover{
+.product-prev_2:hover {
   width: 100vw;
   gap: 15vw;
 }
-.product-prev_2:hover .content-prev{
+.product-prev_2:hover .content-prev {
   visibility: visible;
 }
-.product-prev_2:hover .ban-cont__halo{
+.product-prev_2:hover .ban-cont__halo {
   width: 30vw;
 }
-.product-prev_2:hover .size-per{
+.product-prev_2:hover .size-per {
   left: 10vw;
 }
-.product-prev_3:hover{
+.product-prev_3:hover {
   width: 100vw;
   gap: 30vw;
 }
-.product-prev_3:hover .content-prev{
+.product-prev_3:hover .content-prev {
   visibility: visible;
 }
-.product-prev_3:hover .size-per{
+.product-prev_3:hover .size-per {
   left: 10vw;
 }
-.product-prev_3:hover .ban-gow{
+.product-prev_3:hover .ban-gow {
   width: 30vw;
 }
-.product-prev_3:hover .not-padd{
+.product-prev_3:hover .not-padd {
   padding: 2vh 6vw;
 }
-.size-per{
+.size-per {
   width: 20vw;
   height: 75vh;
   position: relative;
 }
-.ban-cont{
+.ban-cont {
   width: 30vw;
   height: 25vh;
   object-position: top;
   object-fit: cover;
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
 }
-.ban-gow{
+.ban-gow {
   width: 2vw;
 }
-.ban-cont__halo{
+.ban-cont__halo {
   width: 10vw;
 }

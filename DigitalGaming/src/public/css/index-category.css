@@ -1,0 +1,129 @@
+.categories {
+  height: 90vh;
+  justify-content: space-evenly;
+}
+.categories-div {
+  flex-direction: row;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+.titles-categories {
+  width: 50vw;
+}
+.titles-categories h3 {
+  margin-bottom: 2vh;
+}
+.categories-div button {
+  font-size: 2vh;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  font-weight: bold;
+  color: white;
+}
+
+/*----Estilos de la tarjeta de categorias----*/
+.category-section {
+  height: 120vh;
+}
+.fondoCategoria {
+  position: absolute;
+  width: 80vw;
+  height: 10rem;
+  opacity: 0.7;
+  z-index: 0;
+  object-fit: cover;
+}
+.categories {
+  gap: 3vh;
+}
+.categories-card {
+  width: 80vw;
+  height: 10rem;
+
+  flex-direction: row-reverse;
+}
+.polygono-categories {
+  position: relative;
+  z-index: 0;
+  width: 43vw;
+  clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0.8;
+
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5vh;
+}
+.img-categories img {
+  position: relative;
+  width: 32vw;
+  height: 22vh;
+  opacity: 1;
+  object-fit: contain;
+  transition: linear 0.5s;
+}
+
+.img-categories img:hover {
+  width: 33vw;
+  height: 23vh;
+}
+
+@media screen and (min-width: 460px) {
+  /*----MediaQueries de Categorias----*/
+  .category-section {
+    height: 105vh;
+  }
+  .fondoCategoria {
+    width: 41vw;
+    height: 19vh;
+  }
+  .categories {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 84vh;
+    padding: 0 6vw;
+  }
+  .categories-card {
+    display: flex;
+    background-size: cover;
+    width: 42vw;
+    height: 19vh;
+  }
+  .img-categories img {
+    width: 20vw;
+    height: 18vh;
+  }
+  .polygono-categories {
+    font-size: 2vh;
+  }
+}
+@media screen and (min-width: 900px) {
+  .category-section {
+    height: 110vh;
+  }
+  .fondoCategoria {
+    width: 28vw;
+    height: 30vh;
+  }
+  .categories {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .categories-card {
+    width: 28vw;
+    height: 30vh;
+  }
+  .img-categories img {
+    height: 25vh;
+    width: 11vw;
+  }
+  .polygono-categories {
+    font-size: 3.5vh;
+  }
+  .titles-categories {
+    font-size: 3vh;
+  }
+}

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <title>Digital Gaming</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/vectors/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/vectors/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/index-category.css">
     <!--Sunflower font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
     <!--Archivo font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,9 +81,32 @@
                 </ul>
             </div>
         </div>
+        <div>
+          <input type="text" placeholder="Buscar" class="search-input" />
+        </div>
+        <div class="flex align-center w-35 j-content-around">
+          <button class="logo not-tablet cart-icon not-border"></button>
+          <button class="not-tablet reg-icon">REGISTRATE</button>
+          <button class="logo not-mobile user-icon"></button>
+          <button class="logo btn-menu"></button>
+        </div>
+      </nav>
+      <div class="menu-lat bg-dark w-100 h-100">
+        <button class="close btn-cls"></button>
+        <div class="text-center">
+          <ul class="pointer">
+            <li class="menu-elem"></li>
+            <li class="menu-elem"></li>
+            <li class="menu-elem"></li>
+            <li class="menu-elem"></li>
+            <li class="menu-elem"></li>
+            <li class="menu-elem"></li>
+          </ul>
+        </div>
+      </div>
     </header>
     <main class="main text-white">
-        <img src="/vectors/span.svg" class="h-100 span-home absolute rigth" alt="span">
+<img src="/vectors/span.svg" class="h-100 span-home absolute rigth" alt="span">
         <div class="video-container w-100 absolute"></div>
         <section class="home-section">
             <div class="child-home w-100 h-100 flex align-center j-content-around f-direction-column">
@@ -132,7 +157,7 @@
                             <img src="/img/imggowprev.jpg" class="ban-cont ban-gow" alt="ea sports reus">
                             <h1 class="fw-bold">God Of War</h1>
                             <p class="">La trama del juego se desarrolla en el contexto de los dioses nórdicos en esta iteración, en lugar de la Antigua Grecia de los juegos originales, y se desarrolla libremente en la Escandinavia medieval en el reino de Midgard, que es el equivalente nórdico de las tierras habitadas por los primeros humanos cuando el mundo aún era joven.</p>
-                            <button class="btn-generic not-padd bg-limagreen text-white fw-bold pointer">JUEGA AHORA</button
+                            <button class="btn-generic not-padd bg-limagreen text-white fw-bold pointer">JUEGA AHORA</button>
                         </article>
                     </div>
                 </section>
@@ -141,21 +166,254 @@
                 <source src="/videos/main-sinpeso.mp4">
             </video>
         </section>
-        <section class="recomendados-section w-100 h-100 bg-dkblue">
-            <h3>recomendados</h3>
-        </section>
-        <section class="caract-section">
-            <h3>caracteristicas</h3>
-        </section>
-        <section class="category-section">
-            <h3>categoria</h3>
-        </section>
-        <section class="experience-section">
-            <h3>experience</h3>
-        </section>
-        <section class="chain-store">
-            <h3>chain store</h3>
-        </section>
+      <section class="recomendados-section w-100 h-100 bg-dkblue flex f-direction-column">
+        <div class="polygono bg-dark"></div>
+        <div class="recomendados">
+          <div class="titles">
+            <h3>RECOMENDADOS</h3>
+            <p>
+              Echa un vistazo a lo mejor de nuestro catalogo y aprovecha todas
+              nuestras ofertas
+            </p>
+          </div>
+          <button type="button">
+            Ver Más <i class="fa-solid fa-play"></i></i></i>
+          </button>
+        </div>
+        <div class="articles flex align-center j-content-center f-direction-column">
+            <article class="products">
+              <img src=".\img\EA-Sports-FC-.jpg" alt="Imagen del Producto 1">
+              <div class="flex j-content-space-betwen portada">
+                <div class="share-img flex align-center">
+                     <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
+                     <p>Agregar al carrito</p>
+                </div>
+                <p class="share-img descuentos-span bg-purple align-center flex j-content-center">Sin Desc</p>
+              </div>
+              <div class="info flex align-center j-content-space-betwen">
+                <div class="flex f-direction-column name-game">
+                    <h3>EAFC 24</h3>
+                    <p>EA Sports</p>
+                </div>
+                <p class="precio"> $80.0</p>
+              </div>
+            </article>
+            <article class="products">
+              <img src=".\img\Hollow-Knight.jpg" alt="Imagen del Producto 1">
+              <div class="flex j-content-space-betwen portada">
+                <div class="share-img flex align-center">
+                     <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
+                     <p>Agregar al carrito</p>
+                </div>
+                <p class="share-img descuentos-span bg-purple align-center flex j-content-center">80% Desc</p>
+              </div>
+              <div class="info flex align-center j-content-space-betwen">
+                <div class="flex f-direction-column name-game">
+                    <h3>Hollow Knight</h3>
+                    <p>Team Cherry</p>
+                </div>
+                <p class="precio"> $10.0</p>
+              </div>
+            </article>
+            <article class="products">
+              <img src=".\img\COD-MW-II.jpg" alt="Imagen del Producto 1">
+              <div class="flex j-content-space-betwen portada">
+                <div class="share-img flex align-center">
+                     <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
+                     <p>Agregar al carrito</p>
+                </div>
+                <p class="share-img descuentos-span bg-purple align-center flex j-content-center">15% Desc</p>
+              </div>
+              <div class="info flex align-center j-content-space-betwen">
+                <div class="flex f-direction-column name-game">
+                    <h3>COD: MW II</h3>
+                    <p>Activision</p>
+                </div>
+                <p class="precio"> $60.0</p>
+              </div>
+            </article>
+            <article class="products not-mobile">
+              <img src=".\img\mortal-kombat.jpg" alt="Imagen del Producto 1">
+              <div class="flex j-content-space-betwen portada">
+                <div class="share-img flex align-center">
+                     <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
+                     <p>Agregar al carrito</p>
+                </div>
+                <p class="share-img descuentos-span bg-purple align-center flex j-content-center">30% Desc</p>
+              </div>
+              <div class="info flex align-center j-content-space-betwen">
+                <div class="flex f-direction-column name-game">
+                    <h3>Mortal Kombat 11</h3>
+                    <p>Warner Bros</p>
+                </div>
+                <p class="precio"> $30.0</p>
+              </div>
+            </article>
+            <article class="products not-mobile">
+              <img src=".\img\GTA-V.jpg" alt="Imagen del Producto 1">
+              <div class="flex j-content-space-betwen portada">
+                <div class="share-img flex align-center">
+                     <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
+                     <p>Agregar al carrito</p>
+                </div>
+                <p class="share-img descuentos-span bg-purple align-center flex j-content-center">10% Desc</p>
+              </div>
+              <div class="info flex align-center j-content-space-betwen">
+                <div class="flex f-direction-column name-game">
+                    <h3>GTA V</h3>
+                    <p>Rockstar Games</p>
+                </div>
+                <p class="precio"> $65.0</p>
+              </div>
+            </article>
+            <article class="products not-mobile">
+              <img src=".\img\sifu.jpg" alt="Imagen del Producto 1">
+              <div class="flex j-content-space-betwen portada">
+                <div class="share-img flex align-center">
+                     <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
+                     <p>Agregar al carrito</p>
+                </div>
+                <p class="share-img descuentos-span bg-purple align-center flex j-content-center">Sin Desc</p>
+              </div>
+              <div class="info flex align-center j-content-space-betwen">
+                <div class="flex f-direction-column name-game">
+                    <h3>Sifu</h3>
+                    <p>Sloclap</p>
+                </div>
+                <p class="precio"> $20.0</p>
+              </div>
+            </article>
+            <article class="products not-tablet">
+              <img src=".\img\GOW-4.jpg" alt="Imagen del Producto 1">
+              <div class="flex j-content-space-betwen portada">
+                <div class="share-img flex align-center">
+                     <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
+                     <p class="cart-p">Agregar al carrito</p>
+                </div>
+                <p class="share-img descuentos-span bg-purple align-center flex j-content-center">20% Desc</p>
+              </div>
+              <div class="info flex align-center j-content-space-betwen">
+                <div class="flex f-direction-column name-game">
+                    <h3>God of War</h3>
+                    <p>Santa Monica Studio</p>
+                </div>
+                <p class="precio"> $50.0</p>
+              </div>
+            </article>
+            <article class="products not-tablet">
+              <img src=".\img\TombRaider.jpg" alt="Imagen del Producto 1">
+              <div class="flex j-content-space-betwen portada">
+                <div class="share-img flex align-center">
+                     <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
+                     <p>Agregar al carrito</p>
+                </div>
+                <p class="share-img descuentos-span bg-purple align-center flex j-content-center">5% Desc</p>
+              </div>
+              <div class="info flex align-center j-content-space-betwen">
+                <div class="flex f-direction-column name-game">
+                    <h3>Tomb Raider</h3>
+                    <p>Square Enix</p>
+                </div>
+                <p class="precio"> $25.0</p>
+              </div>
+            </article>
+        </div>
+      </section>
+      <section class="caract-section w-100 flex f-direction-column bg-dark">
+        <div class="polygono-caract bg-dark"></div>
+        <div class="caract-div flex f-direction-column align-center j-content-center">
+          <article class="caract-card bg-dark flex f-direction-column j-content-center align-center">
+            <img src="/img/star1.png" alt="imagen de la card">
+            <h3>Elegido por 1M de usuarios</h3>
+          </article>
+          <article class="caract-card bg-dark flex f-direction-column j-content-center align-center not-mobile">
+            <img src="/img/arrow-down.jpg" alt="imagen de la card">
+            <h3>Descarga 100% segura</h3>
+          </article>
+          <article class="caract-card bg-dark flex f-direction-column j-content-center align-center not-mobile">
+            <img src="/img/chat1.jpg" alt="imagen de la card">
+            <h3>Atención al cliente</h3>
+          </article>
+          <article class="caract-card bg-dark flex f-direction-column j-content-center align-center not-mobile">
+            <img src="/img/coin1.jpg" alt="imagen de la card">
+            <h3>Todo tipo de cambio</h3>
+          </article>
+        </div>
+      </section>
+      <section class="category-section w-100 bg-dkblue flex f-direction-column">
+        <div class="categories-div flex j-content-around">
+          <div class="titles-categories">
+            <h3>CATEGORIAS</h3>
+            <p>
+              Descubre un mundo de emocionantes videojuegos en nuestras categorias seleccionadas. ¡La diversión comienza aquí!
+            </p>
+          </div>
+          <button type="button">
+            Ver Más <i class="fa-solid fa-play"></i></i></i>
+          </button>
+        </div>
+        <div class="categories flex align-center j-content-space-betwen f-direction-column">
+          <article class="categories-card flex j-content-space-betwen ">
+            <img src="/img/fondo-FNAF.jpg" alt="fondoCategoria" class="fondoCategoria">
+            <div class="polygono-categories bg-purple flex">
+              <h4 class="nombreCategoria">Terror</h4>
+            </div>
+            <div class="img-categories flex align-center">
+              <img src="/img/FredBear.png" alt="imagen-Personaje">
+          </article>
+          <article class="categories-card flex j-content-space-betwen ">
+            <img src="/img/fondo-simulator.jpg" alt="fondoCategoria" class="fondoCategoria">
+            <div class="polygono-categories bg-purple flex">
+              <h4 class="nombreCategoria">Simulación</h4>
+            </div>
+            <div class="img-categories flex align-center">
+              <img src="/img/avion.png" alt="imagen-Personaje">
+            </div>
+          </article>
+          <article class="categories-card flex j-content-space-betwen ">
+            <img src="/img/fondo-minecraft.jpg" alt="fondoCategoria" class="fondoCategoria">
+            <div class="polygono-categories bg-purple flex">
+              <h4 class="nombreCategoria">Aventura</h4>
+            </div>
+            <div class="img-categories flex align-center">
+              <img src="/img/steve.png" alt="imagen-Personaje">
+            </div>
+          </article>
+          <article class="categories-card flex j-content-space-betwen not-mobile">
+            <img src="/img/fondo-sonic.png" alt="fondoCategoria" class="fondoCategoria">
+            <div class="polygono-categories bg-purple flex">
+              <h4 class="nombreCategoria">Arcade</h4>
+            </div>
+            <div class="img-categories flex align-center">
+              <img src="/img/sonic.png" alt="imagen-Personaje">
+            </div>
+          </article>
+          <article class="categories-card flex j-content-space-betwen not-mobile">
+            <img src="/img/fondo-deportes.jpg" alt="fondoCategoria" class="fondoCategoria">
+            <div class="polygono-categories bg-purple flex">
+              <h4 class="nombreCategoria">Deportes</h4>
+            </div>
+            <div class="img-categories flex align-center">
+              <img src="/img/cr7.png" alt="imagen-Personaje">
+            </div>
+          </article>
+          <article class="categories-card flex j-content-space-betwen not-mobile">
+            <img src="/img/fondo-devil.png" alt="fondoCategoria" class="fondoCategoria">
+            <div class="polygono-categories bg-purple flex">
+              <h4 class="nombreCategoria">Acción</h4>
+            </div>
+            <div class="img-categories flex align-center">
+              <img src="/img/dante.png" alt="imagen-Personaje">
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="experience-section">
+        <h3>experience</h3>
+      </section>
+      <section class="chain-store">
+        <h3>chain store</h3>
+      </section>
     </main>
     <footer>
 
