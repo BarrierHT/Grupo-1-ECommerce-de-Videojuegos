@@ -33,7 +33,7 @@
 /*----Estilos para la SECTION "Recomendados"----*/
 .recomendados-section {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 120vh;
   z-index: 1;
   gap: 6vh;
@@ -46,7 +46,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   height: 9vh;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   justify-content: space-around;
 }
@@ -82,7 +82,7 @@
 /*----Estilos de la Cards----*/
 .articles {
   position: relative;
-  width: 100vw;
+  width: 100%;
   z-index: 1;
 }
 
@@ -146,27 +146,29 @@
 
 /*----Estilos de Seccion Caracteristicas----*/
 .caract-section {
-  background-image: url('/img/mobile-background.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
+  height: 40vh;
 }
-
+.caract-div {
+  background-image: url('/img/bgGamer-mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 40vh;
+  width: 100%;
+}
 .caract-card {
   width: 55vw;
   height: 25vh;
+  gap: 3vh;
 }
 .caract-card img {
+  width: 21vw;
   height: 10vh;
-  width: 20vw;
-  margin-bottom: 3vh;
 }
 .caract-card h3 {
   text-align: center;
+  font-weight: 400;
+  font-size: 3vh;
 }
 
 @media screen and (min-width: 460px) {
@@ -211,31 +213,27 @@
     height: 100vh;
   }
   /*----Media queries de Caracteristicas----*/
-  .polygono-caract {
-    position: absolute;
-    top: 0;
-    left: 10vw;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    clip-path: polygon(46% 0, 100% 0, 100% 100%, 54% 100%);
-  }
-  .caract-section {
-    justify-content: center;
+  .caract-div {
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
   .caract-card {
-    position: relative;
-    left: 29vw;
-    width: 25vw;
-    height: 20vh;
+    display: flex;
+    width: 22vw;
+    height: 17vh;
+    gap: 2vh;
+
+    border-radius: 2vh;
+    border: double 2px white;
   }
   .caract-card img {
-    height: 6vh;
+    height: 7vh;
     width: 10vw;
-    margin-bottom: 3vh;
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 770px) {
   /*----Media queries de Recomendados----*/
   .recomendados-section {
     display: flex;
@@ -243,7 +241,7 @@
     gap: 10vh;
     padding-top: 10vh;
 
-    width: 100vw;
+    width: 100%;
     height: 100vh;
   }
   .portada {
@@ -286,28 +284,24 @@
     font-size: 3vh;
   }
   /*----Media queries de Caracteristicas----*/
-  .polygono-caract {
-    clip-path: polygon(26% 0, 100% 0, 100% 100%, 34% 100%);
-    height: 49vh;
-  }
-  .caract-section {
+  .caract-div {
     background-image: url('/img/bgGamer.jpg');
-    background-position: -13vw -1vh;
     background-size: contain;
+    background-position: left;
     flex-direction: row;
-    justify-content: center;
-    height: 50vh;
+    justify-content: flex-end;
   }
   .caract-card {
-    position: relative;
-    align-items: center;
-    left: 19vw;
-    width: 11vw;
-    height: 14vh;
+    display: flex;
+    width: 10vw;
+    height: 40vh;
+    gap: 2vh;
+
+    border-radius: 0;
+    border: 0;
   }
   .caract-card img {
-    height: 9vh;
-    width: 7vw;
-    margin-bottom: 3vh;
+    height: 5vh;
+    width: 4vw;
   }
 }
