@@ -16,35 +16,70 @@
       rel="stylesheet"
     />
     <!--Archivo font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <!--Iconos de Font Awesome-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Digital Gaming</title>
-  </head>
-
-  <body>
-    <img src="/vectors/span.svg" class="h-100 span-home" alt="span" />
-    <div class="video-container w-100"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script defer src="/js/home.js"></script>
+    <script defer src="/js/main.js"></script>
+    <script defer src="/js/header.js"></script>
+</head>
+<body>
     <header class="w-100 header-home text-white flex align-center cenrter">
-      <nav
-        class="w-100 nav-proj mg-lat-1 flex align-center j-content-space-betwen"
-      >
-        <div class="flex align-center w-35 j-content-around">
-          <img src="/vectors/favicon.svg" alt="logo" class="logo" />
-          <button class="logo not-tablet flag-icon not-border"></button>
-          <button class="logo not-mobile star-icon not-border"></button>
-          <span class="text-white not-tablet">Categorias</span>
+        <nav class="w-100 nav-proj mg-lat-1 flex align-center j-content-space-betwen">
+            <div class="flex align-center w-35 j-content-around">
+                <img src="/vectors/favicon.svg" alt="logo" class="logo">
+                <div class="logo not-tablet flag-icon not-border"></div>
+                <div class="logo not-mobile star-icon not-border"></div>
+                <div class="categ-nav text-white not-tablet align-center pointer">
+                    <p class="size-font-parr">Categorias</p>
+                    <span class="flex icon-double-bott"></span>
+                    <section class="despcat bg-dark w-100">
+                        <div class="content-cat w-100 flex align-center j-content-center ">
+                            <article class="card-caregorinav flex">
+                              <img src="/img/portada-marioarcade.jpg" alt="arcade mario">
+                              <h1 class="tamano-title tlt-card flex align-center j-content-center">ARCADE</h1>
+                            </article>
+                            <article class="card-caregorinav flex">
+                              <img src="/img/portada-alienav.jpg" alt="terror aliens">
+                              <h1 class="tamano-title tlt-card flex align-center j-content-center">TERROR</h1>
+                            </article>
+                            <article class="card-caregorinav flex">
+                              <img src="/img/portada-ufcdeportes.jpg" alt="arcade mario">
+                              <h1 class="tamano-title tlt-card flex align-center j-content-center">DEPORTES</h1>
+                            </article>
+                            <article class="card-caregorinav flex">
+                              <img src="/img/portada-assetonav.jpg" alt="arcade mario">
+                              <h1 class="tamano-title tlt-card flex align-center j-content-center">SIMULACION</h1>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="cont-barfind">
+                <input type="text" placeholder="Buscar" class="search-input text-white">
+                <a href="" class="lupa pointer">
+                    <img src="/vectors/search.svg" alt="lupa">
+                </a>
+            </div>
+            <div class="flex align-center w-35 j-content-around">
+                <div class="logo not-tablet cart-icon not-border"></div>
+                <a href="" class="reg-icon antiancor text-center pointer not-tablet">REGISTRATE</a>
+                <div class="logo not-mobile user-icon"></div>
+                <button class="logo btn-menu"></button>
+            </div>
+        </nav>
+        <div class="menu-lat bg-dark w-100 h-100">
+            <button class="close btn-cls"></button>
+            <div class="flex align-center j-content-center">
+                <ul class="pointer menu-cont text-white text-center flex align-center j-content-center f-direction-column h-100 tamano-title">
+                    <li class="menu-elem">Home</li>
+                    <li class="menu-elem">Catalogo</li>
+                    <li class="menu-elem">Categorias</li>
+                    <li class="menu-elem">Nosotros</li>
+                    <li class="menu-elem">Carrito</li>
+                    <li class="menu-elem">Contacto</li>
+                </ul>
+            </div>
         </div>
         <div>
           <input type="text" placeholder="Buscar" class="search-input" />
@@ -71,17 +106,66 @@
       </div>
     </header>
     <main class="main text-white">
-      <section class="home-section">
-        <div class="child-home w-100 h-100 flex">
-          <h1>home</h1>
-        </div>
-        <div class="present-view-section w-100 h-100">
-          <h1>prev</h1>
-        </div>
-        <video class="h-100 video_main" muted autoplay loop>
-          <source src="/videos/main-sinpeso.mp4" />
-        </video>
-      </section>
+<img src="/vectors/span.svg" class="h-100 span-home absolute rigth" alt="span">
+        <div class="video-container w-100 absolute"></div>
+        <section class="home-section">
+            <div class="child-home w-100 h-100 flex align-center j-content-around f-direction-column">
+                <div class="flex marca-present">
+                    <img src="/vectors/favicon.svg" alt="logo" class="logo__home">
+                    <h1 class="dh-title">DIGITAL GAMING</h1>
+                </div>
+                <ul class="menu-select flex f-direction-column j-content-center">
+                    <li class="sub-tl">Encontra los juegos que queres con los mejores precios del mercado y descubrí un nuevo universo!</li>
+                    <li class="select bg-dark flex pointer"><div class="icon-cont flex align-center j-content-center bg-limagreen"><img src="/vectors/pc-display.svg" alt=""></div>Pc/Windows</li>
+                    <li class="select bg-dark flex pointer"><div class="icon-cont flex align-center j-content-center bg-red"><img src="/vectors/nintendo-switch.svg" alt=""></div>Nintendo</li>
+                    <li class="select bg-dark flex pointer"><div class="icon-cont flex align-center j-content-center bg-blue"><img src="/vectors/joystick.svg" alt=""></div>PS/Xbox</li>
+                    <li class="select bg-dark flex pointer"><div class="icon-cont flex align-center j-content-center bg-yellow"><img src="/vectors/caret-right.svg" alt=""></div>Start</li>
+                </ul>
+            </div>
+            <div class="present-view-section w-100 flex">
+                <section class="marca w-100 flex align-center j-content-center f-direction-column">
+                    <div class="logo-prec flex">
+                        <img src="/vectors/favicon.svg" alt="logo">
+                    </div>
+                    <div class="sub-msj flex f-direction-column j-content-center">
+                        <h2>Los mejores juegos, los encontras acá</h2>
+                        <p>Explora nuestro catalogo</p>
+                    </div>
+                </section>
+                <section class="prev-zone w-100 flex">
+                    <div class="product-prev h-100 absolute rigth flex align-center">
+                        <img src="/img/messiprev.png" alt="messi" class="size-per messi">
+                        <article class="content-prev flex align-center f-direction-column j-content-center">
+                            <img src="/img/imgsportprev.jpg" class="ban-cont" alt="ea sports reus">
+                            <h1 class="fw-bold">EA SPORTS FC™ 24</h1>
+                            <p>EA SPORTS FC™ 24 te da la bienvenida a The World's Game: la experiencia futbolística más fiel hasta la fecha con HyperMotionV*, PlayStyles optimizado por Opta y el nuevo motor de Frostbite™, reinventando la forma en que más de 19 000 futbolistas se mueven, juegan y se ven en cada partido.</p>
+                            <button class="btn-generic bg-dark text-white fw-bold pointer">JUEGA AHORA</button>
+                        </article>
+                    </div>
+                    <div class="product-prev_2 h-100 absolute rigth flex align-center">
+                        <img src="/img/masterchiefprev.png" alt="masterchiefprev" class="size-per mater-ch">
+                        <article class="content-prev flex align-center f-direction-column j-content-center">
+                            <img src="/img/imghaloprev.jpg" class="ban-cont ban-cont__halo" alt="ea sports reus">
+                            <h1 class="fw-bold">Halo</h1>
+                            <p>¡El Jefe Maestro está de vuelta! Siguiendo a los eventos de Halo 5, este juego retoma la historia de Master Chief, su protagonista principal, y esta vez lo transporta al pasado dotándolo de una nueva armadura que es un guiño nostálgico a sus primeras apariciones y a las entregas anteriores de la serie.</p>
+                            <button class="btn-generic bg-purple text-white fw-bold pointer">JUEGA AHORA</button>
+                        </article>
+                    </div>
+                    <div class="product-prev_3 h-100 absolute rigth flex align-center">
+                        <img src="/img/kratosprev.webp" alt="kratos" class="size-per kratos">
+                        <article class="content-prev flex align-center f-direction-column j-content-center">
+                            <img src="/img/imggowprev.jpg" class="ban-cont ban-gow" alt="ea sports reus">
+                            <h1 class="fw-bold">God Of War</h1>
+                            <p class="">La trama del juego se desarrolla en el contexto de los dioses nórdicos en esta iteración, en lugar de la Antigua Grecia de los juegos originales, y se desarrolla libremente en la Escandinavia medieval en el reino de Midgard, que es el equivalente nórdico de las tierras habitadas por los primeros humanos cuando el mundo aún era joven.</p>
+                            <button class="btn-generic not-padd bg-limagreen text-white fw-bold pointer">JUEGA AHORA</button>
+                        </article>
+                    </div>
+                </section>
+            </div>
+            <video class="h-100 video_main" muted autoplay loop>
+                <source src="/videos/main-sinpeso.mp4">
+            </video>
+        </section>
       <section class="recomendados-section w-100 h-100 bg-dkblue flex f-direction-column">
         <div class="polygono bg-dark"></div>
         <div class="recomendados">
@@ -276,7 +360,6 @@
             </div>
             <div class="img-categories flex align-center">
               <img src="/img/FredBear.png" alt="imagen-Personaje">
-            </div>
           </article>
           <article class="categories-card flex j-content-space-betwen ">
             <img src="/img/fondo-simulator.jpg" alt="fondoCategoria" class="fondoCategoria">
@@ -332,8 +415,9 @@
         <h3>chain store</h3>
       </section>
     </main>
-    <footer></footer>
-    <script src="/js/home.js"></script>
-    <script src="/js/main.js"></script>
-  </body>
+    <footer>
+
+    </footer>
+</body>
+
 </html>

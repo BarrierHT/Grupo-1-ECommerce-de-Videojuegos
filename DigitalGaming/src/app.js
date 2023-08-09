@@ -22,6 +22,8 @@ app.get('/productCart', shopController.getCart);
 
 app.get('/productDetail', shopController.getDetailCart);
 
+app.get('/productDetail-standart', shopController.getDetailCartstandart);
+
 app.get('/register', authController.getSignUp);
 
 app.listen(app.get(process.env.PORT) || 3000);
