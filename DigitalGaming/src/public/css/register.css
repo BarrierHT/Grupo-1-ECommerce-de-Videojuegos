@@ -1,82 +1,79 @@
-.main {
-    position: relative;
+.page-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 }
 
-.home-section {
-    position: relative;
-}
-
-body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-.container {
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 400px;
-}
-
-h1 {
-    text-align: center;
-    color: white;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
 
 .input-container-register {
     box-sizing: border-box;
-    position: absolute;
-    width: 1078px;
-    height: 620px;
-    left: 165px;
-    top: 120px;
+    position:relative;
+    width: 85vw;
+    margin-bottom: 20px;
     border: 2px solid #B2B2B2;
     border-radius: 25px;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.719);
     padding: 5px;
+    margin-top: 80px;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+	font-weight: 700;
 }
+
 
 i {
     margin: 0 10px;
 }
 
-label{
+.form label{
     color: white;
-   font-size: 15px;
+    font-size: 2rem;
+	font-weight: 700;
+    text-align: left;
+    padding-left: 1.2rem;
     line-height: 30px;
-    font-weight: 600;
-    left: 446px;
+    display: block;
 }
 
-input {
+.form input {
     border: none;
     border-bottom: 3px #ccc;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+	height: 48px;
+    padding: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.068);
+    background-color: transparent;
+    opacity: 0.8;
+	outline: none;
 }
 
-input:focus{
+.form input:focus{
     outline: none;
     color: #ccc;
     text-align: left;
-    font-size: 13px;
+    font-size: 1.6rem;
 }
 
-button {
+.form input::placeholder {
+	text-align: left;
+    font-size: 1.7rem;
+    padding-left: 1.5rem;
+}
+
+.register-btn {
+    width: 70%;
+    margin-left: 14%;
+    margin-bottom: 20px;
     background-color: #ccc;
-    font-size: 15px;
+    font-size: 1.7rem;
+    font-weight: 700;
     color: black;
     border: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
 }
 
