@@ -44,4 +44,4 @@
 
 _Trello:_ https://trello.com/b/wmwoqzvx/venta-de-videojuegos
 
-_GitHub:_ https://github.com/BarrierHT/grupo_1_DigitalGaming
+
