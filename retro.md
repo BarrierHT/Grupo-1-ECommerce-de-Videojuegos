@@ -15,4 +15,11 @@
 5. _Dejar de Hacer:_
    Entendemos la importancia de estar comunicados, pero también reconocemos que no es necesario estar siempre disponibles en los chats de Discord o WhatsApp. Proponemos dejar de estar incomunicados por largos períodos y, en su lugar, comprometernos a al menos brindar respuestas mínimas para mantenernos informados sobre las conversaciones y preguntas en el grupo.
 
-# Con esta retrospectiva, estamos comprometidos a fortalecer nuestra comunicación y colaboración, maximizando nuestro potencial como equipo. Implementaremos estas mejoras en el próximo ciclo para lograr un ambiente de trabajo más eficiente y cohesionado.
+## Sprint 2
+ Con esta retrospectiva, estamos comprometidos a fortalecer nuestra comunicación y colaboración, maximizando nuestro potencial como equipo. Implementaremos estas mejoras en el próximo sprint para lograr un ambiente de trabajo más eficiente y cohesionado.  
+ Tuvimos inconvenientes con los conflictos al unir las distintas partes, esto se debio a que trabajamos en los mismos archivos y durante la merge aparecieron esas modificaciones, que durante un encuentro sincronico pudimos resolverlo y asi poder unificar todas las partes.  
+ Únicamente quedo pendiente la pagina de product detail en su versión especial, que se realizará en futuras entregas en la 0.2.
+
+
+
+ 
