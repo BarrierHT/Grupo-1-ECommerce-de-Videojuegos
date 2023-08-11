@@ -1,0 +1,221 @@
+.page-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 75vh;
+}
+
+
+.input-container-productCart {
+    box-sizing: border-box;
+    position:relative;
+    width: 60vw;
+    border: 2px solid #B2B2B2;
+    border-radius: 25px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.555);
+    padding: 2px;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+	font-weight: 700;
+}
+
+i {
+    margin: 0 10px;
+}
+
+.form label{
+    color: white;
+    font-size: 2rem;
+	font-weight: 700;
+    text-align: left;
+    padding-left: 1.2rem;
+    line-height: 30px;
+    display: block;
+    
+}
+
+.form input{
+    border: none;
+    width: 100%;
+    padding: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.068);
+    background-color: transparent;
+    opacity: 0.8;
+	outline: none;
+}
+
+.form input:focus, option:focus{
+    outline: none;
+    color: #ccc;
+    text-align: left;
+    font-size: 1.6rem;
+}
+
+.form input::placeholder {
+	text-align: left;
+    font-size: 1.7rem;
+    padding-left: 1.5rem;
+}
+
+.select-estilizado {
+    border: none;
+    font-size: 1.6rem;
+    color: #ccc;
+    text-align: left;
+    padding-left: 2rem;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.068);
+    background-color: transparent;
+    opacity: 0.8;
+	outline: none;
+}
+.select-estilizado option{
+    border: none;
+    width: 100%;
+    font-size: 1.2rem;
+    color: black;
+    padding: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.555);
+    background-color: transparent;
+    opacity: 0.8;
+	outline: none;
+}
+
+.container-productCart{
+    box-sizing: border-box;
+    position:relative;
+    width: 80vw;
+    border: 1px solid grey;
+    border-radius: 15px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.555);
+    padding: 2px;
+    text-align:center;
+    color: white;
+    font-size: 2rem;
+	font-weight: 700;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colums ul {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    padding: 0;
+}
+
+.colums ul li {
+    list-style: none;
+    margin:0 5.1rem;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.384);
+    width: 78vw;
+}
+
+.product-details li {
+    list-style: none;
+    margin:0 4.8rem;
+}
+
+.product img {
+    width: 60px;
+    height: 90px;
+    margin-right: 10px;
+}
+
+.price p, .sub-price p {
+    margin: 0;
+}
+
+.quantity input{
+    border: none;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.068);
+    background-color: transparent;
+    opacity: 0.8;
+	outline: none;
+}
+
+.delete-button {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: #15ff00ce; 
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+.delete-button:hover {
+    background-color: #30cc00a9; 
+}
+
+.delete-icon {
+    display: inline-block;
+    line-height: 1;
+}
+
+.btn-delete{
+    background-color: #000000; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .btn-delete:hover {
+    background-color: #0000008e; 
+  }
+  .btn-delete:active {
+    transform: scale(0.95);
+  }
+  .btn-buy {
+    background-color: #15ff00ce; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+  }
+
+  .btn-buy:hover {
+    background-color: #30cc00a9;
+  }
+  .btn-buy:active {
+    transform: scale(0.95);
+  }
+
+/* Media Query para pantalla pequeña */
+@media screen and (max-width: 768px) {
+	.login-box {
+		width: 90%;
+	}
+}
