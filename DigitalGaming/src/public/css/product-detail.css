@@ -49,34 +49,6 @@
     float: right;
     height: 4vh;
 }
-.medio-pago{
-    background-color: white;
-    width: 60vw;
-    padding: 0.5vh 2vh;
-}
-.icon-pago{
-    background-position: center;
-    background-size: cover;
-    height: 1.3rem;
-    width: 2rem;
-}
-.visa{
-    background: url('/img/visa.png') no-repeat;
-}
-.mastercard{
-    background: url('/img/mastercard.png') no-repeat;
-}
-.card-icon{
-    background: url('/vectors/credit-card.svg') no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-.hsbc{
-    background: url('/img/hsbc.png') no-repeat;
-    width: 3rem;
-    background-position: center;
-    background-size: contain;
-}
 .detail-video{
     height: 40vh;
     width: 100vw;

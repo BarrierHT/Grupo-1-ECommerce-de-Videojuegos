@@ -1,0 +1,68 @@
+.form-compra{
+    padding-top: 10vh;
+    gap: 3.5vh;
+    width: 90vw;
+    height: 80vh;
+    margin: 0 auto;
+}
+.input-form{
+    width: 50vw;
+    border-radius: 10px;
+}
+#list-cart-cash{
+    width: 50vw;
+    border-radius: 10px;
+  }
+.form-row, .pago-formcart{
+    width: 80vw;
+}
+.form-row label{
+    width: 40vw;
+}
+.pago-formcart span{
+    width: 40vw;
+}
+/* detalles de compra */
+.detail-compra{
+    background: #1111119a;
+    width: 90%;
+    border-radius: 10px;
+}
+/* Estilos generales de la tabla */
+table, tbody, thead {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th {
+    background-color: #661088;
+    font-weight: bold;
+    padding: 8px;
+    text-align: left;
+}
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+@media screen and (min-width: 460px) {
+    
+}
+@media screen and (min-width: 780px) {
+    .detail-compra{
+        padding: 2vh;
+    }
+    table, tbody, thead{
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+  th, td {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  th:nth-child(6), td:nth-child(6) {
+    display: none;
+  }
+}
+  
