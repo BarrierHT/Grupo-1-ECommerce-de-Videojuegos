@@ -1,29 +1,33 @@
 const path = require('path');
 
 const express = require('express');
-const authController = require('./controllers/auth');
-const shopController = require('./controllers/shop');
+
+const mainRoute = require('./routes/mainRoute');
+const productRoute = require('./routes/productRoute');
+const userRoute = require('./routes/userRoute');
 
 require('dotenv').config();
 
 const app = express();
 
 // app.use(express.static(__dirname + '/'));
+
 app.use(express.static(path.join(__dirname, 'public')));
+
 // app.use(express.static(path.join(__dirname, 'resources')));
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 app.set(process.env.PORT);
 
-app.get('/', shopController.getIndex);
+app.use(mainRoute);
 
-app.get('/login', authController.getLogin);
+app.use(productRoute);
 
-app.get('/productCart', shopController.getCart);
+app.use(userRoute);
 
-app.get('/productDetail', shopController.getDetailCart);
-
-app.get('/productDetail-standart', shopController.getDetailCartstandart);
-
-app.get('/register', authController.getSignUp);
+app.use((req, res, next) => {
+	res.render('404');
+});
 
 app.listen(app.get(process.env.PORT) || 3000);
