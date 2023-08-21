@@ -20,53 +20,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-        <script defer src="/js/main.js"></script>
-        <script defer src="/js/header.js"></script>
     </head>
     <body class="bg-dkblue">
-        <header class="w-100 header-home text-white flex align-center center">
-            <nav class="w-100 nav-proj mg-lat-1 flex align-center j-content-space-betwen">
-                <div class="flex align-center w-35 j-content-around">
-                    <img src="/vectors/favicon.svg" alt="logo" class="logo">
-                    <div class="logo not-tablet flag-icon not-border"></div>
-                    <div class="logo not-mobile star-icon not-border"></div>
-                    <div class="categ-nav text-white not-tablet align-center pointer">
-                        <p class="size-font-parr">Categorias</p>
-                        <span class="flex icon-double-bott"></span>
-                        <section class="despcat bg-dark w-100">
-                            <div class="content-cat bg-limagreen w-100">
-                                <h2>Categorias</h2>
-                                <article class=""></article>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-                <div class="cont-barfind">
-                    <input type="text" placeholder="Buscar" class="search-input text-white">
-                    <a href="" class="lupa pointer">
-                        <img src="/vectors/search.svg" alt="lupa">
-                    </a>
-                </div>
-                <div class="flex align-center w-35 j-content-around">
-                    <a href="" class="reg-icon antiancor text-center pointer not-tablet">REGISTRATE</a>
-                    <div class="logo not-mobile user-icon"></div>
-                    <button class="logo btn-menu"></button>
-                </div>
-            </nav>
-            <div class="menu-lat bg-dark w-100 h-100">
-                <button class="close btn-cls"></button>
-                <div class="text-center">
-                    <ul class="pointer text-white">
-                        <li class="menu-elem">Home</li>
-                        <li class="menu-elem">Catalogo</li>
-                        <li class="menu-elem">Categorias</li>
-                        <li class="menu-elem">Nosotros</li>
-                        <li class="menu-elem">Carrito</li>
-                        <li class="menu-elem">Contacto</li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+        <%- include('../partials/header') %>
         <main>
             <section class="bg-dkblue">
                 <div class="page-container">
@@ -103,25 +59,7 @@
         
             </section>
         </main>
-        <footer class="pie text-white">
-            <section class="footer-section w-100 bg-dkblue">
-              <div class="polygono-footer bg-dark"></div>
-              <article class="pieInfo flex ">
-                <div class="botones-footer">
-                  <button>Sobre Nosotros</button>
-                  <button>Reglas de la Comunidad</button>
-                  <button>Términos de servicio</button>
-                </div>
-                <div class="logoFooter">
-                  <img src="/vectors/favicon.svg" alt="Logo de Footer">
-                </div>
-              </article>
-              <h4>Copyright ©2023 Digital Gaming Inc. Todos los derechos reservados.</h4>
-            </section>
-            <div class="copyright"></div>
-        </footer>
-        <script defer src="/js/home.js"></script>
-        <script defer src="/js/main.js"></script>
-        <script defer src="/js/header.js"></script>
+        <%- include('../partials/footer') %>
+        <%- include('../partials/js') %>
     </body>
 </html>
