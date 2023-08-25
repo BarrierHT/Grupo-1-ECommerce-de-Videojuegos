@@ -13,12 +13,12 @@ exports.getDetailCartstandart = (req, res, next) => {
 };
 
 exports.getAddProduct = (req, res, next) => {
-	res.render('products/edit-product');
+	res.render('products/addProductForm');
 };
 
 exports.getEditProduct = (req, res, next) => {
 	const { productId } = req.params;
 
 	console.log(productId);
-	res.render('products/edit-product');
+	res.render('products/editProductForm');
 };

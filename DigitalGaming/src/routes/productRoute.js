@@ -6,7 +6,7 @@ const shopController = require('../controllers/shop');
 router.get('/productCart', shopController.getCart);
 router.get('/productDetail-standart', shopController.getDetailCartstandart);
 
-router.get('/add-product', shopController.getAddProduct);
-router.get('/edit-product/:productId', shopController.getEditProduct);
+router.get('/addProductForm', shopController.getAddProduct);
+router.get('/editProductForm/:productId', shopController.getEditProduct);
 
 module.exports = router;
