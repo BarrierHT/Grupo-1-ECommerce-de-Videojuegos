@@ -22,7 +22,7 @@ app.set(process.env.PORT);
 
 app.use(mainRoute);
 
-app.use(productRoute);
+app.use('/products', productRoute);
 
 app.use(userRoute);
 

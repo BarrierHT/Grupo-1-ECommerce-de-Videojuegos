@@ -3,6 +3,7 @@
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+	overflow: auto;
 }
 
 .login-container {
@@ -17,6 +18,7 @@
 	font-weight: 700;
 	position: relative;
 	overflow: auto;
+	margin-top: 4rem;
 }
 
 .overlay {
@@ -26,6 +28,7 @@
 	background: rgba(0, 0, 0, 0.75);
 	border-radius: 25px;
 	border: 1px #b2b2b2 solid;
+	overflow: auto;
 }
 .login-box {
 	position: relative;
@@ -37,6 +40,7 @@
 	font-weight: 700;
 	background-color: rgba(0, 0, 0, 0.75);
 	border-radius: 25px;
+	overflow: auto;
 }
 
 .login-box h1 {

@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %> 
+<%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/login.css">
     <title>Inicio Sesion</title>
-<body>
-    <%- include('../partials/header') %>
-    <section class="bg-dkblue">
-        <div class="page-container">
-            <div class="login-container">
 
-                <div class="login-box">
-                    <h1>Login</h1>
-                    <hr>
-                    <div class="input-group">
-                        <label for="email">Email <img style="width: 30px;"
-                                src="https://s3-alpha-sig.figma.com/img/46bb/dba7/f73b81cfd5e792c7191b47bfc758659f?Expires=1692576000&Signature=jKMz-yIe-3S~HhfemrLTZUnaeyWuvASDDSokPgzl2AwgfDfl1kKH77KNH1IRBezayZO9Mwz9RvRaNQOysYrLYwDADukZc9LBpBCTrhMrovITsZX84Tqdmzmzi45Zs1bR3bJsWAQxijY4I3SzviLfIKXk9IaJ9dkozF5GdYEGy9DYmojgp2ZZKNcu-6XooSyak4WE5e1rvIxane-WQ8zu-19rVGpYj7sAgHAX78plH2hVgPFqktIzPeq05-zi4LR3y-35IPFLnukKvRn7hMKNM04fnvpVHZfiJrUnb~eqoVAOSP22bcpmR-S-dBC4nLEqVqt~xLPcIA1J0w6Vaza5yA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" /></label>
+    <body>
+        <%- include('../partials/header') %>
+            <section class="bg-dkblue">
+                <div class="page-container">
+                    <div class="login-container">
 
-                        <input type="email" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="input-group">
-                        <label for="password">Contraseña <img style="width: 30px;"
-                                src="https://s3-alpha-sig.figma.com/img/4d45/ab37/ad513f3bd2da47f284aa3262eca50fad?Expires=1692576000&Signature=LiquzUxh5EBa5w2sujgINKa~dUM0lKvZKG2Oh~8RP0NPDcvII8ylm3FArjXAdPr46zrdjYQGzyAIFm7trZmDAMAPMLL0G~HDVLLYPyYR9By86rfCk6D3QlYuy1qhuBOL2w9se3TNisLfTlDHPCjkNOkuAbpWIwsK~G6VvH425FOCVWhUaIr88gAcWwQloLF~u59zl5knF3dOSoUY~E4pUjudQJsjx9aWV63MKKSaTzPBjRjE7O4Mbao6vyAqBB3~SkYn5j4VHWkXV61H3LpIGXw7QKQ1gDkcj5pNLQCi-6VQCKkI8Pt3S55Zk5TOL5j63RlOE1k54gXl373RLe81WA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" /></label>
-                        <input type="password" id="password" placeholder="Enter your password">
-                    </div>
-                    <button class="login-btn">Ingresar</button>
-                    <div class="signup-text">
-                        <span>No tienes una cuenta?</span>
-                        <span>Regístrate!</span>
+                        <div class="login-box">
+                            <h1>Login</h1>
+                            <hr>
+                            <div class="input-group">
+                                <label for="email">Email <i class="bi bi-person"></i> </label>
+
+                                <input type="email" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="input-group">
+                                <label for="password">Contraseña
+                                    <i class="bi bi-file-lock"></i>
+                                </label>
+                                <input type="password" id="password" placeholder="Enter your password">
+                            </div>
+                            <button class="login-btn">Ingresar</button>
+                            <div class="signup-text">
+                                <span>No tienes una cuenta?</span>
+                                <span>Regístrate!</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-    </section>
+            </section>
 
-    <%- include('../partials/footer') %>
-    <%- include('../partials/js') %>
+            <%- include('../partials/footer') %>
+                <%- include('../partials/js') %>
 
-</body>
+    </body>
+
 </html>
