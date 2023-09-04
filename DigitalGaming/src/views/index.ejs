@@ -80,6 +80,8 @@
           </button>
         </div>
         <div class="articles flex align-center j-content-center f-direction-column">
+          <% products.map(product => { %>
+          <a href="/products/<%= product.id %>">
             <article class="products">
               <img src=".\img\EA-Sports-FC-.jpg" alt="Imagen del Producto 1">
               <div class="flex j-content-space-betwen portada">
@@ -91,12 +93,14 @@
               </div>
               <div class="info flex align-center j-content-space-betwen">
                 <div class="flex f-direction-column name-game">
-                    <h3>EAFC 24</h3>
+                    <h3><%= product.nombre %></h3>
                     <p>EA Sports</p>
                 </div>
                 <p class="precio"> $80.0</p>
               </div>
             </article>
+          </a>
+          <% }) %>
             <article class="products">
               <img src=".\img\Hollow-Knight.jpg" alt="Imagen del Producto 1">
               <div class="flex j-content-space-betwen portada">
