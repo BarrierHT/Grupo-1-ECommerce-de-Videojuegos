@@ -95,9 +95,9 @@
               <div class="info flex align-center j-content-space-betwen">
                 <div class="flex f-direction-column name-game">
                     <h3><%= product.nombre %></h3>
-                    <p>EA Sports</p>
+                    <p><%= product.categoria %></p>
                 </div>
-                <p class="precio"> $80.0</p>
+                <p class="precio"> $<%= product.precio %></p>
               </div>
             </article>
           <% }) %>

@@ -6,7 +6,7 @@
     "precio": 59.99,
     "imagen": "/img/EAFC24.jpg",
     "portada": "/img/EA-Sports-FC-.jpg",
-    "video": "undefined",
+    "video": "/videos/EAFC24.mp4",
     "categoria": "Deportes",
     "requisitos": {
       "MINIMOS": {
@@ -32,7 +32,7 @@
     "precio": 14.99,
     "imagen": "/img/HOLLOWKNIGHT.jpg",
     "portada": "/img/Hollow-Knight.jpg",
-    "video": "undefined",
+    "video": "/videos/HollowKnight.mp4",
     "categoria": "Aventuras",
     "requisitos": {
       "MINIMOS": {
@@ -58,7 +58,7 @@
     "precio": 49.99,
     "imagen": "/img/CODMWII.jpg",
     "portada": "/img/COD-MW-II.jpg",
-    "video": "undefined",
+    "video": "/videos/CodMWII.mp4",
     "categoria": "Disparos",
     "requisitos": {
       "MINIMOS": {
@@ -84,7 +84,7 @@
     "precio": 39.99,
     "imagen": "/img/MK11.jpg",
     "portada": "/img/mortal-kombat.jpg",
-    "video": "undefined",
+    "video": "/videos/MK11.mp4",
     "categoria": "Lucha",
     "requisitos": {
       "MINIMOS": {
