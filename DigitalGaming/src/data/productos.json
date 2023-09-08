@@ -4,23 +4,23 @@
     "nombre": "EAFC 24",
     "descripcion": "Experimenta la emoción del fútbol como nunca antes con EAFC 24. Con gráficos impresionantes, una jugabilidad realista y una amplia variedad de equipos y modos de juego, este juego te sumergirá en el mundo del deporte más popular del planeta.",
     "precio": 59.99,
-    "imagen": "undefined",
-    "portada": "undefined",
+    "imagen": "/img/EAFC24.jpg",
+    "portada": "/img/EA-Sports-FC-.jpg",
     "video": "undefined",
     "categoria": "Deportes",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 1050",
+        "Graficos": "NVIDIA GeForce GTX 1050",
         "Almacenamiento": "50 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce RTX 2060",
+        "Graficos": "NVIDIA GeForce RTX 2060",
         "Almacenamiento": "50 GB"
       }
     }
@@ -30,23 +30,23 @@
     "nombre": "Hollow Knight",
     "descripcion": "Adéntrate en un oscuro y misterioso mundo lleno de desafíos en Hollow Knight. Explora intrincados niveles, enfréntate a enemigos aterradores y descubre secretos ocultos mientras desentrañas la historia de este juego de acción y aventuras.",
     "precio": 14.99,
-    "imagen": "undefined",
-    "portada": "undefined",
+    "imagen": "/img/HOLLOWKNIGHT.jpg",
+    "portada": "/img/Hollow-Knight.jpg",
     "video": "undefined",
     "categoria": "Aventuras",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 7",
+        "SistemaOperativo": "Windows 7",
         "Procesador": "Intel Core i3",
         "Memoria": "4 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 470",
+        "Graficos": "NVIDIA GeForce GTX 470",
         "Almacenamiento": "9 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 770",
+        "Graficos": "NVIDIA GeForce GTX 770",
         "Almacenamiento": "9 GB"
       }
     }
@@ -56,23 +56,23 @@
     "nombre": "COD: MW II",
     "descripcion": "Vuelve a la acción en Call of Duty: Modern Warfare II. Con una intensa campaña llena de giros inesperados y un multijugador competitivo, este juego te pondrá en el centro de la acción en un mundo moderno y conflictivo.",
     "precio": 49.99,
-    "imagen": "undefined",
-    "portada": "undefined",
+    "imagen": "/img/CODMWII.jpg",
+    "portada": "/img/COD-MW-II.jpg",
     "video": "undefined",
     "categoria": "Disparos",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 8",
+        "SistemaOperativo": "Windows 8",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 960",
+        "Graficos": "NVIDIA GeForce GTX 960",
         "Almacenamiento": "175 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce RTX 3060",
+        "Graficos": "NVIDIA GeForce RTX 3060",
         "Almacenamiento": "175 GB"
       }
     }
@@ -82,23 +82,23 @@
     "nombre": "Mortal Kombat 11",
     "descripcion": "Entra en el torneo de lucha más sangriento y emocionante con Mortal Kombat 11. Lucha con una amplia variedad de personajes, realiza movimientos especiales devastadores y compite en línea para demostrar tu habilidad en este juego de lucha icónico.",
     "precio": 39.99,
-    "imagen": "undefined",
-    "portada": "undefined",
+    "imagen": "/img/MK11.jpg",
+    "portada": "/img/mortal-kombat.jpg",
     "video": "undefined",
     "categoria": "Lucha",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 7",
+        "SistemaOperativo": "Windows 7",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 670",
+        "Graficos": "NVIDIA GeForce GTX 670",
         "Almacenamiento": "40 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 1080",
+        "Graficos": "NVIDIA GeForce GTX 1080",
         "Almacenamiento": "60 GB"
       }
     }

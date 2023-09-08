@@ -12,7 +12,7 @@
         >
           <div class="detail-portada flex align-center j-content-center">
             <span>X</span>
-            <img src="/img/nfsportada.jpg" alt="nfs" class="img" />
+            <img src="<%= findProduct.imagen %>" alt="nfs" class="img" />
             <span>X</span>
           </div>
           <div
@@ -28,12 +28,12 @@
             >
               <a href="" class="formato bg-dark not-link text-white text-center"
                 >Fisico<span class="price-format bg-white text-dark"
-                  >$0000</span
+                  >$<%= findProduct.precio %></span
                 ></a
               >
               <a href="" class="formato bg-dark not-link text-white text-center"
                 >Digital<span class="price-format bg-white text-dark"
-                  >$0000</span
+                  >$<%= findProduct.precio %></span
                 ></a
               >
             </section>
@@ -58,14 +58,8 @@
         class="h-100 detail-description flex f-direction-column align-center j-content-center"
       >
         <article class="text-white article-desc flex f-direction-column">
-          <h1 class="tamano-title">Need for Speed Unbound</h1>
-          <p>
-            Need for Speed Unbound para PC es un juego de carreras, el vigésimo
-            quinto de la impresionantemente larga franquicia Need for Speed, que
-            demuestra que cada generación se nutre de la velocidad de una forma
-            u otra. Acerca del Juego El juego está ambientado en una ciudad
-            ficticia llamada Lakeshore City, inspirada vagamente en Chicago.
-          </p>
+          <h1 class="tamano-title"><%= findProduct.nombre %></h1>
+          <p><%= findProduct.descripcion %></p>
         </article>
         <video class="detail-video" autoplay muted loop>
           <source src="/videos/gameplayunbound.mp4" />
@@ -87,28 +81,26 @@
               <tbody>
                 <thead></thead>
                 <tr>
-                  <td>Sistema operativo:</td>
-                  <td>Windows 10</td>
+                  <td>Sistema Operativo</td>
+                  <td>
+                    <%= findProduct.requisitos.MINIMOS.SistemaOperativo %>
+                  </td>
                 </tr>
                 <tr>
                   <td>Procesador:</td>
-                  <td>Intel Core i7</td>
+                  <td><%= findProduct.requisitos.MINIMOS.Procesador %></td>
                 </tr>
                 <tr>
                   <td>Memoria:</td>
-                  <td>16 GB RAM</td>
+                  <td><%= findProduct.requisitos.MINIMOS.Memoria %></td>
                 </tr>
                 <tr>
                   <td>Gráficos:</td>
-                  <td>NVIDIA GeForce RTX 3080</td>
-                </tr>
-                <tr>
-                  <td>Direct X:</td>
-                  <td>Direct X 12</td>
+                  <td><%= findProduct.requisitos.MINIMOS.Graficos %></td>
                 </tr>
                 <tr>
                   <td>Almacenamiento:</td>
-                  <td>SSD 512 GB</td>
+                  <td><%= findProduct.requisitos.MINIMOS.Almacenamiento %></td>
                 </tr>
               </tbody>
             </table>
@@ -121,27 +113,27 @@
               <tbody class="text-subtitle">
                 <tr>
                   <td>Sistema operativo:</td>
-                  <td>Windows 10</td>
+                  <td>
+                    <%= findProduct.requisitos.RECOMENDADOS.SistemaOperativo %>
+                  </td>
                 </tr>
                 <tr>
                   <td>Procesador:</td>
-                  <td>Intel Core i7</td>
+                  <td><%= findProduct.requisitos.RECOMENDADOS.Procesador %></td>
                 </tr>
                 <tr>
                   <td>Memoria</td>
-                  <td>16 GB RAM</td>
+                  <td><%= findProduct.requisitos.RECOMENDADOS.Memoria %></td>
                 </tr>
                 <tr>
                   <td>Gráficos:</td>
-                  <td>NVIDIA GeForce RTX 3080</td>
-                </tr>
-                <tr>
-                  <td>Direct X:</td>
-                  <td>Direct X 12</td>
+                  <td><%= findProduct.requisitos.RECOMENDADOS.Graficos %></td>
                 </tr>
                 <tr>
                   <td>Almacenamiento:</td>
-                  <td>SSD 512 GB</td>
+                  <td>
+                    <%= findProduct.requisitos.RECOMENDADOS.Almacenamiento %>
+                  </td>
                 </tr>
               </tbody>
             </table>

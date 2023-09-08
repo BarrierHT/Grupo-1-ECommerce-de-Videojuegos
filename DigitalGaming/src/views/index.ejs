@@ -81,9 +81,10 @@
         </div>
         <div class="articles flex align-center j-content-center f-direction-column">
           <% products.map(product => { %>
-          <a href="/products/<%= product.id %>">
             <article class="products">
-              <img src=".\img\EA-Sports-FC-.jpg" alt="Imagen del Producto 1">
+              <a href="/products/<%= product.id %>">
+              <img src="<%= product.portada %>" alt="Imagen del Producto 1">
+              </a>
               <div class="flex j-content-space-betwen portada">
                 <div class="share-img flex align-center">
                      <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
@@ -99,7 +100,6 @@
                 <p class="precio"> $80.0</p>
               </div>
             </article>
-          </a>
           <% }) %>
             <article class="products">
               <img src=".\img\Hollow-Knight.jpg" alt="Imagen del Producto 1">
