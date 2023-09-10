@@ -125,7 +125,7 @@ exports.putEditProduct = (req, res, next) => {
 
 	if (existingProductIndex === -1) {
 		// return res.send('404');
-		return res.status(404).send('Producto no encontrado');
+		return res.status(404).render('404');
 	}
 
 	// Obtiene el producto existente
