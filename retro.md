@@ -43,3 +43,24 @@ Reconocemos la importancia de optimizar nuestras reuniones sincrónicas. Evitare
 No identificamos ningún aspecto negativo en este Sprint que requiera ser resaltado en esta categoría. Continuemos construyendo sobre lo positivo y abordando las oportunidades de mejora en las áreas relevantes.
 
 En general, estamos contentos con la eficiencia lograda en este Sprint. Utilizaremos estas lecciones para perfeccionar nuestros métodos y asegurarnos de que el próximo ciclo sea igualmente exitoso y enriquecedor.
+
+## Sprint 4
+
+**Starfish Retrospective: Hablando sobre la comunicación y el trabajo en equipo**
+
+1. Empezar a Hacer:
+Reconocemos la importancia de trabajar juntos de manera más colaborativa. Deberíamos animarnos a realizar tareas de manera conjunta, especialmente en llamadas, para lograr un flujo de trabajo más fluido en los próximos sprints. Esta práctica puede mejorar la comunicación y la eficiencia en nuestro equipo.
+
+2. Hacer Más:
+Notamos que la comunicación sigue siendo no tan efectiva y esto afecta nuestro entendimiento del progreso individual de cada miembro del equipo. Proponemos hacer más hincapié en la comunicación, asegurándonos de mantenernos en contacto de manera regular para saber con certeza cómo está avanzando cada integrante del equipo. La comunicación constante es clave para una colaboración efectiva y para garantizar que todos estemos alineados en nuestros objetivos y avances.
+
+3. Continuar Haciendo:
+La reunión semanal al inicio de los sprints ("weekly") ha demostrado ser valiosa. Continuaremos con esta práctica, ya que nos permite dividir las tareas de manera efectiva y garantizar un comienzo organizado de cada sprint. Esta reunión es esencial para nuestra planificación y coordinación.
+
+4. Hacer Menos:
+Reconocemos que retrasar las tareas hasta los últimos días del sprint es una práctica que debemos reducir. Hacerlo aumenta el riesgo de no poder completar el sprint a tiempo y afecta la calidad de nuestro trabajo. Deberíamos evitar la procrastinación y distribuir las tareas de manera más uniforme a lo largo del sprint.
+
+5. Dejar de Hacer:
+Dejar de hacer las reuniones diarias o las reuniones programadas no es beneficioso para nuestro equipo. Estas reuniones proporcionan información crucial sobre nuestro progreso individual y colectivo. Debemos asegurarnos de que todos participemos en estas reuniones programadas para mantenernos en el camino correcto y no retroceder en nuestra colaboración y desarrollo del sprint.
+
+Con esta retrospectiva, buscamos mejorar nuestra colaboración, comunicación y eficiencia en futuros sprints. Implementaremos estas lecciones aprendidas para asegurarnos de que nuestro equipo continúe creciendo y entregando resultados exitosos en nuestros proyectos.
