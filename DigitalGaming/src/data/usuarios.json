@@ -1,11 +1,110 @@
 [
     {
         "id": 1,
-        "name": "",
-        "lastname": "",
-        "email": "",
-        "password": "",
-        "rol": "",
-        "user-image": ""
+        "name": "Mateo",
+        "lastname": "Rodriguez",
+        "email": "mateo1@gmail.com",
+        "password": "12345",
+        "rol": "usuario",
+        "user-image": "undefined"
+    },
+    {
+        "id": 2,
+        "name": "Lucas",
+        "lastname": "Rodriguez",
+        "email": "luck@gmail.com",
+        "password": "lucas1",
+        "rol": "administrador",
+        "user-image": "undefined"
+    },
+    {
+        "id": 3,
+        "name": "Facundo",
+        "lastname": "Cala",
+        "email": "facs3@gmail.com",
+        "password": "54321",
+        "rol": "administrador",
+        "user-image": "undefined"
+    },
+    {
+        "id": 4,
+        "name": "José",
+        "lastname": "Calapeña",
+        "email": "rouringg@gmail.com",
+        "password": "1234",
+        "rol": "usuario",
+        "user-image": "undefined"
+    },
+    {
+        "id": 5,
+        "name": "Franco",
+        "lastname": "Rodrigues",
+        "email": "fransmin@gmail.com",
+        "password": "franco",
+        "rol": "usuario",
+        "user-image": "undefined"
+    },
+    {
+        "id": 6,
+        "name": "Alejandro",
+        "lastname": "Alancay",
+        "email": "aleale1@gmail.com",
+        "password": "1235",
+        "rol": "usuario",
+        "user-image": "undefined"
+    },
+    {
+        "id": 7,
+        "name": "Rocio",
+        "lastname": "Cala",
+        "email": "rochi1@gmail.com",
+        "password": "12345",
+        "rol": "usuario",
+        "user-image": "undefined"
+    },
+    {
+        "id": 8,
+        "name": "Miguel",
+        "lastname": "Aleman",
+        "email": "1234@gmail.com",
+        "password": "12345",
+        "rol": "usuario",
+        "user-image": "undefined"
+    },
+    {
+        "id": 9,
+        "name": "Lourdes",
+        "lastname": "Avila",
+        "email": "lulu@gmail.com",
+        "password": "125",
+        "rol": "usuario",
+        "user-image": "undefined"
+    },
+    {
+        "id": 10,
+        "name": "Aldana",
+        "lastname": "Martiarena",
+        "email": "aldos@gmail.com",
+        "password": "1234512",
+        "rol": "administrador",
+        "user-image": "undefined"
+    },
+    {
+        "id": 11,
+        "name": "Luis",
+        "lastname": "Cruz",
+        "email": "luiss2@gmail.com",
+        "password": "12345",
+        "rol": "usuario",
+        "user-image": "undefined"
+    },
+    {
+        "id": 12,
+        "name": "Mateo",
+        "lastname": "Aldonate",
+        "email": "mateoA@gmail.com",
+        "password": "12345",
+        "rol": "usuario",
+        "user-image": "undefined"
     }
 ]
