@@ -61,7 +61,7 @@ exports.getEditProduct = (req, res, next) => {
 	const productId = req.params.productId;
 	// Obtener los datos del producto para editar
 	const products = readProductsFile();
-	const product = products.find(p => p.id === productId);
+	const product = products.find(p => p.id == productId.toString());
 
 	if (!product) {
 		// Manejar el caso en que el producto no se encuentra

@@ -1,53 +1,63 @@
 [
   {
     "id": 1,
-    "nombre": "EAFC 24",
+    "nombre": "EAFC 24000",
     "descripcion": "Experimenta la emoción del fútbol como nunca antes con EAFC 24. Con gráficos impresionantes, una jugabilidad realista y una amplia variedad de equipos y modos de juego, este juego te sumergirá en el mundo del deporte más popular del planeta.",
     "precio": 59.99,
-    "descuento":"10%",
-    "imagen": "./img/fondo-deportes.jpg",
-    "portada": "undefined",
-    "video": "undefined",
-    "categoria": "Deportes",
+    "descuento": 14,
+    "imagen": "",
+    "portada": "/img/EA-Sports-FC-.jpg",
+    "video": "/videos/EAFC24.mp4",
+    "categoria": [
+      "Accion",
+      ""
+    ],
+    "plataforma": "PC",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 1050",
+        "Graficos": "NVIDIA GeForce GTX 1050",
         "Almacenamiento": "50 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce RTX 2060",
+        "Graficos": "NVIDIA GeForce RTX 2060",
         "Almacenamiento": "50 GB"
       }
-    }
+    },
+    "_method": "PUT",
+    "options": "PC",
+    "price": "59.99",
+    "description": "Experimenta la emoción del fútbol como nunca antes con EAFC 24. Con gráficos impresionantes, una jugabilidad realista y una amplia variedad de equipos y modos de juego, este juego te sumergirá en el mundo del deporte más popular del planeta."
   },
   {
     "id": 2,
     "nombre": "Hollow Knight",
     "descripcion": "Adéntrate en un oscuro y misterioso mundo lleno de desafíos en Hollow Knight. Explora intrincados niveles, enfréntate a enemigos aterradores y descubre secretos ocultos mientras desentrañas la historia de este juego de acción y aventuras.",
     "precio": 14.99,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
+    "descuento": 14,
+    "imagen": "/img/HOLLOWKNIGHT.jpg",
+    "portada": "/img/Hollow-Knight.jpg",
+    "video": "/videos/HollowKnight.mp4",
     "categoria": "Aventuras",
+    "plataforma": "PC",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 7",
+        "SistemaOperativo": "Windows 7",
         "Procesador": "Intel Core i3",
         "Memoria": "4 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 470",
+        "Graficos": "NVIDIA GeForce GTX 470",
         "Almacenamiento": "9 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 770",
+        "Graficos": "NVIDIA GeForce GTX 770",
         "Almacenamiento": "9 GB"
       }
     }
@@ -57,23 +67,25 @@
     "nombre": "COD: MW II",
     "descripcion": "Vuelve a la acción en Call of Duty: Modern Warfare II. Con una intensa campaña llena de giros inesperados y un multijugador competitivo, este juego te pondrá en el centro de la acción en un mundo moderno y conflictivo.",
     "precio": 49.99,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
-    "categoria": "Disparos",
+    "descuento": 14,
+    "imagen": "/img/CODMWII.jpg",
+    "portada": "/img/COD-MW-II.jpg",
+    "video": "/videos/CodMWII.mp4",
+    "categoria": "Accion",
+    "plataforma": "PS/Xbox",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 8",
+        "SistemaOperativo": "Windows 8",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 960",
+        "Graficos": "NVIDIA GeForce GTX 960",
         "Almacenamiento": "175 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce RTX 3060",
+        "Graficos": "NVIDIA GeForce RTX 3060",
         "Almacenamiento": "175 GB"
       }
     }
@@ -83,23 +95,25 @@
     "nombre": "Mortal Kombat 11",
     "descripcion": "Entra en el torneo de lucha más sangriento y emocionante con Mortal Kombat 11. Lucha con una amplia variedad de personajes, realiza movimientos especiales devastadores y compite en línea para demostrar tu habilidad en este juego de lucha icónico.",
     "precio": 39.99,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
-    "categoria": "Lucha",
+    "descuento": 14,
+    "imagen": "/img/MK11.jpg",
+    "portada": "/img/mortal-kombat.jpg",
+    "video": "/videos/MK11.mp4",
+    "categoria": "Accion",
+    "plataforma": "PS/Xbox",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 7",
+        "SistemaOperativo": "Windows 7",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 670",
+        "Graficos": "NVIDIA GeForce GTX 670",
         "Almacenamiento": "40 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 1080",
+        "Graficos": "NVIDIA GeForce GTX 1080",
         "Almacenamiento": "60 GB"
       }
     }
@@ -109,23 +123,25 @@
     "nombre": "God Of War: Ragnarok",
     "descripcion": "Sumérgete una vez más en la historia del dios espartano más conocido de todos. En esta prometedora entrega que te lleva hacia tierras nórdicas junto a Atreus, su hijo, y su cómico compañero Mimir. Descubre qué hay detrás de los dioses nórdicos y el oscuro futuro de Atreus.",
     "precio": 49.99,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
-    "categoria": "Acción",
+    "descuento": 14,
+    "imagen": "/img/gowRagnarok.jpg",
+    "portada": "/img/gowRagnarokPortada.jpg",
+    "video": "/videos/GOW-ragnarok.mp4",
+    "categoria": "Aventuras",
+    "plataforma": "PS/Xbox",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 960",
+        "Graficos": "NVIDIA GeForce GTX 960",
         "Almacenamiento": "70 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 1060",
+        "Graficos": "NVIDIA GeForce GTX 1060",
         "Almacenamiento": "70 GB"
       }
     }
@@ -134,24 +150,26 @@
     "id": 6,
     "nombre": "Grand Theft Auto V",
     "descripcion": "Prueba este videojuego de la famosa y reconocida franquicia Grand Theft Auto y distribuida por la compañía Rockstar Games, conocida por hacer videojuegos de mundo abierto realistas y con una gran cantidad de detalles. En esta ocasión tenemos la remodelada ciudad de Los Santos inspirada en la reconocida Los Angeles.",
-    "precio": 65.00,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
-    "categoria": "Acción",
+    "precio": 65,
+    "descuento": 14,
+    "imagen": "/img/grand-theft-auto-V.jpg",
+    "portada": "/img/GTA-V.jpg",
+    "video": "/videos/gtaV.mp4",
+    "categoria": "Accion",
+    "plataforma": "PC",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 8.1",
+        "SistemaOperativo": "Windows 8.1",
         "Procesador": "Intel Core 2 Quad",
         "Memoria": "4 GB RAM",
-        "Gráficos": "NVIDIA 9800 GT",
+        "Graficos": "NVIDIA 9800 GT",
         "Almacenamiento": "65 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 8.1",
+        "SistemaOperativo": "Windows 8.1",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GTX 660",
+        "Graficos": "NVIDIA GTX 660",
         "Almacenamiento": "65 GB"
       }
     }
@@ -160,51 +178,54 @@
     "id": 7,
     "nombre": "Halo: Infinite",
     "descripcion": "El videojuego reconocido por ser una caricia a la nostalgia de los seguidores de esta saga está ahora disponible. El juego que tuvo demoras debido a las exigencias de su desarrolladores es ahora conocido por ser un fiel retrato de lo que los jugadores buscan en un juego de acción y disparos",
-    "precio": 48.00,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
-    "categoria": "Disparos",
+    "precio": 48,
+    "descuento": 14,
+    "imagen": "/img/haloInfinite.jpg",
+    "portada": "/img/HI-Portada.jpg",
+    "video": "/videos/HaloInfinite.mp4",
+    "categoria": "Accion",
+    "plataforma": "PS/Xbox",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 1050",
+        "Graficos": "NVIDIA GeForce GTX 1050",
         "Almacenamiento": "50 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce RTX 2070",
+        "Graficos": "NVIDIA GeForce RTX 2070",
         "Almacenamiento": "50 GB"
       }
     }
-    
   },
   {
     "id": 8,
     "nombre": "Tomb Raider",
     "descripcion": "Una historia ya conocida por muchos gamers regresa con este fantástico remake que logra dar el siguiente paso en el realismo para darnos una entrega de mucha aventura y adrenalina. En este título tendremos a una mejorada Lara Croft que te sorprenderá por su capacidad de superar los límites conocidos.",
     "precio": 29.99,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
+    "descuento": 14,
+    "imagen": "/img/TombRaider2.jpg",
+    "portada": "/img/TombRaider.jpg",
+    "video": "/videos/TombRaider.mp4",
     "categoria": "Aventuras",
+    "plataforma": "PC",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 8",
+        "SistemaOperativo": "Windows 8",
         "Procesador": "Intel Core 2 Duo",
         "Memoria": "1 GB RAM",
-        "Gráficos": "AMD Radeon HD 2600 XT",
+        "Graficos": "AMD Radeon HD 2600 XT",
         "Almacenamiento": "12 GB"
       },
       "RECOMENDADOS": {
         "Sistema Operativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "4 GB RAM",
-        "Gráficos": "NVidia GTX 480",
+        "Graficos": "NVidia GTX 480",
         "Almacenamiento": "12 GB"
       }
     }
@@ -220,20 +241,36 @@
     "categoria": "Acción",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GT 640",
+        "Graficos": "NVIDIA GeForce GT 640",
         "Almacenamiento": "22 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "10 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 970",
+        "Graficos": "NVIDIA GeForce GTX 970",
         "Almacenamiento": "22 GB"
       }
     }
+  },
+  {
+    "id": "9240bec5-e346-4ec7-9293-47e88dbf9c11",
+    "nombre": "asdadsd",
+    "descripcion": "asdfdgfdhdfgf",
+    "precio": 12313,
+    "imagen": "Messi.jpg",
+    "portada": "undefined",
+    "video": "undefined",
+    "categoria": [
+      "estrategy",
+      ""
+    ],
+    "requisitos": {
+      "MINIMOS": {},
+      "RECOMENDADOS": {}
+    }
   }
-
 ]
