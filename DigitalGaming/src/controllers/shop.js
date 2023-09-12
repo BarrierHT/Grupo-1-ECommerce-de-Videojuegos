@@ -20,7 +20,15 @@ function saveProductsToFile(products) {
 }
 
 exports.getIndex = (req, res, next) => {
-	res.render('index.ejs', { products });
+	fs.readFile(productsFilePath, 'utf8', (err,data)=>{
+		if(err){
+			console.error('Error al leer el JSON', err);
+			return res.status(500).send('error interno server');
+		}
+		const productos = JSON.parse(data);
+		const productosLimitados = productos.slice(0, 8);
+		res.render('index.ejs', { productos: productosLimitados });
+	})
 };
 
 exports.getCart = (req, res, next) => {
