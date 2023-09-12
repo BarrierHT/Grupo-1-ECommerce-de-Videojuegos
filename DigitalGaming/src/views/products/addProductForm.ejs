@@ -10,11 +10,11 @@
             <div class="page-container">
                 <div class="input-container-editProduct">
                         <div class="form">
-                            <form action="options" method="post" id="form">
+                            <form action="/products" method="post" id="form">
                             <label for="username">Nombre del Nuevo Producto:</label>
-                            <input type="text" id="nameProduct" name="nameProduct" placeholder="Enter your name new product" required><br><hr>
+                            <input type="text" id="nameProduct" name="nombre" placeholder="Enter your name new product" required><br><hr>
                             <label for="pay">Categoría:</label>
-                            <select class="select-estilizado" id="options" name="options">
+                            <select class="select-estilizado" id="options" name="categoria">
                               <option value="" disabled selected>Seleccione una categoría</option>
                               <option value="accion">Accion</option>
                               <option value="aventure">Aventura</option>
@@ -25,14 +25,14 @@
                               <option value="horror">Horror</option>
                               <option value="otra">Otro</option>
                           </select>
-                          <input type="text" id="otraOption" name="otraOption" placeholder="Ingrese otra opción" style="display: none;">
+                          <input type="text" id="otraOption" name="categoria" placeholder="Ingrese otra opción" style="display: none;">
                             <br><hr>
                             <label for="imagen">Imagen:</label>
                             <input class="file-imagen" type="file" name="imagen" id="imagen" accept="image/*">
                             <div id="miniatura" style="display: none;"></div>
                             <br><hr>
                             <label for="platform">Preferencias de Plataforma:</label>
-                            <select class="select-estilizado" id="options" name="options">
+                            <select class="select-estilizado" id="options" name="plataforma">
                                 <option value="" disabled selected>Seleccione una plataforma</option>
                                 <option value="pc">PC</option>
                                 <option value="console">Consola (PlayStation, Xbox, Nintendo Switch)</option>
@@ -40,10 +40,10 @@
                             </select>
                             <br><hr>
                             <label for="price">Precio $:</label>
-                            <input type="number" id="price" name="price" step="0.01" min="0" placeholder="Enter your price" required>
+                            <input type="number" id="price" name="precio" step="0.01" min="0" placeholder="Enter your price" required>
                             <br><hr>
                             <label for="description">Descripcion:</label>
-                            <textarea class="description-input"type="text" id="description" name="description" placeholder="Enter your description" required></textarea><br><hr>
+                            <textarea class="description-input"type="text" id="description" name="descripcion" placeholder="Enter your description" required></textarea><br><hr>
                             <button class="btn-edit" type="submit">Agregar Producto</button>
                             <button class="btn-cancel" type="button">Cancelar Edicion</button>
                         </form>
