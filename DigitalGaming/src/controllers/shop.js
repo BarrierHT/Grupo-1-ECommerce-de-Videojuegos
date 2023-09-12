@@ -160,13 +160,14 @@ exports.putEditProduct = (req, res, next) => {
 
 exports.deleteProduct = (req, res, next) => {
 	const productId = req.params.productId;
+	console.log(productId);
 	// Lógica para eliminar un producto
 	// Leer la lista actual de productos desde el archivo JSON
 	const products = readProductsFile();
 
 	// Filtrar la lista de productos para eliminar el producto con el ID dado
 	const updatedProducts = products.filter(
-		product => product.id !== productId
+		product => product.id != productId.toString()
 	);
 
 	if (products.length === updatedProducts.length) {

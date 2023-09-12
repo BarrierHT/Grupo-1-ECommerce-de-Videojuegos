@@ -14,12 +14,13 @@ router.get('/create', shopController.getAddProduct); //Form de agregar productos
 
 router.get('/:productId', shopController.getProductDetail); //Detalle de un producto particular
 
+router.delete('/:productId', shopController.deleteProduct); //Borrar producto
+
 router.put('/:productId', shopController.putEditProduct); //Editar producto
 
 router.post('/', shopController.postAddProduct); //Crear producto
 
 router.get('/:productId/edit', shopController.getEditProduct); //Formulario de editar producto
 
-router.delete('/:productId', shopController.deleteProduct); //Borrar producto
 
 module.exports = router;
