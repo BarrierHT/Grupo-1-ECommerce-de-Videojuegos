@@ -108,23 +108,23 @@
     "nombre": "God Of War: Ragnarok",
     "descripcion": "Sumérgete una vez más en la historia del dios espartano más conocido de todos. En esta prometedora entrega que te lleva hacia tierras nórdicas junto a Atreus, su hijo, y su cómico compañero Mimir. Descubre qué hay detrás de los dioses nórdicos y el oscuro futuro de Atreus.",
     "precio": 49.99,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
+    "imagen": "/img/gowRagnarok.jpg",
+    "portada": "/img/gowRagnarokPortada.jpg",
+    "video": "/videos/GOW-ragnarok.mp4",
     "categoria": "Acción",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 960",
+        "Graficos": "NVIDIA GeForce GTX 960",
         "Almacenamiento": "70 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 1060",
+        "Graficos": "NVIDIA GeForce GTX 1060",
         "Almacenamiento": "70 GB"
       }
     }
@@ -134,23 +134,23 @@
     "nombre": "Grand Theft Auto V",
     "descripcion": "Prueba este videojuego de la famosa y reconocida franquicia Grand Theft Auto y distribuida por la compañía Rockstar Games, conocida por hacer videojuegos de mundo abierto realistas y con una gran cantidad de detalles. En esta ocasión tenemos la remodelada ciudad de Los Santos inspirada en la reconocida Los Angeles.",
     "precio": 65.00,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
+    "imagen": "/img/grand-theft-auto-V.jpg",
+    "portada": "/img/GTA-V.jpg",
+    "video": "/videos/gtaV.mp4",
     "categoria": "Acción",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 8.1",
+        "SistemaOperativo": "Windows 8.1",
         "Procesador": "Intel Core 2 Quad",
         "Memoria": "4 GB RAM",
-        "Gráficos": "NVIDIA 9800 GT",
+        "Graficos": "NVIDIA 9800 GT",
         "Almacenamiento": "65 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 8.1",
+        "SistemaOperativo": "Windows 8.1",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GTX 660",
+        "Graficos": "NVIDIA GTX 660",
         "Almacenamiento": "65 GB"
       }
     }
@@ -160,23 +160,23 @@
     "nombre": "Halo: Infinite",
     "descripcion": "El videojuego reconocido por ser una caricia a la nostalgia de los seguidores de esta saga está ahora disponible. El juego que tuvo demoras debido a las exigencias de su desarrolladores es ahora conocido por ser un fiel retrato de lo que los jugadores buscan en un juego de acción y disparos",
     "precio": 48.00,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
+    "imagen": "/img/haloInfinite.jpg",
+    "portada": "/img/HI-Portada.jpg",
+    "video": "/videos/HaloInfinite.mp4",
     "categoria": "Disparos",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 1050",
+        "Graficos": "NVIDIA GeForce GTX 1050",
         "Almacenamiento": "50 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "16 GB RAM",
-        "Gráficos": "NVIDIA GeForce RTX 2070",
+        "Graficos": "NVIDIA GeForce RTX 2070",
         "Almacenamiento": "50 GB"
       }
     }
@@ -187,23 +187,23 @@
     "nombre": "Tomb Raider",
     "descripcion": "Una historia ya conocida por muchos gamers regresa con este fantástico remake que logra dar el siguiente paso en el realismo para darnos una entrega de mucha aventura y adrenalina. En este título tendremos a una mejorada Lara Croft que te sorprenderá por su capacidad de superar los límites conocidos.",
     "precio": 29.99,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
+    "imagen": "/img/TombRaider2.jpg",
+    "portada": "/img/TombRaider.jpg",
+    "video": "/videos/TombRaider.mp4",
     "categoria": "Aventuras",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 8",
+        "SistemaOperativo": "Windows 8",
         "Procesador": "Intel Core 2 Duo",
         "Memoria": "1 GB RAM",
-        "Gráficos": "AMD Radeon HD 2600 XT",
+        "Graficos": "AMD Radeon HD 2600 XT",
         "Almacenamiento": "12 GB"
       },
       "RECOMENDADOS": {
         "Sistema Operativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "4 GB RAM",
-        "Gráficos": "NVidia GTX 480",
+        "Graficos": "NVidia GTX 480",
         "Almacenamiento": "12 GB"
       }
     }
@@ -219,17 +219,17 @@
     "categoria": "Acción",
     "requisitos": {
       "MINIMOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i5",
         "Memoria": "8 GB RAM",
-        "Gráficos": "NVIDIA GeForce GT 640",
+        "Graficos": "NVIDIA GeForce GT 640",
         "Almacenamiento": "22 GB"
       },
       "RECOMENDADOS": {
-        "Sistema Operativo": "Windows 10",
+        "SistemaOperativo": "Windows 10",
         "Procesador": "Intel Core i7",
         "Memoria": "10 GB RAM",
-        "Gráficos": "NVIDIA GeForce GTX 970",
+        "Graficos": "NVIDIA GeForce GTX 970",
         "Almacenamiento": "22 GB"
       }
     }
