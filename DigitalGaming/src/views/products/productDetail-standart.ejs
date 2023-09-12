@@ -48,6 +48,10 @@
               class="btn-generic bg-limagreen not-link text-white text-center"
               >COMPRAR AHORA</a
             >
+            <form action="/products/<%= findProduct.id %>?_method=DELETE" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="btn-generic bg-red not-link text-white text-center" type="submit">Eliminar</button>
+            </form>
             <p>Comprar como regalo</p>
           </div>
           <div class="poligon-detail__black w-100 bg-dark"></div>
