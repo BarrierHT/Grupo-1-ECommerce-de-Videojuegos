@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <title>Admin Dashboard - Digital Gaming</title>
-<%- include('./partials/head') %>
+<%- include('../partials/head') %>
 <body>
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
-    <main class="dash-fath">
-        <section class="options-dash">
-            <ul>
+    <main class="dash-fath h-100" id="dash">
+        <section class="options-dash bg-dark text-white" id="dash-option">
+            <h1 class="text-center">Dashboard</h1>
+            <ul class="flex j-content-center align-center f-direction-column w-100 list-options">
                 <li class="select-option">Usuarios</li>
                 <li class="select-option">Productos</li>
                 <li class="select-option">Stats</li>
@@ -16,7 +17,7 @@
             </ul>
         </section>
         <section class="contains-dash">
-            <%- include('./admin/sections/dash-users') %>
+            <%- include('../admin/sections/dash-users') %>
         </section>
     </main>
 </body>

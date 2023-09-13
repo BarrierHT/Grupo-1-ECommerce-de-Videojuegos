@@ -1,0 +1,13 @@
+.dash-fath{
+    background: red;
+    padding-top: 10vh;
+}
+.options-dash{
+    width: 25%;
+    height: 100%;
+}
+.list-options{
+    height: 100%;
+    font-size: 3.5vh;
+    gap: 2vh;
+}
