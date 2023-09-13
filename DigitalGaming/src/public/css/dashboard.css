@@ -16,3 +16,22 @@
 .contains-dash{
     width: 75vw;
 }
+.users-contains, .products-contains, .stats-contains, .notice-contains{
+    padding: 10vh;
+}
+/* DASH DE USUARIOS */
+.users-contains{
+    background: green;
+}
+/* DASH DE PRODUCTOS */
+.products-contains{
+    background: pink;
+}
+/* DASH DE STATS */
+.stats-contains{
+    background: blue;
+}
+/* DASH DE NOTICIAS */
+.notice-contains{
+    background: orange;
+}
