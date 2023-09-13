@@ -99,10 +99,9 @@
             
             <!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
             <% productos.forEach(producto => { %>
-            <article class="products">
-              <a href="/products/<%= producto.id %>">
+            <article class="products pointer">
+              <a href="/products/<%= producto.id %>" class="antiancor text-white">
               <img src="<%= producto.portada %>" alt="<%= producto.nombre %>-img">
-              </a>
               <div class="flex j-content-space-betwen portada">
                 <div class="share-img flex align-center">
                   <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
@@ -117,6 +116,7 @@
                 </div>
                 <p class="precio">$<%= producto.precio.toFixed(2) %></p>
               </div>
+              </a>
             </article>
             <% }); %>
 

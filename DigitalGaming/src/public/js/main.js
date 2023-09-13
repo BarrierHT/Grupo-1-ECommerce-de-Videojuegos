@@ -8,3 +8,12 @@ boton.addEventListener('click', () => {
 botoncerrar.addEventListener('click', ()=>{
     slidemenu.classList.toggle('activo')
 } )
+document.addEventListener("DOMContentLoaded", function () {
+    const home = document.querySelectorAll(".home-navigate");
+    
+    home.forEach(div => {
+        div.addEventListener("click", function () {
+            window.location.href = "/";
+        });
+    });
+});

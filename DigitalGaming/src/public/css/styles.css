@@ -324,7 +324,7 @@ input[type='text'] {
 }
 @media screen and (min-width: 770px) {
   .not-tablet {
-    display: initial;
+    display: flex;
   }
   .search-input {
     width: 30vw;
