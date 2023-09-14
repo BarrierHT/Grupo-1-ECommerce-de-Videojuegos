@@ -83,41 +83,38 @@
             <source src="/videos/main-sinpeso.mp4">
           </video>
         </section>
-        <section class="recomendados-section w-100 h-100 bg-dkblue flex f-direction-column">
+        <section class="recomendados-section w-100 bg-dkblue flex f-direction-column">
           <div class="polygono bg-dark"></div>
-          <div class="recomendados">
+          <div class="recomendados flex align-center j-content-space-betwen ">
             <div class="titles">
               <h3>RECOMENDADOS</h3>
-              <p>
-                Echa un vistazo a lo mejor de nuestro catalogo y aprovecha todas
-                nuestras ofertas
-              </p>
+              <p>Echa un vistazo a lo mejor de nuestro catalogo y aprovecha todas nuestras ofertas</p>
             </div>
-            <button type="button">Ver Más <i class="fa-solid fa-play"></i></button>
+            <span class="btn-vermas btn-generic bg-purple text-white pointer fw-bold text-center">Ver Más</span>
           </div>
-          <div class="articles flex align-center j-content-center f-direction-column">
-            
+          <div class="container-cards flex align-center j-content-space-betwen">
             <!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
             <% productos.forEach(producto => { %>
-            <article class="products pointer">
-              <a href="/products/<%= producto.id %>" class="antiancor text-white">
-              <img src="<%= producto.portada %>" alt="<%= producto.nombre %>-img">
-              <div class="flex j-content-space-betwen portada">
-                <div class="share-img flex align-center">
-                  <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
-                  <p>Agregar al carrito</p>
+            
+            <a href="/products/<%= producto.id %>" class="antiancor text-white">
+              <article class="products pointer">
+                <img src="<%= producto.portada %>" alt="<%= producto.nombre %>-img">
+                <div class="flex j-content-space-betwen portada">
+                  <div class="share-img flex align-center">
+                    <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
+                    <p>Agregar al carrito</p>
+                  </div>
+                  <p class="share-img descuentos-span bg-purple align-center flex j-content-center"><%= producto.descuento %>% Desc</p>
                 </div>
-                <p class="share-img descuentos-span bg-purple align-center flex j-content-center"><%= producto.descuento %>% Desc</p>
-              </div>
-              <div class="info flex align-center j-content-space-betwen">
-                <div class="flex f-direction-column name-game">
-                  <h3><%= producto.nombre %></h3>
-                  <p><%= producto.categoria %></p>
+                <div class="info flex align-center j-content-space-betwen">
+                  <div class="flex f-direction-column name-game">
+                    <h3><%= producto.nombre %></h3>
+                    <p><%= producto.categoria %></p>
+                  </div>
+                  <p class="precio">$<%= producto.precio.toFixed(2) %></p>
                 </div>
-                <p class="precio">$<%= producto.precio.toFixed(2) %></p>
-              </div>
-              </a>
-            </article>
+              </article>
+            </a>
             <% }); %>
 
           </div>
@@ -143,7 +140,8 @@
             </article>
           </div>
         </section>
-        <section class="category-section w-100 bg-dkblue flex f-direction-column">
+        <section class="category-section w-100 bg-dkblue flex f-direction-column"
+        style="display:none;">
           <div class="categories-div flex j-content-around">
             <div class="titles-categories">
               <h3>CATEGORIAS</h3>
