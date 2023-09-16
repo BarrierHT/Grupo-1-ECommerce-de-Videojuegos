@@ -9,8 +9,8 @@
         <img src="/vectors/span.svg" class="h-100 span-home absolute rigth" alt="span">
         <div class="video-container w-100 absolute"></div>
         <section class="home-section">
-          <div class="child-home w-100 h-100 flex align-center j-content-around f-direction-column">
-            <div class="flex marca-present">
+          <div class="child-home w-100 flex align-center j-content-around f-direction-column">
+            <div class="flex marca-present w-100">
               <img src="/vectors/favicon.svg" alt="logo" class="logo__home">
               <h1 class="dh-title">DIGITAL GAMING</h1>
             </div>
@@ -79,7 +79,7 @@
               </div>
             </section>
           </div>
-          <video class="h-100 video_main" muted autoplay loop>
+          <video class="h-100 w-100 video_main" muted autoplay loop>
             <source src="/videos/main-sinpeso.mp4">
           </video>
         </section>
@@ -92,7 +92,7 @@
             </div>
             <span class="btn-vermas btn-generic bg-purple text-white pointer fw-bold text-center">Ver Más</span>
           </div>
-          <div class="container-cards flex align-center j-content-space-betwen">
+          <div class="container-cards flex align-center j-content-space-betwen w-100">
             <!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
             <% productos.forEach(producto => { %>
             
@@ -116,7 +116,7 @@
               </article>
             </a>
             <% }); %>
-
+        
           </div>
         </section>
         <section class="caract-section w-100 flex bg-dark">

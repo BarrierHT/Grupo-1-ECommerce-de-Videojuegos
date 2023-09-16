@@ -8,7 +8,6 @@
 .video_main {
   position: fixed;
   left: 0;
-  width: 75%;
   object-fit: cover;
   z-index: -1;
 }
@@ -18,6 +17,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 .span-home {
+  display: none;
   width: 50vw;
   float: right;
   object-fit: cover;
@@ -60,7 +60,6 @@
   flex-wrap: wrap;
   z-index: 3;
   padding-bottom: 7vh;
-  margin: 0 2rem;
 }
 .info {
   height: 5vh;
@@ -77,14 +76,18 @@
   font-size: 2.5vh;
 }
 .products{
+  width: 90vw;
   margin: 1rem 0;
 }
 .products img{
   position: absolute;
+  width: 90vw;
+  height: 10rem;
 }
 .portada {
   align-items: flex-end;
-  height: 23vh;
+  height: 10rem;
+  width: 100%;
 }
 .descuentos-span {
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
@@ -107,16 +110,20 @@
 /*----Estilos de Seccion Caracteristicas----*/
 .icon-cont{
   width: 100%;
+  flex-wrap: wrap;
+  padding: 3rem 0;
 }
 .image-caract img{
+  display: none;
   clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%);
   height: 17rem;
   width: 48.8vw;
   object-fit: cover;
 }
 .icon-elem{
-  width: 11.3vw;
-  height: 6rem;
+  width: 45vw;
+  height: 6.5rem;
+  margin-top: 3vh;
 }
 .star{
   background: url('/img/star1.png') no-repeat center;
@@ -136,88 +143,10 @@
   background-size: 100%;
 }
 
-@media screen and (min-width: 460px) {
-  /*----Media queries de Recomendados----*/
-  .titles h3 {
-    font-size: 2vh;
-  }
-  .titles p {
-    font-size: 1.8vh;
-  }
-  .products {
-    width: 40vw;
-  }
-  .products img {
-    width: 40vw;
-    height: 15vh;
-  }
-  .share-img img {
-    height: 4vh;
-    width: 4vw;
-  }
-  /* CARDS STYLE MEDIA */
-  .portada {
-    height: 15vh;
-  }
-  .descuentos-span {
-    width: 15vw;
-    height: 2vh;
-    padding: 1.3vh;
-  }
-  .recomendados-section {
-    width: 100vw;
-  }
-  /*----Media queries de Caracteristicas----*/
-  
-}
-@media screen and (min-width: 770px) {
-  /*----Media queries de Recomendados----*/
-  .recomendados-section {
-    display: flex;
-    flex-direction: column;
-    gap: 4vh;
-    padding-top: 10vh;
-    width: 100%;
-  }
-  .portada {
-    width: 20vw;
-    height: 23vh;
-  }
-  .products {
-    width: 20vw;
-  }
-  .products img {
-    width: 20vw;
-    height: 23vh;
-  }
-  .share-img img {
-    height: 3.5vh;
-    width: 3.5vw;
-  }
-  .share-img p {
-    width: 9vw;
-    height: 4vh;
-    font-size: 2vh;
-  }
-/* CARDS STYLE MEDIA */
-  .descuentos-span {
-    height: 3vh;
-    font-size: 1vw;
-  }
-  .titles h3 {
-    font-size: 3.5vh;
-  }
-  .titles p {
-    font-size: 3vh;
-  }
-  /*----Media queries de Caracteristicas----*/
-  
-}
 /*Selectores del home para redirigir segun la consola*/
 .child-home {
   padding-top: 1vh;
   position: relative;
-  width: 55vw;
 }
 .marca-present {
   padding-top: 25vh;
@@ -227,26 +156,27 @@
   width: 20vw;
 }
 .dh-title {
-  width: 30vw;
-  font-size: 10vh;
+  font-size: 8vh;
   font-weight: 300;
+  width: 60vw;
   font-family: 'Sunflower', sans-serif;
-}
-.sub-tl {
-  width: 40vw;
 }
 .menu-select {
   font-size: 3.5vh;
   gap: 1vh;
+}
+.icon-cont{
+  width: 20vw;
 }
 .icon-cont img {
   height: 3.5vh;
   width: 3.5vw;
 }
 .select {
+  width: 90vw;
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-  width: 25vw;
   padding: 1vh;
+  height: 2.5rem;
   border: solid 1px grey;
   transition: all 0.5s;
 }
@@ -273,9 +203,11 @@
   font-size: 7vh;
   width: 30vw;
 }
+/* SECCION DE PRESENTACION SLIDE HOME */
 .present-view-section {
   position: relative;
   z-index: 3;
+  display: none;
 }
 .polig-sect {
   transition: width 2s;
@@ -367,4 +299,89 @@
 }
 .ban-cont__halo {
   width: 10vw;
+}
+
+@media screen and (min-width: 460px) {
+  /*----Media queries de Recomendados----*/
+  .titles h3 {
+    font-size: 2vh;
+  }
+  .titles p {
+    font-size: 1.8vh;
+  }
+  .products {
+    width: 40vw;
+  }
+  .products img {
+    width: 40vw;
+    height: 15vh;
+  }
+  .share-img img {
+    height: 4vh;
+    width: 4vw;
+  }
+  /* CARDS STYLE MEDIA */
+  .portada {
+    height: 15vh;
+  }
+  .descuentos-span {
+    width: 15vw;
+    height: 2vh;
+    padding: 1.3vh;
+  }
+  .recomendados-section {
+    width: 100vw;
+  }
+  /*----Media queries de Caracteristicas----*/
+  
+}
+@media screen and (min-width: 770px) {
+
+  .span-home{
+    display: block;
+  }
+  .present-view-section{
+    display: block;
+  }
+  /*----Media queries de Recomendados----*/
+  .recomendados-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    padding-top: 10vh;
+    width: 100%;
+  }
+  .portada {
+    width: 20vw;
+    height: 23vh;
+  }
+  .products {
+    width: 20vw;
+  }
+  .products img {
+    width: 20vw;
+    height: 23vh;
+  }
+  .share-img img {
+    height: 3.5vh;
+    width: 3.5vw;
+  }
+  .share-img p {
+    width: 9vw;
+    height: 4vh;
+    font-size: 2vh;
+  }
+/* CARDS STYLE MEDIA */
+  .descuentos-span {
+    height: 3vh;
+    font-size: 1vw;
+  }
+  .titles h3 {
+    font-size: 3.5vh;
+  }
+  .titles p {
+    font-size: 3vh;
+  }
+  /*----Media queries de Caracteristicas----*/
+  
 }
