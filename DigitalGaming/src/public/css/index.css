@@ -158,7 +158,7 @@
 .dh-title {
   font-size: 8vh;
   font-weight: 300;
-  width: 60vw;
+  /* width: 60vw; */
   font-family: 'Sunflower', sans-serif;
 }
 .menu-select {
@@ -377,14 +377,33 @@
   }
   .polighome-1{
     clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-    width: 20vw;
+    width: 15vw;
   }
   .polighome-2{
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
-    width: 40vw;
+    clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 30vw;
   }
   .polighome-3{
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(39% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 44vw;
+  }
+
+  /* CHILD HOME */
+  .marca-present{
+    margin-left: 9vw;
+  }
+  .child-home{
     width: 60vw;
+  }
+
+  /* CHILD HOME CON LA BOTONERA SELECT AND LOGO */
+  .menu-select{
+    width: 50VW;
+  }
+  .select{
+    width: 45vw;
+  }
+  .select:hover{
+    width: 50vw;
   }
 }
