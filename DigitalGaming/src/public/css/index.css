@@ -32,7 +32,9 @@
 }
 .recomendados {
   flex-wrap: wrap;
-  margin: 0 2rem;
+  margin: 0 10px;
+  padding: 2rem 0;
+  gap: 1rem;
 }
 .btn-vermas{
   z-index: 2;
