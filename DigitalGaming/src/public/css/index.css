@@ -1,7 +1,9 @@
 .main {
   position: relative;
 }
-
+.polygons-init{
+  display: none;
+}
 .home-section {
   position: relative;
 }
@@ -15,13 +17,6 @@
   left: 0;
   height: 200vh;
   background-color: rgba(0, 0, 0, 0.5);
-}
-.span-home {
-  display: none;
-  width: 50vw;
-  float: right;
-  object-fit: cover;
-  z-index: 1;
 }
 
 /*----Estilos para la SECTION "Recomendados"----*/
@@ -151,6 +146,7 @@
 .child-home {
   height: 100vh;
   position: relative;
+  z-index: 5;
 }
 .marca-present {
   padding-top: 24vh;
@@ -336,8 +332,6 @@
   .recomendados{
     margin: 0 5vw;
   }
-  /*----Media queries de Caracteristicas----*/
-  
 }
 @media screen and (min-width: 770px) {
   /*----Media queries de Recomendados----*/
@@ -364,6 +358,33 @@
     height: 4vh;
     font-size: 1.5vh;
   }
-  /*----Media queries de Caracteristicas----*/
-  
+}
+@media screen and (min-width: 1100px){
+  .polygons-init{
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right:0;
+  }
+  .contains-polig{
+    position: relative;
+    background: rgba(255, 0, 0, 0.13);
+  }
+  .pol-gen{
+    right: 0;
+    top: 0;
+  }
+  .polighome-1{
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    width: 20vw;
+  }
+  .polighome-2{
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 40vw;
+  }
+  .polighome-3{
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 60vw;
+  }
 }

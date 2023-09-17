@@ -127,7 +127,7 @@
   height: 9vh;
   position: fixed;
   background: transparent;
-  z-index: 4;
+  z-index: 20;
   transition: linear 0.5s;
 }
 .header-home.scroll {
