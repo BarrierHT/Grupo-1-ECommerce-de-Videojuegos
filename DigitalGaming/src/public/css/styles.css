@@ -251,13 +251,14 @@ input[type='text'] {
   border: none;
 }
 .btn-cls {
-  float: right;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
   background: url('/vectors/x-lg.svg') no-repeat;
   background-size: cover;
-  height: 5vh;
-  width: 5vh;
+  height: 1.5rem;
+  width: 1.5rem;
   border: none;
-  margin: 2vh 2vh;
 }
 /* medio de pago con sus respectivas img */
 .medio-pago{
