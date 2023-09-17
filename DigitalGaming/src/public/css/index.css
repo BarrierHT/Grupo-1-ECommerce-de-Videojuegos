@@ -64,8 +64,7 @@
   padding-bottom: 7vh;
 }
 .info {
-  height: 5vh;
-  padding: 4.5vh 0;
+  padding: 0.8rem 0.2rem;
 }
 .name-game {
   gap: 1vh;
@@ -84,24 +83,27 @@
 .products img{
   position: absolute;
   width: 90vw;
-  height: 10rem;
+  height: 8.5rem;
 }
 .portada {
   align-items: flex-end;
-  height: 10rem;
+  height: 8.5rem;
   width: 100%;
 }
+.share-img{
+  z-index: 3;
+}
 .descuentos-span {
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-  width: 30vw;
-  height: 4vh;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  width: 50vw;
+  height: 5vh;
   padding: 2.2vh;
   font-weight: 700;
 }
 .share-img img {
   position: relative;
-  height: 5vh;
-  width: 5vw;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 .share-img p {
   width: 13vw;
@@ -110,9 +112,10 @@
 }
 
 /*----Estilos de Seccion Caracteristicas----*/
-.icon-cont{
+.container-caract{
   width: 100%;
   flex-wrap: wrap;
+  padding: 2rem 0;
 }
 .image-caract img{
   display: none;
@@ -167,13 +170,10 @@
   gap: 1vh;
   padding-bottom: 3vh;
 }
-.icon-cont{
-  width: 20vw;
-  height: 6vh;
-}
-.icon-cont img {
-  height: 1.3rem;
-  width: 2rem;
+.icon-cont {
+  width: 13vw;
+  height: 4.5vh;
+  flex-wrap: wrap;
 }
 .select {
   width: 84vw;
