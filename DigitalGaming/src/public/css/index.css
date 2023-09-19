@@ -117,13 +117,22 @@
   display: none;
   clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%);
   height: 17rem;
-  width: 48.8vw;
+  width: 40vw;
   object-fit: cover;
 }
 .icon-elem{
   width: 45vw;
   height: 6.5rem;
   margin-top: 3vh;
+}
+.icon-elem h3{
+  vertical-align: middle;
+  height: 2rem;
+}
+.icon-size-caract{
+  height: 3rem;
+  width: 3rem;
+  background-size: 100%;
 }
 .star{
   background: url('/img/star1.png') no-repeat center;
@@ -136,11 +145,6 @@
 }
 .coin{
   background: url('/img/coin1.jpg') no-repeat center;
-}
-.icon-size-caract{
-  height: 3rem;
-  width: 3rem;
-  background-size: 100%;
 }
 
 /*Selectores del home para redirigir segun la consola*/
@@ -401,7 +405,6 @@
   .child-home{
     width: 60vw;
   }
-
   /* CHILD HOME CON LA BOTONERA SELECT AND LOGO */
   .menu-select{
     width: 50VW;
@@ -421,5 +424,13 @@
   }
   .products img {
     width: 22vw;
+  }
+
+  /* CARACT SECTION */
+  .image-caract img{
+    display: block;
+  }
+  .icon-elem{
+    width: 14vw;
   }
 }
