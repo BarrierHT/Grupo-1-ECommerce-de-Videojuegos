@@ -8,7 +8,8 @@
   position: relative;
 }
 .video_main {
-  position: fixed;
+  position: absolute;
+  top: 0;
   left: 0;
   object-fit: cover;
   z-index: -1;
@@ -309,18 +310,19 @@
     height: 5.5rem;
   }
   .container-cards{
-    justify-content: space-evenly;
+    padding: 0 5vw;
+    gap: 1rem;
+  }
+  .portada {
+    width: 13rem;
+    height: 10rem;
   }
   .products {
-    width: 40vw;
+    width: 13rem;
   }
   .products img {
-    width: 40vw;
-    height: 15vh;
-  }
-  /* CARDS STYLE MEDIA */
-  .portada {
-    height: 15vh;
+    width: 13rem;
+    height: 10rem;
   }
   .descuentos-span {
     width: 16vw;
@@ -343,16 +345,21 @@
     width: 100%;
   }
   .portada {
-    width: 40vw;
-    height: 20vh;
+    width: 29vw;
+    height: 13rem;
   }
   .products {
-    width: 40vw;
+    width: 29vw;
   }
   .products img {
-    width: 40vw;
-    height: 20vh;
+    width: 29vw;
+    height: 13rem;
   }
+  .container-cards{
+    justify-content: space-between;
+    gap: 0;
+  }
+  
   .share-img p {
     width: 9vw;
     height: 4vh;
@@ -369,7 +376,6 @@
   }
   .contains-polig{
     position: relative;
-    background: rgba(255, 0, 0, 0.13);
   }
   .pol-gen{
     right: 0;
@@ -377,15 +383,15 @@
   }
   .polighome-1{
     clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-    width: 15vw;
+    width: 7rem;
   }
   .polighome-2{
     clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
-    width: 30vw;
+    width: 14rem;
   }
   .polighome-3{
     clip-path: polygon(39% 0%, 100% 0%, 100% 100%, 0% 100%);
-    width: 44vw;
+    width: 20rem;
   }
 
   /* CHILD HOME */
@@ -405,5 +411,15 @@
   }
   .select:hover{
     width: 50vw;
+  }
+  /* SECCION DE RECOMENDADOS */
+  .portada {
+    width: 22vw;
+  }
+  .products {
+    width: 22vw;
+  }
+  .products img {
+    width: 22vw;
   }
 }
