@@ -189,7 +189,150 @@
   width: 90vw;
   border-color: rgb(195, 0, 255);
 }
-/*Seccion de previsualizacion*/
+
+.present-view-section{
+  display: none;
+}
+
+@media screen and (min-width: 460px) {
+  /*----Media queries de Recomendados----*/
+  .dh-title{
+    font-size: 6vh;
+  }
+  .info{
+    height: 5.5rem;
+  }
+  .container-cards{
+    padding: 0 5vw;
+    gap: 1rem;
+  }
+  .portada {
+    width: 13rem;
+    height: 10rem;
+  }
+  .products {
+    width: 13rem;
+  }
+  .products img {
+    width: 13rem;
+    height: 10rem;
+  }
+  .descuentos-span {
+    width: 16vw;
+    height: 1rem;
+  }
+  .recomendados-section {
+    width: 100vw;
+  }
+  .recomendados{
+    margin: 0 5vw;
+  }
+}
+@media screen and (min-width: 770px) {
+  /*----Media queries de Recomendados----*/
+  .recomendados-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    padding-top: 10vh;
+    width: 100%;
+  }
+  .portada {
+    width: 29vw;
+    height: 13rem;
+  }
+  .products {
+    width: 29vw;
+  }
+  .products img {
+    width: 29vw;
+    height: 13rem;
+  }
+  .container-cards{
+    justify-content: space-between;
+    gap: 0;
+  }
+  
+  .share-img p {
+    width: 9vw;
+    height: 4vh;
+    font-size: 1.5vh;
+  }
+}
+@media screen and (min-width: 1100px){
+  .polygons-init{
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right:0;
+    height: 100%;
+  }
+  .contains-polig{
+    position: relative;
+  }
+  .pol-gen{
+    right: 0;
+    top: 0;
+  }
+  .polighome-1{
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    width: 7rem;
+  }
+  .polighome-2{
+    clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 14rem;
+  }
+  .polighome-3{
+    clip-path: polygon(39% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 20rem;
+  }
+
+  /* CHILD HOME */
+  .marca-present{
+    margin-left: 9vw;
+  }
+  .child-home{
+    width: 60vw;
+  }
+  /* CHILD HOME CON LA BOTONERA SELECT AND LOGO */
+  .menu-select{
+    width: 50VW;
+  }
+  .select{
+    width: 45vw;
+  }
+  .select:hover{
+    width: 50vw;
+  }
+  /* SECCION DE RECOMENDADOS */
+  .portada {
+    width: 22vw;
+  }
+  .products {
+    width: 22vw;
+  }
+  .products img {
+    width: 22vw;
+  }
+
+  .poligrecom-1{
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 14rem;
+    height: 100%;
+  }
+  .poligrecom-2{
+    clip-path: polygon(34% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 21rem;
+    height: 100%;
+  }
+  .poligrecom-3{
+    clip-path: polygon(39% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 30rem;
+    height: 100%;
+  }
+
+  /*Seccion de previsualizacion*/
 .logo-prec {
   height: 57vh;
   align-items: flex-end;
@@ -211,7 +354,8 @@
 .present-view-section {
   position: relative;
   z-index: 3;
-  display: none;
+  display: flex;
+  background: black;
 }
 .polig-sect {
   transition: width 2s;
@@ -304,127 +448,6 @@
 .ban-cont__halo {
   width: 10vw;
 }
-
-@media screen and (min-width: 460px) {
-  /*----Media queries de Recomendados----*/
-  .dh-title{
-    font-size: 6vh;
-  }
-  .info{
-    height: 5.5rem;
-  }
-  .container-cards{
-    padding: 0 5vw;
-    gap: 1rem;
-  }
-  .portada {
-    width: 13rem;
-    height: 10rem;
-  }
-  .products {
-    width: 13rem;
-  }
-  .products img {
-    width: 13rem;
-    height: 10rem;
-  }
-  .descuentos-span {
-    width: 16vw;
-    height: 1rem;
-  }
-  .recomendados-section {
-    width: 100vw;
-  }
-  .recomendados{
-    margin: 0 5vw;
-  }
-}
-@media screen and (min-width: 770px) {
-  /*----Media queries de Recomendados----*/
-  .recomendados-section {
-    display: flex;
-    flex-direction: column;
-    gap: 4vh;
-    padding-top: 10vh;
-    width: 100%;
-  }
-  .portada {
-    width: 29vw;
-    height: 13rem;
-  }
-  .products {
-    width: 29vw;
-  }
-  .products img {
-    width: 29vw;
-    height: 13rem;
-  }
-  .container-cards{
-    justify-content: space-between;
-    gap: 0;
-  }
-  
-  .share-img p {
-    width: 9vw;
-    height: 4vh;
-    font-size: 1.5vh;
-  }
-}
-@media screen and (min-width: 1100px){
-  .polygons-init{
-    display: flex;
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    right:0;
-  }
-  .contains-polig{
-    position: relative;
-  }
-  .pol-gen{
-    right: 0;
-    top: 0;
-  }
-  .polighome-1{
-    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-    width: 7rem;
-  }
-  .polighome-2{
-    clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
-    width: 14rem;
-  }
-  .polighome-3{
-    clip-path: polygon(39% 0%, 100% 0%, 100% 100%, 0% 100%);
-    width: 20rem;
-  }
-
-  /* CHILD HOME */
-  .marca-present{
-    margin-left: 9vw;
-  }
-  .child-home{
-    width: 60vw;
-  }
-  /* CHILD HOME CON LA BOTONERA SELECT AND LOGO */
-  .menu-select{
-    width: 50VW;
-  }
-  .select{
-    width: 45vw;
-  }
-  .select:hover{
-    width: 50vw;
-  }
-  /* SECCION DE RECOMENDADOS */
-  .portada {
-    width: 22vw;
-  }
-  .products {
-    width: 22vw;
-  }
-  .products img {
-    width: 22vw;
-  }
 
   /* CARACT SECTION */
   .image-caract img{
