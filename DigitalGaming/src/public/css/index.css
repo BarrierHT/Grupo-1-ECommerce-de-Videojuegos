@@ -172,7 +172,7 @@
   padding-bottom: 3vh;
 }
 .icon-cont {
-  width: 13vw;
+  width: 2.5rem;
   height: 4.5vh;
   flex-wrap: wrap;
 }
@@ -183,6 +183,7 @@
   height: 2.5rem;
   border: solid 1px grey;
   transition: all 0.5s;
+  gap: 2vh;
 }
 .select:hover {
   background: black;
@@ -226,6 +227,13 @@
   }
   .recomendados{
     margin: 0 5vw;
+  }
+
+  .select{
+    width: 20rem;
+  }
+  .select:hover{
+    width: 23rem;
   }
 }
 @media screen and (min-width: 770px) {
@@ -299,12 +307,7 @@
   .menu-select{
     width: 50VW;
   }
-  .select{
-    width: 45vw;
-  }
-  .select:hover{
-    width: 50vw;
-  }
+  
   /* SECCION DE RECOMENDADOS */
   .portada {
     width: 21vw;
