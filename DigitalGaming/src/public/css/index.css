@@ -308,12 +308,14 @@
   /* SECCION DE RECOMENDADOS */
   .portada {
     width: 22vw;
+    height: 11rem;
   }
   .products {
     width: 22vw;
   }
   .products img {
     width: 22vw;
+    height: 11rem;
   }
 
   .poligrecom-1{
