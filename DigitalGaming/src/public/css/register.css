@@ -1,85 +1,73 @@
-.page-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	overflow: auto;
+.main-register{
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+	background: url("/img/bg-session.gif") no-repeat;
+	background-position: center;
+	background-size: cover;
 }
-
 .input-container-register {
+	width: 90%;
 	position: relative;
-	width: 85vw;
-	margin-bottom: 20px;
-	border: 2px solid #b2b2b2;
 	border-radius: 25px;
 	align-items: center;
-	background-color: rgba(0, 0, 0, 0.719);
-	padding: 5px;
-	margin-top: 80px;
+	background-image: linear-gradient(to left bottom, #030b16, #25128d, #6a02c0, #00bf49, #45eb12);
+	padding:1.4rem 18px;
 	text-align: center;
 	color: white;
-	font-size: 2rem;
-	font-weight: 700;
-	overflow: auto;
 }
-
-i {
-	margin: 0 10px;
+.register{
+	background: #000000c0;
+	padding: 25px 10px 10px 10px;
+	border-radius: 20px;
 }
-
 .form label {
-	color: white;
-	font-size: 2rem;
-	font-weight: 700;
-	text-align: left;
-	padding-left: 1.2rem;
-	line-height: 30px;
-	display: block;
+	text-align: start;
+	display: flex;
+	margin-top: 10px;
 }
-
 .form input {
 	border: none;
-	border-bottom: 3px #ccc;
 	width: 100%;
-	height: 48px;
-	padding: 1.2rem;
+	height: 1.6rem;
 	background-color: rgba(0, 0, 0, 0.068);
 	background-color: transparent;
 	opacity: 0.8;
+	font-size: 2.4vh;
 	outline: none;
 }
 
 .form input:focus {
 	outline: none;
 	color: #ccc;
-	text-align: left;
-	font-size: 1.6rem;
 }
 
 .form input::placeholder {
 	text-align: left;
-	font-size: 1.7rem;
-	padding-left: 1.5rem;
 }
 
 .register-btn {
 	width: 70%;
-	margin-left: 10px;
 	margin-bottom: 20px;
-	background-color: #ccc;
-	font-size: 1.7rem;
-	font-weight: 700;
+	background-color: white;
 	color: black;
 	border: none;
 	padding: 10px;
 	border-radius: 50px;
-	cursor: pointer;
-	overflow: auto;
+	transition: ease .2s;
 }
-
-/* Media Query para pantalla pequeña */
-@media screen and (max-width: 768px) {
-	.login-box {
-		width: 90%;
+.register-btn:hover{
+	background-color: black;
+	color: white;
+}
+/* Media Query para tablet */
+@media screen and (min-width: 460px) {
+	.input-container-register{
+		width: 20rem;
+		padding: 1.4rem 1rem;
+	}
+}
+@media screen and (min-width: 780px) {
+	.input-container-register{
+		width: 23rem;
 	}
 }
