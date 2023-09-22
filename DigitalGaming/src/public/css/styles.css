@@ -310,6 +310,44 @@ input[type='text'] {
   width: 15rem;
   z-index: 3;
 }
+/* MODAL HEADER INICIO Y REGISTRO SESSION */
+.modal-session{
+  height: 12rem;
+  width: 16rem;
+  position: absolute;
+  top: 9vh;
+  right: 4.5vw;
+  border-radius: 5px;
+  background: rgb(230, 230, 230);
+  gap: 1vh;
+  display: none;
+}
+.modal-session.active{
+  display: flex;
+}
+.close-mod-sess{
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  font-size: 1.5rem;
+}
+.or-elem{
+  gap: .5rem;
+}
+.or-elem::before{
+  content: "";
+  display: block;
+  width: 3rem;
+  background: black;
+  height: 2px;
+}
+.or-elem::after{
+  content: "";
+  display: block;
+  width: 3rem;
+  background: black;
+  height: 2px;
+}
 /*Propiedades responsivas*/
 .not-mobile {
   display: none;
