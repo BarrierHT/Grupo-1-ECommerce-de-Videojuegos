@@ -337,6 +337,10 @@
     height: 100%;
   }
 
+  .titles p{
+    width: 50vw;
+  }
+
   /*Seccion de previsualizacion*/
 .logo-prec {
   height: 57vh;

@@ -1,6 +1,6 @@
 .main-register{
-	padding-top: 10vh;
-	padding-bottom: 10vh;
+	padding-top: 14vh;
+	padding-bottom: 6vh;
 	background: url("/img/bg-session.gif") no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -10,13 +10,13 @@
 	position: relative;
 	border-radius: 25px;
 	align-items: center;
-	background-image: linear-gradient(to left bottom, #030b16, #25128d, #6a02c0, #00bf49, #45eb12);
+	background-image: linear-gradient(to left bottom, #1b1b1b83, #2d128da8, #6a02c0e1, #00bf49be, #45eb1281);
 	padding:1.4rem 18px;
 	text-align: center;
 	color: white;
 }
 .register{
-	background: #000000c0;
+	background: #000000a6;
 	padding: 25px 10px 10px 10px;
 	border-radius: 20px;
 }

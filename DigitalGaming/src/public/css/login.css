@@ -1,5 +1,5 @@
 .session-sect{
-	background: url("/img/bg-session.gif") no-repeat center;
+	background: url("/img/bg-session-sc.gif") no-repeat center;
 	background-size: cover;
 	padding-top: 5vh;
 }
@@ -12,7 +12,7 @@
 }
 
 .login-container {
-	background-image: linear-gradient(to left bottom, #030b16, #25128d, #6a02c0, #00bf49, #45eb12);
+	background-image: linear-gradient(to right bottom, #1b1b1b93, #640391b9, #6a02c0, #00bf29ad, #27770ea6);
 	border-radius: 20px;
 	padding: 20px;
 	text-align: center;
