@@ -4,6 +4,20 @@
   box-sizing: border-box;
   font-family: 'Archivo', sans-serif;
 }
+::-webkit-scrollbar {
+  background-color: #818181;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #7303b4;
+  border-radius: 6px;
+  transition: ease-in .3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d1d1d1;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
 .btn-generic {
   padding: 2vh 6vw;
   border: none;
@@ -176,28 +190,16 @@ input[type='text'] {
   background: url('/vectors/Usuario.svg') no-repeat;
   background-size: cover;
 }
-.reg-icon {
-  background: url('/img/bgbuttonreg.jpg') no-repeat;
-  background-size: cover;
-  border: none;
-  height: 6vh;
-  width: 11vw;
-  font-weight: 800;
-  font-size: 2.5vh;
-  color: transparent;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 45px;
-  -webkit-text-stroke: 0.5px white;
-}
 .cart-icon {
   background: url('/vectors/cart.svg') no-repeat;
   background-size: cover;
 }
-.flag-icon {
-  background: url('/vectors/Pais.svg') no-repeat;
-  background-size: contain;
-  background-position: center;
+.flag-icon{
+  height: 6vh;
+}
+.flag-icon::after{
+  content: "Idioma";
+  display: block;
 }
 .icon-double-bott {
   background: url('/vectors/chevron-double-down.svg') no-repeat;
