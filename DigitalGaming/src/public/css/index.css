@@ -1,14 +1,16 @@
 .main {
   position: relative;
 }
-
+.polygons-init{
+  display: none;
+}
 .home-section {
   position: relative;
 }
 .video_main {
-  position: fixed;
+  position: absolute;
+  top: 0;
   left: 0;
-  width: 75%;
   object-fit: cover;
   z-index: -1;
 }
@@ -17,121 +19,88 @@
   height: 200vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.span-home {
-  width: 50vw;
-  float: right;
-  object-fit: cover;
-  z-index: 1;
-}
 
 /*----Estilos para la SECTION "Recomendados"----*/
 .recomendados-section {
-  position: relative;
   width: 100%;
-  height: 120vh;
   z-index: 1;
-  gap: 6vh;
-}
-
-.recomendados {
   position: relative;
-  padding-top: 2vh;
-  display: flex;
-  flex-direction: row;
+}
+.recomendados {
   flex-wrap: wrap;
-  height: 9vh;
-  width: 100%;
-  align-items: center;
-  justify-content: space-around;
+  margin: 0 10px;
+  padding: 2rem 0;
+  gap: 1rem;
 }
-
-.recomendados h3 {
-  padding: 1vh 0;
+.btn-vermas{
+  z-index: 2;
+  transition: ease-out .2s;
 }
-
-.recomendados button {
-  font-size: 2vh;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-
-  font-weight: bold;
-  color: white;
+.btn-vermas:hover{
+  background: white;
+  color: black;
 }
-
 .titles {
-  width: 50vw;
+  z-index: 2;
 }
-
 .polygono {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40vw;
-  height: 120vh;
+  width: 50vw;
+  height: 100%;
   z-index: 0;
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 /*----Estilos de la Cards----*/
-.articles {
-  position: relative;
-  width: 100%;
-  z-index: 1;
+.container-cards{
+  flex-wrap: wrap;
+  z-index: 3;
+  padding-bottom: 7vh;
 }
-
-.products {
-  width: 85vw;
-}
-
-.products img {
-  position: absolute;
-  width: 85vw;
-  height: 23vh;
-  opacity: 0.8;
-}
-
-.share-img {
-  position: relative;
-}
-
 .info {
-  height: 5vh;
-  padding: 4.5vh 0;
+  padding: 0.8rem 0.2rem;
 }
-
 .name-game {
   gap: 1vh;
 }
-
 .name-game p {
   color: rgb(154, 154, 154);
 }
-
 .precio {
   font-weight: 600;
   font-size: 2.5vh;
 }
-
+.products{
+  width: 90vw;
+  margin: 1rem 0;
+}
+.products img{
+  position: absolute;
+  width: 90vw;
+  height: 8.5rem;
+}
 .portada {
   align-items: flex-end;
-  height: 23vh;
+  height: 8.5rem;
+  width: 100%;
 }
-
+.share-img{
+  z-index: 3;
+}
 .descuentos-span {
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-  width: 30vw;
-  height: 4vh;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  width: 50vw;
+  height: 5vh;
   padding: 2.2vh;
   font-weight: 700;
 }
-
-.share-img img {
+#icon-cart{
   position: relative;
-  height: 5vh;
-  width: 5vw;
+  height: 1.5rem;
+  width: 1.5rem;
 }
-
 .share-img p {
   width: 13vw;
   font-size: 1.5vh;
@@ -139,92 +108,135 @@
 }
 
 /*----Estilos de Seccion Caracteristicas----*/
-.caract-section {
-  height: 40vh;
-}
-.caract-div {
-  background-image: url('/img/bgGamer-mobile.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 40vh;
+.container-caract{
   width: 100%;
+  flex-wrap: wrap;
+  padding: 2rem 0;
 }
-.caract-card {
-  width: 55vw;
-  height: 25vh;
-  gap: 3vh;
+.image-caract img{
+  display: none;
+  clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%);
+  height: 17rem;
+  width: 40vw;
+  object-fit: cover;
 }
-.caract-card img {
-  width: 21vw;
-  height: 10vh;
+.icon-elem{
+  width: 45vw;
+  height: 6.5rem;
+  margin-top: 3vh;
 }
-.caract-card h3 {
-  text-align: center;
-  font-weight: 400;
-  font-size: 3vh;
+.icon-elem h3{
+  vertical-align: middle;
+  height: 2rem;
+}
+.icon-size-caract{
+  height: 3rem;
+  width: 3rem;
+  background-size: 100%;
+}
+.star{
+  background: url('/img/star1.png') no-repeat center;
+}
+.securedown{
+  background: url('/img/arrow-down.jpg') no-repeat center;
+}
+.clientat{
+  background: url('/img/chat1.jpg') no-repeat center;
+}
+.coin{
+  background: url('/img/coin1.jpg') no-repeat center;
+}
+
+/*Selectores del home para redirigir segun la consola*/
+.child-home {
+  height: 100vh;
+  position: relative;
+  z-index: 5;
+}
+.marca-present {
+  padding-top: 24vh;
+}
+.logo__home {
+  height: 20vh;
+  width: 20vw;
+}
+.dh-title {
+  font-size: 8vh;
+  font-weight: 300;
+  /* width: 60vw; */
+  font-family: 'Sunflower', sans-serif;
+}
+.menu-select {
+  font-size: 3.5vh;
+  gap: 1vh;
+  padding-bottom: 3vh;
+}
+.icon-cont {
+  width: 2.5rem;
+  height: 4.5vh;
+  flex-wrap: wrap;
+}
+.select {
+  width: 84vw;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+  padding: 1vh;
+  height: 2.5rem;
+  border: solid 1px grey;
+  transition: all 0.5s;
+  gap: 2vh;
+}
+.select:hover {
+  background: black;
+  width: 90vw;
+  border-color: rgb(195, 0, 255);
+}
+
+.present-view-section{
+  display: none;
 }
 
 @media screen and (min-width: 460px) {
   /*----Media queries de Recomendados----*/
-  .titles h3 {
-    font-size: 2vh;
+  .dh-title{
+    font-size: 6vh;
   }
-  .titles p {
-    font-size: 1.8vh;
+  .info{
+    height: 5.5rem;
   }
-  .products {
-    width: 40vw;
+  .container-cards{
+    padding: 0 5vw;
+    gap: 1rem;
   }
-  .products img {
-    width: 40vw;
-    height: 15vh;
-  }
-  .share-img img {
-    height: 4vh;
-    width: 4vw;
-  }
-  .articles {
-    width: 100vw;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5vw;
+  .sub-tl{
+    width: 70vw;
   }
   .portada {
-    height: 15vh;
+    width: 13rem;
+    height: 10rem;
   }
-
+  .products {
+    width: 13rem;
+  }
+  .products img {
+    width: 13rem;
+    height: 10rem;
+  }
   .descuentos-span {
-    width: 15vw;
-    height: 2vh;
-    padding: 1.3vh;
+    width: 16vw;
+    height: 1rem;
   }
   .recomendados-section {
     width: 100vw;
-    height: 100vh;
   }
-  .polygono {
-    height: 100vh;
+  .recomendados{
+    margin: 0 5vw;
   }
-  /*----Media queries de Caracteristicas----*/
-  .caract-div {
-    background-size: cover;
-    background-repeat: no-repeat;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .caract-card {
-    display: flex;
-    width: 22vw;
-    height: 17vh;
-    gap: 2vh;
 
-    border-radius: 2vh;
-    border: double 2px white;
+  .select{
+    width: 20rem;
   }
-  .caract-card img {
-    height: 7vh;
-    width: 10vw;
+  .select:hover{
+    width: 23rem;
   }
 }
 @media screen and (min-width: 770px) {
@@ -232,128 +244,123 @@
   .recomendados-section {
     display: flex;
     flex-direction: column;
-    gap: 10vh;
+    gap: 4vh;
     padding-top: 10vh;
-
     width: 100%;
-    height: 100vh;
+  }
+  .dh-title{
+    font-size: 4rem;
+    width: 14rem;
+  }
+  .sub-tl{
+    width: 50vw;
   }
   .portada {
-    width: 20vw;
-    height: 23vh;
+    width: 29vw;
+    height: 13rem;
   }
   .products {
-    width: 20vw;
+    width: 29vw;
   }
   .products img {
-    width: 20vw;
-    height: 23vh;
+    width: 29vw;
+    height: 13rem;
   }
-  .share-img img {
-    height: 3.5vh;
-    width: 3.5vw;
+  .container-cards{
+    justify-content: space-between;
+    gap: 0;
   }
+  
   .share-img p {
     width: 9vw;
     height: 4vh;
-    font-size: 2vh;
+    font-size: 1.5vh;
   }
-  .articles {
-    width: 100vw;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2vw;
-  }
-  .descuentos-span {
-    height: 3vh;
-    font-size: 1vw;
-  }
-  .polygono {
-    height: 100vh;
-  }
-  .titles h3 {
-    font-size: 3.5vh;
-  }
-  .titles p {
-    font-size: 3vh;
-  }
-  /*----Media queries de Caracteristicas----*/
-  .caract-div {
-    background-image: url('/img/bgGamer.jpg');
-    background-size: contain;
-    background-position: left;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  .caract-card {
+}
+@media screen and (min-width: 1100px){
+  .polygons-init{
     display: flex;
-    width: 10vw;
-    height: 40vh;
-    gap: 2vh;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right:0;
+    height: 100%;
+  }
+  .contains-polig{
+    position: relative;
+  }
+  .pol-gen{
+    right: 0;
+    top: 0;
+  }
+  .polighome-1{
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    width: 6rem;
+  }
+  .polighome-2{
+    clip-path: polygon(52% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 14rem;
+  }
+  .polighome-3{
+    clip-path: polygon(39% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 20rem;
+  }
 
-    border-radius: 0;
-    border: 0;
+  /* CHILD HOME */
+  .child-home{
+    width: 60vw;
   }
-  .caract-card img {
-    height: 5vh;
-    width: 4vw;
+  /* CHILD HOME CON LA BOTONERA SELECT AND LOGO */
+  .menu-select{
+    width: 50VW;
   }
-}
-/*Selectores del home para redirigir segun la consola*/
-.child-home {
-  padding-top: 1vh;
-  position: relative;
-  width: 55vw;
-}
-.marca-present {
-  padding-top: 25vh;
-}
-.logo__home {
-  height: 20vh;
-  width: 20vw;
-}
-.dh-title {
-  width: 30vw;
-  font-size: 10vh;
-  font-weight: 300;
-  font-family: 'Sunflower', sans-serif;
-}
-.sub-tl {
-  width: 40vw;
-}
-.menu-select {
-  font-size: 3.5vh;
-  gap: 1vh;
-}
-.icon-cont {
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-  width: 7vw;
-  height: 100%;
-}
-.icon-cont img {
-  height: 3.5vh;
-  width: 3.5vw;
-}
-.select {
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-  width: 25vw;
-  padding: 1vh;
-  border: solid 1px grey;
-  transition: all 0.5s;
-}
-.select:hover {
-  background: black;
-  width: 26vw;
-  border-color: rgb(195, 0, 255);
-}
-/*Seccion de previsualizacion*/
+  
+  /* SECCION DE RECOMENDADOS */
+  .portada {
+    width: 21vw;
+    height: 10rem;
+  }
+  .products {
+    width: 21vw;
+  }
+  .products img {
+    width: 21vw;
+    height: 10rem;
+  }
+
+  .poligrecom-1{
+    clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 15rem;
+    height: 100%;
+  }
+  .poligrecom-2{
+    clip-path: polygon(42% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 24rem;
+    height: 100%;
+  }
+  .poligrecom-3{
+    clip-path: polygon(35.4% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 31rem;
+    height: 100%;
+  }
+
+  .titles p{
+    width: 50vw;
+  }
+
+  /*Seccion de previsualizacion*/
 .logo-prec {
   height: 57vh;
   align-items: flex-end;
 }
+.logo-prec img{
+  box-shadow: 4px 5px 14px 5px rgba(0,0,0,0.75);
+}
 .sub-msj {
   height: 39vh;
   margin: 2vh;
+  background: #0000004a;
+  border-radius: 7px;
 }
 .sub-msj p {
   font-size: 3.5vh;
@@ -364,9 +371,13 @@
   font-size: 7vh;
   width: 30vw;
 }
+/* SECCION DE PRESENTACION SLIDE HOME */
 .present-view-section {
   position: relative;
   z-index: 3;
+  display: flex;
+  background: url("/img/bg-home.gif") no-repeat center;
+  background-size: cover;
 }
 .polig-sect {
   transition: width 2s;
@@ -375,20 +386,20 @@
 .product-prev {
   transition: width 2s;
   width: 51.5vw;
-  background: url('/vectors/poligone.svg') no-repeat;
+  background: url('/vectors/polig-03.svg') no-repeat;
   background-size: cover;
   background-position: center;
 }
 .product-prev_2 {
   width: 42vw;
-  background: url('/vectors/poligtwo.svg') no-repeat;
+  background: url('/vectors/polig-02.svg') no-repeat;
   transition: width 2s;
   background-size: cover;
   background-position: center;
 }
 .product-prev_3 {
   width: 30vw;
-  background: url('/vectors/poligthree.svg') no-repeat;
+  background: url('/vectors/polig-01.svg') no-repeat;
   transition: width 2s;
   background-size: cover;
   background-position: center;
@@ -458,4 +469,13 @@
 }
 .ban-cont__halo {
   width: 10vw;
+}
+
+  /* CARACT SECTION */
+  .image-caract img{
+    display: block;
+  }
+  .icon-elem{
+    width: 14vw;
+  }
 }

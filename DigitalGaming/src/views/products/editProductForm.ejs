@@ -9,7 +9,7 @@
         <section class="bg-dkblue">
             <div class="page-container">
                 <div class="input-container-editProduct">
-                        <div class="form">
+                        <div class="form text-white size size-font-parr">
                             <form action="/products/<%= product.id %>/?_method=PUT" method="post" id="form">
                             <input type="hidden" name="_method" value="PUT">
                             <label for="username">Nombre del Producto:</label>
@@ -44,8 +44,10 @@
                             <br><hr>
                             <label for="description">Descripcion:</label>
                             <textarea class="description-input"type="text" id="description" name="description" placeholder="Enter your description" required><%= product.descripcion != undefined ?   product.descripcion : '' %></textarea><br><hr>
-                            <button class="btn-edit" type="submit">Editar Producto</button>
-                            <button class="btn-cancel" type="button">Cancelar Edicion</button>
+                            <div class="flex">
+                                <button class="btn-form pointer text-white bg-limagreen" type="submit">Editar Producto</button>
+                                <button class="btn-form pointer text-white bg-red" type="button">Cancelar Edicion</button>
+                            </div>
                         </form>
                         </div>
                 </div>

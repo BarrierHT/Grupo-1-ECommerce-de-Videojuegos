@@ -1,10 +1,12 @@
 <header class="w-100 header-home text-white flex align-center cenrter">
-    <nav class="w-100 nav-proj mg-lat-1 flex align-center j-content-space-betwen">
+    <nav class="w-100 nav-proj flex align-center j-content-space-betwen">
         <div class="flex align-center w-35 j-content-around">
-            <img src="/vectors/favicon.svg" alt="logo" class="logo">
-            <div class="logo not-tablet flag-icon not-border"></div>
-            <div class="logo not-mobile star-icon not-border"></div>
-            <div class="categ-nav text-white not-tablet align-center pointer">
+            <img src="/vectors/favicon.svg" alt="logo" class="logo home-navigate pointer">
+            <span class="size-font-parr link pointer not-mobile" data-endpoint="/dashboard">ADMIN</span>
+            <div class="not-tablet flag-icon pointer flex f-direction-column align-center">
+              <img src="/vectors/Pais.svg" alt="pais - AR" class="logo">
+            </div>
+            <div class="categ-nav flex text-white not-tablet align-center pointer">
                 <p class="size-font-parr">Categorias</p>
                 <span class="flex icon-double-bott"></span>
                 <section class="despcat bg-dark w-100">
@@ -37,45 +39,35 @@
         </div>
         <div class="flex align-center w-35 j-content-around">
             <div class="logo not-tablet cart-icon not-border"></div>
-            <a href="" class="reg-icon antiancor text-center pointer not-tablet">REGISTRATE</a>
-            <div class="logo not-mobile user-icon"></div>
-            <button class="logo btn-menu"></button>
+            <div class="logo not-mobile star-icon not-border"></div>
+            <div class="logo not-mobile user-icon pointer"></div>
+            <button class="logo btn-menu pointer"></button>
         </div>
     </nav>
     <div class="menu-lat bg-dark w-100 h-100">
-        <button class="close btn-cls"></button>
+        <button class="close btn-cls pointer"></button>
+        <div class="deco-menu flex">
+          <span class="span-lat bg-limagreen">
+          </span>
+          <span class="span-lat-2 bg-purple"></span>
+        </div>
         <div class="flex align-center j-content-center">
             <ul class="pointer menu-cont text-white text-center flex align-center j-content-center f-direction-column h-100 tamano-title">
-                <li class="menu-elem">Home</li>
-                <li class="menu-elem">Catalogo</li>
-                <li class="menu-elem">Categorias</li>
-                <li class="menu-elem">Nosotros</li>
-                <li class="menu-elem">Carrito</li>
-                <li class="menu-elem">Contacto</li>
+              <li class="menu-elem user-icon menu-user"></li>  
+              <li class="menu-elem home-navigate">Home</li>
+              <li class="menu-elem">Catalogo</li>
+              <li class="menu-elem">Categorias</li>
+              <li class="menu-elem">Nosotros</li>
+              <li class="menu-elem">Carrito</li>
+              <li class="menu-elem">Contacto</li>
             </ul>
         </div>
     </div>
-    <div>
-      <input type="text" placeholder="Buscar" class="search-input" />
-    </div>
-    <div class="flex align-center w-35 j-content-around">
-      <button class="logo not-tablet cart-icon not-border"></button>
-      <button class="not-tablet reg-icon">REGISTRATE</button>
-      <button class="logo not-mobile user-icon"></button>
-      <button class="logo btn-menu"></button>
+    <div class="modal-session f-direction-column align-center j-content-center size-font-parr">
+      <button class="text-dark not-border close-mod-sess pointer">X</button>
+      <span class="btn-generic bg-dark pointer link" data-endpoint="/login">Inicia sesión</span>
+      <span class="or-elem text-dark flex align-center">O</span>
+      <span class="btn-generic bg-limagreen pointer link" data-endpoint="/register">Registrate</span>
     </div>
   </nav>
-  <div class="menu-lat bg-dark w-100 h-100">
-    <button class="close btn-cls"></button>
-    <div class="text-center">
-      <ul class="pointer">
-        <li class="menu-elem"></li>
-        <li class="menu-elem"></li>
-        <li class="menu-elem"></li>
-        <li class="menu-elem"></li>
-        <li class="menu-elem"></li>
-        <li class="menu-elem"></li>
-      </ul>
-    </div>
-  </div>
 </header>

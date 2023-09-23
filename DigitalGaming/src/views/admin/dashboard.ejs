@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<title>Admin Dashboard - Digital Gaming</title>
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+
+    <main class="dash-fath h-100 flex" id="dash">
+        <section class="options-dash bg-dark text-white" id="dash-option">
+            <h1 class="text-center tamano-title dash-tit">Dashboard</h1>
+            <ul class="flex j-content-center align-center f-direction-column w-100 list-options text-center size-font-parr">
+                <li class="select-option selected pointer" id="users">Usuarios</li>
+                <li class="select-option pointer" id="products">Productos</li>
+                <li class="select-option pointer" id="stats">Stats</li>
+                <li class="select-option pointer" id="notice">Notice</li>
+                <li class="select-option"></li>
+            </ul>
+        </section>
+        <section class="contains-dash">
+            <div id="dash-users">
+                <%- include('../admin/sections/dash-users') %>
+            </div>
+            <div id="dash-products">
+                <%- include('../admin/sections/dash-products') %>
+            </div>
+            <div id="dash-stats">
+                <%- include('../admin/sections/dash-stats') %>
+            </div>
+            <div id="dash-notice">
+                <%- include('../admin/sections/dash-notice') %>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

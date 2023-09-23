@@ -1,0 +1,46 @@
+.dash-fath{
+    background: red;
+}
+.options-dash{
+    width: 25%;
+    height: 100%;
+}
+.list-options{
+    height: 65%;
+    font-size: 3.5vh;
+    gap: 2vh;
+}
+.select-option{
+    width: 65%;
+    padding: 1vh 0;
+    clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+}
+.select-option.selected{
+    color: black;
+    background: white;
+}
+.dash-tit{
+    padding: 10vh;
+}
+.contains-dash{
+    width: 75vw;
+}
+.users-contains, .products-contains, .stats-contains, .notice-contains{
+    padding: 10vh;
+}
+/* DASH DE USUARIOS */
+.users-contains{
+    background: green;
+}
+/* DASH DE PRODUCTOS */
+.products-contains{
+    background: pink;
+}
+/* DASH DE STATS */
+.stats-contains{
+    background: blue;
+}
+/* DASH DE NOTICIAS */
+.notice-contains{
+    background: orange;
+}

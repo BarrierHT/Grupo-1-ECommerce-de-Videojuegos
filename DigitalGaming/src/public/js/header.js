@@ -7,3 +7,15 @@ function cambioBg(){
     }
 }
 window.addEventListener('scroll', cambioBg);
+
+const btnOpen = document.querySelector(".user-icon");
+const btnClosemodal = document.querySelector(".close-mod-sess");
+const modalsession = document.querySelector(".modal-session");
+
+btnOpen.addEventListener('click',() => {
+    modalsession.classList.toggle('active');
+})
+
+btnClosemodal.addEventListener('click',() => {
+    modalsession.classList.toggle('active');
+})

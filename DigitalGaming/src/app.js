@@ -5,6 +5,7 @@ const express = require('express');
 const mainRoute = require('./routes/mainRoute');
 const productRoute = require('./routes/productRoute');
 const userRoute = require('./routes/userRoute');
+const adminRoute = require('./routes/adminRoute')
 
 const override = require("method-override");
 
@@ -31,6 +32,8 @@ app.use('/products', productRoute);
 
 
 app.use(userRoute);
+
+app.use(adminRoute);
 
 app.use((req, res, next) => {
 	res.render('404');

@@ -1,160 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('./partials/head') %>
   <title>Digital Gaming</title>
-
+  <%- include('./partials/head') %>
   <body>
     <%- include('./partials/header') %>
       <main class="main text-white">
-        <img src="/vectors/span.svg" class="h-100 span-home absolute rigth" alt="span">
+        <section class="polygons-init h-100 w-100">
+          <div class="contains-polig h-100 w-100">
+            <div class="pol-gen h-100 polighome-3 bg-purple absolute"></div>
+            <div class="pol-gen h-100 polighome-2 bg-limagreen absolute"></div>
+            <div class="pol-gen h-100 polighome-1 bg-dark absolute"></div>
+          </div>
+        </section>
         <div class="video-container w-100 absolute"></div>
         <section class="home-section">
-          <div class="child-home w-100 h-100 flex align-center j-content-around f-direction-column">
-            <div class="flex marca-present">
+          <div class="child-home w-100 flex align-center j-content-around f-direction-column">
+            <div class="flex marca-present w-100 align-center j-content-center">
               <img src="/vectors/favicon.svg" alt="logo" class="logo__home">
-              <h1 class="dh-title">DIGITAL GAMING</h1>
+              <h1 class="dh-title text-center">DIGITAL GAMING</h1>
             </div>
-            <ul class="menu-select flex f-direction-column j-content-center">
+            <ul class="menu-select flex f-direction-column j-content-center" id="list-select">
               <li class="sub-tl">Encontra los juegos que queres con los mejores precios del mercado y descubrí un nuevo universo!</li>
-              <li class="select bg-dark flex pointer">
-                <div class="icon-cont flex align-center j-content-center bg-limagreen"><img src="/vectors/pc-display.svg" alt=""></div>Pc/Windows
+              <li class="select bg-dark flex pointer align-center">
+                <div class="icon-cont flex align-center j-content-center bg-limagreen"><img src="/vectors/pc-display.svg" alt="Pc icon"></div>
+                <p>Pc/Windows</p>
               </li>
-              <li class="select bg-dark flex pointer">
-                <div class="icon-cont flex align-center j-content-center bg-red"><img src="/vectors/nintendo-switch.svg" alt=""></div>Nintendo
+              <li class="select bg-dark flex pointer align-center">
+                <div class="icon-cont flex align-center j-content-center bg-red"><img src="/vectors/nintendo-switch.svg" alt=""></div>
+                <p>Nintendo</p>
               </li>
-              <li class="select bg-dark flex pointer">
-                <div class="icon-cont flex align-center j-content-center bg-blue"><img src="/vectors/joystick.svg" alt=""></div>PS/Xbox
+              <li class="select bg-dark flex pointer align-center">
+                <div class="icon-cont flex align-center j-content-center bg-blue"><img src="/vectors/joystick.svg" alt=""></div>
+                <p>PS/Xbox</p>
               </li>
-              <li class="select bg-dark flex pointer">
-                <div class="icon-cont flex align-center j-content-center bg-yellow"><img src="/vectors/caret-right.svg" alt=""></div>Start
+              <li class="select bg-dark flex pointer align-center">
+                <div class="icon-cont flex align-center j-content-center bg-yellow"><img src="/vectors/caret-right.svg" alt=""></div>
+                <p>Start</p>
               </li>
             </ul>
           </div>
-          <div class="present-view-section w-100 flex">
-            <section class="marca w-100 flex align-center j-content-center f-direction-column">
-              <div class="logo-prec flex">
-                <img src="/vectors/favicon.svg" alt="logo">
-              </div>
-              <div class="sub-msj flex f-direction-column j-content-center">
-                <h2>Los mejores juegos, los encontras acá</h2>
-                <p>Explora nuestro catalogo</p>
-              </div>
-            </section>
-            <section class="prev-zone w-100 flex">
-              <div class="product-prev h-100 absolute rigth flex align-center">
-                <img src="/img/messiprev.png" alt="messi" class="size-per messi">
-                <article class="content-prev flex align-center f-direction-column j-content-center">
-                  <img src="/img/imgsportprev.jpg" class="ban-cont" alt="ea sports reus">
-                  <h1 class="fw-bold">EA SPORTS FC™ 24</h1>
-                  <p>EA SPORTS FC™ 24 te da la bienvenida a The World's Game: la experiencia futbolística más fiel hasta
-                    la fecha con HyperMotionV*, PlayStyles optimizado por Opta y el nuevo motor de Frostbite™,
-                    reinventando la forma en que más de 19 000 futbolistas se mueven, juegan y se ven en cada partido.
-                  </p>
-                  <button class="btn-generic bg-dark text-white fw-bold pointer">JUEGA AHORA</button>
-                </article>
-              </div>
-              <div class="product-prev_2 h-100 absolute rigth flex align-center">
-                <img src="/img/masterchiefprev.png" alt="masterchiefprev" class="size-per mater-ch">
-                <article class="content-prev flex align-center f-direction-column j-content-center">
-                  <img src="/img/imghaloprev.jpg" class="ban-cont ban-cont__halo" alt="ea sports reus">
-                  <h1 class="fw-bold">Halo</h1>
-                  <p>¡El Jefe Maestro está de vuelta! Siguiendo a los eventos de Halo 5, este juego retoma la historia
-                    de Master Chief, su protagonista principal, y esta vez lo transporta al pasado dotándolo de una
-                    nueva armadura que es un guiño nostálgico a sus primeras apariciones y a las entregas anteriores de
-                    la serie.</p>
-                  <button class="btn-generic bg-purple text-white fw-bold pointer">JUEGA AHORA</button>
-                </article>
-              </div>
-              <div class="product-prev_3 h-100 absolute rigth flex align-center">
-                <img src="/img/kratosprev.webp" alt="kratos" class="size-per kratos">
-                <article class="content-prev flex align-center f-direction-column j-content-center">
-                  <img src="/img/imggowprev.jpg" class="ban-cont ban-gow" alt="ea sports reus">
-                  <h1 class="fw-bold">God Of War</h1>
-                  <p class="">La trama del juego se desarrolla en el contexto de los dioses nórdicos en esta iteración,
-                    en lugar de la Antigua Grecia de los juegos originales, y se desarrolla libremente en la
-                    Escandinavia medieval en el reino de Midgard, que es el equivalente nórdico de las tierras habitadas
-                    por los primeros humanos cuando el mundo aún era joven.</p>
-                  <button class="btn-generic not-padd bg-limagreen text-white fw-bold pointer">JUEGA AHORA</button>
-                </article>
-              </div>
-            </section>
-          </div>
-          <video class="h-100 video_main" muted autoplay loop>
+          <video class="h-100 w-100 video_main" muted autoplay loop>
             <source src="/videos/main-sinpeso.mp4">
           </video>
         </section>
-        <section class="recomendados-section w-100 h-100 bg-dkblue flex f-direction-column">
-          <div class="polygono bg-dark"></div>
-          <div class="recomendados">
-            <div class="titles">
-              <h3>RECOMENDADOS</h3>
-              <p>
-                Echa un vistazo a lo mejor de nuestro catalogo y aprovecha todas
-                nuestras ofertas
-              </p>
+        <section class="recomendados-section w-100 bg-dkblue flex f-direction-column">
+          <div class="polygons-init w-100">
+            <div class="contains-polig w-100">
+              <div class="pol-gen poligrecom-3 bg-purple absolute"></div>
+              <div class="pol-gen poligrecom-2 bg-limagreen absolute"></div>
+              <div class="pol-gen poligrecom-1 bg-dark absolute"></div>
             </div>
-            <button type="button">Ver Más <i class="fa-solid fa-play"></i></button>
           </div>
-          <div class="articles flex align-center j-content-center f-direction-column">
-            
+          <div class="recomendados flex align-center j-content-space-betwen ">
+            <div class="titles w-100">
+              <h3 class="tamano-title">RECOMENDADOS</h3>
+              <p class="size-font-parr">Echa un vistazo a lo mejor de nuestro catalogo y aprovecha todas nuestras ofertas</p>
+            </div>
+            <span class="btn-vermas btn-generic bg-purple text-white pointer fw-bold text-center">Ver Más</span>
+          </div>
+          <div class="container-cards flex align-center j-content-center w-100">
             <!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
             <% productos.forEach(producto => { %>
-            <article class="products">
-              <a href="/products/<%= producto.id %>">
-              <img src="<%= producto.portada %>" alt="<%= producto.nombre %>-img">
-              </a>
-              <div class="flex j-content-space-betwen portada">
-                <div class="share-img flex align-center">
-                  <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
-                  <p>Agregar al carrito</p>
+            
+            <a href="/products/<%= producto.id %>" class="antiancor text-white">
+              <article class="products pointer">
+                <img src="<%= producto.portada %>" alt="<%= producto.nombre %>-img">
+                <div class="flex j-content-space-betwen portada">
+                  <div class="share-img flex align-center">
+                    <img src="\vectors\cart.svg" alt="carrito" id="icon-cart" class="icon-cart">
+                    <p>Agregar al carrito</p>
+                  </div>
+                  <p class="share-img descuentos-span bg-purple align-center flex j-content-center text-center "><%= producto.descuento %>% Desc</p>
                 </div>
-                <p class="share-img descuentos-span bg-purple align-center flex j-content-center"><%= producto.descuento %>% Desc</p>
-              </div>
-              <div class="info flex align-center j-content-space-betwen">
-                <div class="flex f-direction-column name-game">
-                  <h3><%= producto.nombre %></h3>
-                  <p><%= producto.categoria %></p>
+                <div class="info flex align-center j-content-space-betwen">
+                  <div class="flex f-direction-column name-game">
+                    <h3><%= producto.nombre %></h3>
+                    <p><%= producto.categoria %></p>
+                  </div>
+                  <p class="precio">$<%= producto.precio.toFixed(2) %></p>
                 </div>
-                <p class="precio">$<%= producto.precio.toFixed(2) %></p>
-              </div>
-            </article>
+              </article>
+            </a>
             <% }); %>
-
+        
           </div>
         </section>
-        <section class="caract-section w-100 flex f-direction-column bg-dark">
-          <div class="polygono-caract bg-dark"></div>
-          <div class="caract-div flex f-direction-column align-center j-content-center">
-            <article class="caract-card bg-dark flex f-direction-column j-content-center align-center">
-              <img src="/img/star1.png" alt="imagen de la card">
-              <h3>Elegido por 1M de usuarios</h3>
-            </article>
-            <article class="caract-card bg-dark flex f-direction-column j-content-center align-center not-mobile">
-              <img src="/img/arrow-down.jpg" alt="imagen de la card">
-              <h3>Descarga 100% segura</h3>
-            </article>
-            <article class="caract-card bg-dark flex f-direction-column j-content-center align-center not-mobile">
-              <img src="/img/chat1.jpg" alt="imagen de la card">
-              <h3>Atención al cliente</h3>
-            </article>
-            <article class="caract-card bg-dark flex f-direction-column j-content-center align-center not-mobile">
-              <img src="/img/coin1.jpg" alt="imagen de la card">
-              <h3>Todo tipo de cambio</h3>
-            </article>
+        <section class="present-view-section w-100 flex">
+          <div class="marca w-100 flex align-center j-content-center f-direction-column">
+            <div class="logo-prec flex">
+              <img src="/vectors/favicon.svg" alt="logo">
+            </div>
+            <div class="sub-msj text-center flex f-direction-column j-content-center">
+              <h2>Los mejores juegos, los encontras acá</h2>
+              <p>Explora nuestro catalogo</p>
+            </div>
+          </div>
+          <div class="prev-zone w-100 flex">
+            <div class="product-prev h-100 absolute rigth flex align-center">
+              <img src="/img/messiprev.png" alt="messi" class="size-per messi">
+              <article class="content-prev flex align-center f-direction-column j-content-center">
+                <img src="/img/imgsportprev.jpg" class="ban-cont" alt="ea sports reus">
+                <h1 class="fw-bold">EA SPORTS FC™ 24</h1>
+                <p>EA SPORTS FC™ 24 te da la bienvenida a The World's Game: la experiencia futbolística más fiel hasta
+                  la fecha con HyperMotionV*, PlayStyles optimizado por Opta y el nuevo motor de Frostbite™,
+                  reinventando la forma en que más de 19 000 futbolistas se mueven, juegan y se ven en cada partido.
+                </p>
+                <button class="btn-generic bg-dark text-white fw-bold pointer">JUEGA AHORA</button>
+              </article>
+            </div>
+            <div class="product-prev_2 bg-limagreen h-100 absolute rigth flex align-center">
+              <img src="/img/masterchiefprev.png" alt="masterchiefprev" class="size-per mater-ch">
+              <article class="content-prev flex align-center f-direction-column j-content-center">
+                <img src="/img/imghaloprev.jpg" class="ban-cont ban-cont__halo" alt="ea sports reus">
+                <h1 class="fw-bold">Halo</h1>
+                <p>¡El Jefe Maestro está de vuelta! Siguiendo a los eventos de Halo 5, este juego retoma la historia
+                  de Master Chief, su protagonista principal, y esta vez lo transporta al pasado dotándolo de una
+                  nueva armadura que es un guiño nostálgico a sus primeras apariciones y a las entregas anteriores de
+                  la serie.</p>
+                <button class="btn-generic bg-purple text-white fw-bold pointer">JUEGA AHORA</button>
+              </article>
+            </div>
+            <div class="product-prev_3 bg-dark h-100 absolute rigth flex align-center">
+              <img src="/img/kratosprev.webp" alt="kratos" class="size-per kratos">
+              <article class="content-prev flex align-center f-direction-column j-content-center">
+                <img src="/img/imggowprev.jpg" class="ban-cont ban-gow" alt="ea sports reus">
+                <h1 class="fw-bold">God Of War</h1>
+                <p class="">La trama del juego se desarrolla en el contexto de los dioses nórdicos en esta iteración,
+                  en lugar de la Antigua Grecia de los juegos originales, y se desarrolla libremente en la
+                  Escandinavia medieval en el reino de Midgard, que es el equivalente nórdico de las tierras habitadas
+                  por los primeros humanos cuando el mundo aún era joven.</p>
+                <button class="btn-generic not-padd bg-limagreen text-white fw-bold pointer">JUEGA AHORA</button>
+              </article>
+            </div>
           </div>
         </section>
         <section class="category-section w-100 bg-dkblue flex f-direction-column">
-          <div class="categories-div flex j-content-around">
-            <div class="titles-categories">
-              <h3>CATEGORIAS</h3>
-              <p>
-                Descubre un mundo de emocionantes videojuegos en nuestras categorias seleccionadas. ¡La diversión
-                comienza aquí!
-              </p>
+          <div class="bg-dark poligon-cat absolute rigth"></div>
+          <div class="recomendados flex align-center j-content-space-betwen ">
+            <div class="titles">
+              <h3 class="tamano-title">CATEGORIAS</h3>
+              <p class="size-font-parr">Descubre un mundo de emocionantes videojuegos en nuestras categorias seleccionadas. ¡La diversión comienza aquí!</p>
             </div>
-            <button type="button">
-              Ver Más <i class="fa-solid fa-play"></i></i></i>
-            </button>
+            <span class="btn-vermas btn-generic bg-purple text-white pointer fw-bold text-center">Ver Más</span>
           </div>
           <div class="categories flex align-center j-content-space-betwen f-direction-column">
             <article class="categories-card flex j-content-space-betwen ">
@@ -210,6 +197,29 @@
                 <img src="/img/dante.png" alt="imagen-Personaje">
               </div>
             </article>
+          </div>
+        </section>
+        <section class="caract-section w-100 flex bg-dark">
+          <div class="image-caract">
+            <img src="/img/bgGamer-mobile.jpg" alt="gamer en pc">
+          </div>
+          <div class="container-caract flex j-content-center align-center ">
+            <span class="flex f-direction-column align-center icon-elem j-content-space-betwen">
+              <div class="star icon-size-caract"></div>
+              <h3 class="text-center">1M de usuarios</h3>
+            </span>
+            <span class="flex f-direction-column align-center icon-elem j-content-space-betwen">
+              <div class="securedown icon-size-caract"></div>
+              <h3 class="text-center">Descarga 100% segura</h3>
+            </span>
+            <span class="flex f-direction-column align-center icon-elem j-content-space-betwen">
+              <div class="clientat icon-size-caract"></div>
+              <h3 class="text-center">Atención al cliente</h3>
+            </span>
+            <span class="flex f-direction-column align-center icon-elem j-content-space-betwen">
+              <div class="coin icon-size-caract"></div>
+              <h3 class="text-center">Todo tipo de cambio</h3>
+            </span>
           </div>
         </section>
       </main>
