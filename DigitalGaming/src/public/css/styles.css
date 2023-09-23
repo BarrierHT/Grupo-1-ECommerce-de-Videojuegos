@@ -21,7 +21,7 @@
 .btn-generic {
   padding: 2vh 6vw;
   border: none;
-  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
 }
 /*Estilos generales par los textos (tamaños, decoraciones, etc)*/
 .tamano-title {
