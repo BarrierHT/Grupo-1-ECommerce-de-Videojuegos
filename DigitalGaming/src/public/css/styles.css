@@ -244,6 +244,10 @@ input[type='text'] {
   transition: width 5s;
   z-index: 3;
 }
+.menu-user{
+  height: 2.5rem;
+  width: 2.5rem;
+}
 .menu-lat.activo {
   display: block;
 }
@@ -261,6 +265,41 @@ input[type='text'] {
   height: 1.5rem;
   width: 1.5rem;
   border: none;
+}
+/* DECORACION PARA EL LATERAL DEL MENU */
+@keyframes slideSpan {
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 100vh;
+  }
+}
+.deco-menu{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 11;
+}
+.span-lat, .span-lat-2{
+  width: 2rem;
+  display: flex;
+  height: 0;
+}
+.span-lat.animate{
+  animation-name: slideSpan;
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.span-lat-2.animate{
+  animation-name: slideSpan;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.text-span{
+  display: none;
 }
 /* medio de pago con sus respectivas img */
 .medio-pago{
@@ -362,6 +401,9 @@ input[type='text'] {
   .not-mobile {
     display: unset;
   }
+  .span-lat, .span-lat-2{
+    width: 3rem;
+  }
 }
 @media screen and (min-width: 770px) {
   .not-tablet {
@@ -369,5 +411,8 @@ input[type='text'] {
   }
   .search-input {
     width: 30vw;
+  }
+  .span-lat, .span-lat-2{
+    width: 5rem;
   }
 }

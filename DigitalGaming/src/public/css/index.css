@@ -207,6 +207,9 @@
     padding: 0 5vw;
     gap: 1rem;
   }
+  .sub-tl{
+    width: 70vw;
+  }
   .portada {
     width: 13rem;
     height: 10rem;
@@ -244,6 +247,13 @@
     gap: 4vh;
     padding-top: 10vh;
     width: 100%;
+  }
+  .dh-title{
+    font-size: 4rem;
+    width: 14rem;
+  }
+  .sub-tl{
+    width: 50vw;
   }
   .portada {
     width: 29vw;
@@ -297,9 +307,6 @@
   }
 
   /* CHILD HOME */
-  .marca-present{
-    margin-left: 9vw;
-  }
   .child-home{
     width: 60vw;
   }
