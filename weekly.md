@@ -17,3 +17,6 @@ Como es rutinario en estos encuentros repasamos lo sucedido en la sprint anterio
 
 Una vez repartidas las tareas nos pusimos de acuerdo para completar las tareas que acordamos realizar grupalmente y respetar la priodidad de los puntos establecidos en el tablero de trello, y mantener el orden.
 
+### >------ Encuentro 24/9/23 ------<
+Esta ocasión dimos pie a la fase de organizacion para la Sprint 5, en la cual enlistamos todos los objetivos que se proponen desde DH    
+Dando asi lugar a analizar que es lo que requeria cada tarea para poder ordenarla según su importancia, y de esta manera poder asignar las tareas de una forma eficiente
