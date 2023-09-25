@@ -351,10 +351,10 @@ input[type='text'] {
 }
 /* MODAL HEADER INICIO Y REGISTRO SESSION */
 .modal-session{
-  height: 12rem;
-  width: 16rem;
+  height: 14rem;
+  width: 21rem;
   position: absolute;
-  top: 9vh;
+  top: 13vh;
   right: 4.5vw;
   border-radius: 5px;
   background: rgb(230, 230, 230);
