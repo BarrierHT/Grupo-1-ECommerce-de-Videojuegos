@@ -194,48 +194,5 @@
         "Almacenamiento": "12 GB"
       }
     }
-  },
-  {
-    "id": 9,
-    "nombre": "Sifu",
-    "descripcion": "Emociónate con este innovador título del estudio independiente Soclap en el que tomarás el lugar de un joven artista marcial que busca venganza. El videojuego cuenta la historia de Sifu que busca cobrarse con los asesinos de su familia. Desafortunadamente, no tiene ningún apoyo, por lo cual deberá hacerle frente a innumerables enemigos para conseguir su objetivo.",
-    "precio": 39.99,
-    "imagen": "undefined",
-    "portada": "undefined",
-    "video": "undefined",
-    "categoria": "Acción",
-    "requisitos": {
-      "MINIMOS": {
-        "SistemaOperativo": "Windows 10",
-        "Procesador": "Intel Core i5",
-        "Memoria": "8 GB RAM",
-        "Graficos": "NVIDIA GeForce GT 640",
-        "Almacenamiento": "22 GB"
-      },
-      "RECOMENDADOS": {
-        "SistemaOperativo": "Windows 10",
-        "Procesador": "Intel Core i7",
-        "Memoria": "10 GB RAM",
-        "Graficos": "NVIDIA GeForce GTX 970",
-        "Almacenamiento": "22 GB"
-      }
-    }
-  },
-  {
-    "id": "9240bec5-e346-4ec7-9293-47e88dbf9c11",
-    "nombre": "asdadsd",
-    "descripcion": "asdfdgfdhdfgf",
-    "precio": 12313,
-    "imagen": "Messi.jpg",
-    "portada": "undefined",
-    "video": "undefined",
-    "categoria": [
-      "estrategy",
-      ""
-    ],
-    "requisitos": {
-      "MINIMOS": {},
-      "RECOMENDADOS": {}
-    }
   }
 ]
