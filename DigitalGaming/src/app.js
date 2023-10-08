@@ -15,6 +15,13 @@ require('dotenv').config();
 
 const app = express();
 
+const productsFilePath = path.join(__dirname, './data/productos.json');
+
+function readProductsFile() {
+	const productsData = fs.readFileSync(productsFilePath, 'utf8');
+	return JSON.parse(productsData);
+}
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set(process.env.PORT);
@@ -65,10 +72,12 @@ app.use((err, req, res, next) => {
 	const status = err.statusCode || 500;
 	const message = err.message || 'Server error';
 	const data = err.data || {};
-	// return res.status(status).json({ message, data });
+	// return res.status(status).json({ message, data })
+
 	return res.status(status).render('index', {
 		message,
 		data,
+		productos: readProductsFile().slice(0, 8),
 	});
 });
 

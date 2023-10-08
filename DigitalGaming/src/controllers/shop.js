@@ -20,15 +20,13 @@ function saveProductsToFile(products) {
 }
 
 exports.getIndex = (req, res, next) => {
-	fs.readFile(productsFilePath, 'utf8', (err,data)=>{
-		if(err){
-			console.error('Error al leer el JSON', err);
-			return res.status(500).send('error interno server');
-		}
-		const productos = JSON.parse(data);
-		const productosLimitados = productos.slice(0, 8);
-		res.render('index.ejs', { productos: productosLimitados });
-	})
+	const productos = readProductsFile();
+
+	const productosLimitados = productos.slice(0, 8);
+
+	// console.log(productosLimitados.length);
+
+	res.render('index.ejs', { productos: productosLimitados });
 };
 
 exports.getCart = (req, res, next) => {
@@ -44,7 +42,7 @@ exports.getDetailCartstandart = (req, res, next) => {
 exports.getProducts = (req, res, next) => {
 	const products = readProductsFile();
 
-	console.log(products);
+	// console.log(products);
 
 	//res.send(products);
 
@@ -160,7 +158,7 @@ exports.putEditProduct = (req, res, next) => {
 
 exports.deleteProduct = (req, res, next) => {
 	const productId = req.params.productId;
-	console.log(productId);
+	// console.log(productId);
 	// Lógica para eliminar un producto
 	// Leer la lista actual de productos desde el archivo JSON
 	const products = readProductsFile();
