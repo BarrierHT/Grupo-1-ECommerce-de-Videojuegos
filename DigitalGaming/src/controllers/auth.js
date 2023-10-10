@@ -10,108 +10,117 @@ const { validationResult } = require('express-validator');
 const usersFilePath = path.join(__dirname, '../data/usuarios.json');
 
 function readUsersFile() {
-	const usersData = fs.readFileSync(usersFilePath, 'utf8');
-	return JSON.parse(usersData);
+  const usersData = fs.readFileSync(usersFilePath, 'utf8');
+  return JSON.parse(usersData);
 }
 
 function saveUsersToFile(users) {
-	fs.writeFileSync(usersFilePath, JSON.stringify(users), 'utf8');
+  fs.writeFileSync(usersFilePath, JSON.stringify(users), 'utf8');
 }
 
-exports.fileRemove = fileUrl => {
-	//Delete a File
-	if (fs.existsSync(fileUrl))
-		fs.unlink(fileUrl, err => (err ? console.log(err) : ''));
-	//Check if a path exists and unlink it
-	else console.log('The given path doesnt exist');
+exports.fileRemove = (fileUrl) => {
+  //Delete a File
+  if (fs.existsSync(fileUrl))
+    fs.unlink(fileUrl, (err) => (err ? console.log(err) : ''));
+  //Check if a path exists and unlink it
+  else console.log('The given path doesnt exist');
 };
 
 let generateID = () => {
-	return uuidv4();
+  return uuidv4();
 };
 
 exports.getLogin = (req, res, next) => {
-	res.render('users/login');
+  res.render('users/login');
 };
 
 exports.postLogin = async (req, res, next) => {
-	const { email, password } = req.body;
+  const { email, password } = req.body;
 
-	//console.log('login: ', email, ' ', password);
+  //console.log('login: ', email, ' ', password);
 
-	const usersData = readUsersFile();
+  const usersData = readUsersFile();
 
-	// Verifica las credenciales del usuario
-	const user = usersData.find(user => user.email == email);
+  // Verifica las credenciales del usuario
+  const user = usersData.find((user) => user.email == email);
 
-	console.log(user);
+  console.log(user);
 
-	if (user) {
-		const hasMatch = await bcrypt.compare(password, user.password);
-		if (!hasMatch) return res.redirect('/login');
+  if (user) {
+    const hasMatch = await bcrypt.compare(password, user.password);
+    if (!hasMatch) return res.redirect('/login');
 
-		// Iniciar sesión almacenando la información del usuario en la sesión
-		req.session.user = user;
+    // Iniciar sesión almacenando la información del usuario en la sesión
+    req.session.user = user;
 
-		res.redirect('/');
-	} else res.redirect('/login');
+    res.redirect('/');
+  } else res.redirect('/login');
 };
 
 exports.getSignUp = (req, res, next) => {
-	res.render('users/register');
+  res.render('users/register');
 };
 
 exports.postSignUp = async (req, res, next) => {
-	//Logica del formulario de registro de los usuarios.
-	let newIdUser = generateID();
+  //Logica del formulario de registro de los usuarios.
+  let newIdUser = generateID();
 
-	let resultValidation = validationResult(req);
+  //Variable con las validaciones
+  const resultValidation = validationResult(req);
+  //console.log(resultValidation.mapped());
 
-	// console.log(req.body);
+  // console.log(req.body);
 
-	if (!resultValidation.isEmpty() || req.file == undefined) {
-		// console.log(resultValidation.errors);
-		// console.log(req.file);
+  //   if (!resultValidation.isEmpty() || req.file == undefined) {
+  //     // console.log(resultValidation.errors);
+  //     // console.log(req.file);
 
-		if (req.file != undefined) this.fileRemove(req.file.location);
+  //     if (req.file != undefined) this.fileRemove(req.file.location);
 
-		console.log('No validado');
-		return res.status(402).redirect('/');
-	}
+  //     //console.log('No validado');
+  //     return res.status(402).redirect('/');
+  //   }
 
-	const usersData = readUsersFile();
+  if (resultValidation.errors.length > 0) {
+    res.render('users/register', {
+      errors: resultValidation.mapped(),
+      oldValue: req.body,
+    });
+  } else {
+    const usersData = readUsersFile();
 
-	// console.log('file: ', req.file);
+    // console.log('file: ', req.file);
 
-	const hashedPassword = await bcrypt.hash(req.body.password, 12);
+    const hashedPassword = await bcrypt.hash(req.body.password, 12);
 
-	let newUser = {
-		id: newIdUser,
-		lastname: req.body.lastname,
-		username: req.body.username,
-		email: req.body.email,
-		['user-image']: '/img/users/' + req.file.filename,
-		password: hashedPassword,
-	};
+    let newUser = {
+      id: newIdUser,
+      lastname: req.body.lastname,
+      username: req.body.username,
+      email: req.body.email,
+      ['user-image']: '/img/users/' + req.file.filename,
+      password: hashedPassword,
+    };
 
-	// console.log('new user: ', newUser);
+    // console.log('new user: ', newUser);
 
-	usersData.push(newUser);
+    usersData.push(newUser);
 
-	saveUsersToFile(usersData);
+    saveUsersToFile(usersData);
 
-	return res.redirect('/');
+    return res.redirect('/');
+  }
 };
 
 exports.getLogout = (req, res, next) => {
-	try {
-		//if (req.session.user._id.toString() == req.user._id.toString()) {
-		req.session.destroy(err => {
-			if (err) throw new Error('session error');
-			res.redirect('/');
-		});
-		//}
-	} catch (error) {
-		next(error);
-	}
+  try {
+    //if (req.session.user._id.toString() == req.user._id.toString()) {
+    req.session.destroy((err) => {
+      if (err) throw new Error('session error');
+      res.redirect('/');
+    });
+    //}
+  } catch (error) {
+    next(error);
+  }
 };
