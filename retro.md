@@ -64,3 +64,25 @@ Reconocemos que retrasar las tareas hasta los últimos días del sprint es una p
 Dejar de hacer las reuniones diarias o las reuniones programadas no es beneficioso para nuestro equipo. Estas reuniones proporcionan información crucial sobre nuestro progreso individual y colectivo. Debemos asegurarnos de que todos participemos en estas reuniones programadas para mantenernos en el camino correcto y no retroceder en nuestra colaboración y desarrollo del sprint.
 
 Con esta retrospectiva, buscamos mejorar nuestra colaboración, comunicación y eficiencia en futuros sprints. Implementaremos estas lecciones aprendidas para asegurarnos de que nuestro equipo continúe creciendo y entregando resultados exitosos en nuestros proyectos.
+   
+## Sprint 5
+
+**Starfish Retrospective: La importancia de tener Orden**
+
+1. Empezar a Hacer:   
+Ciertamente se ha mejorado la comunicación entre el grupo, claro que tambien hay excepciones debido a varias circunstancias que corta un poco el lazo comunicativo... que lo vemos desde un lado empatico, sin embargo nos queda mejorar los tiempos de desarrollo y la cordinación de las tareas repartidas desde la planificación del sprint, para ello se podrian tomar medidas como organizar una agenda accesible o establecer un tiempo limite para una tarea (a parte de la fecha general).
+   
+2. Hacer Más:   
+Se demostro que el uso de trello ayuda bastante a saber cual es el progreso actual del proyecto, por lo tanto es importante recalcar esto. Lo cual tambien viene acompañado de un analisis que se realiza en encuentros informativos del grupo con el fin de reportar que cosas se realizaron y que otras no, y asi poder apoyar en la construcción de las mismas.
+Tambien la deconstruccion de estas tareas da un beneficio a la hora de priorizarlas.
+   
+4. Continuar Haciendo:   
+El contacto personal entre integrantes que compartan una tarea o tengan un conflicto en el proyecto, se ve que esto ayuda a no saturar el entorno de dialogo el cual comparte todo el grupo con el fin de ser mas puntual al transmitir un mensaje que entiendan todos.
+      
+5. Hacer Menos:
+El pair programing tiene sus ventajas, sim embargo hay que saber cuando y como hacerlas, asi que seria de mejor eficiencia preparar de antemano estos encuentros y asi mejorar el desarrollo del proyecto.
+      
+6. Dejar de Hacer:
+Sin punto a destacar.
+
+Con esta retrospectiva, buscamos mejorar nuestra colaboración, comunicación y eficiencia en futuros sprints. Implementaremos estas lecciones aprendidas para asegurarnos de que nuestro equipo continúe creciendo y entregando resultados exitosos en nuestros proyectos.
