@@ -2,6 +2,7 @@ const path = require('path');
 
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
 const session = require('express-session');
 const fs = require('fs');
 
@@ -50,27 +51,29 @@ app.use((req, res, next) => {
 	next();
 });
 
+app.use(morgan('dev'));
+
 app.use('/', mainRoute);
-app.use('/productsCart', productRoute);
+app.use('/products', productRoute);
 
-app.use('/login', (req, res, next) => {
-	if (res.locals.isAuthenticated) {
-		res.redirect('/productCart');
-	} else {
-		next();
-	}
-});
+// app.use('/login', (req, res, next) => {
+// 	if (res.locals.isAuthenticated) {
+// 		res.redirect('/productCart');
+// 	} else {
+// 		next();
+// 	}
+// });
 
-app.use((req, res, next) => {
-	if (!res.locals.isAuthenticated) {
-		res.redirect('/register');
-	} else {
-		next();
-	}
-});
+// app.use((req, res, next) => {
+// 	if (!res.locals.isAuthenticated) {
+// 		res.redirect('/register');
+// 	} else {
+// 		next();
+// 	}
+// });
 
-app.use(userRoute); 
-app.use(adminRoute); 
+app.use(userRoute);
+app.use(adminRoute);
 
 app.use((req, res, next) => {
 	res.render('404');
