@@ -2,12 +2,23 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/auth');
 const multer = require('../middlewares/multer');
-const validationsSingUp = require('../middlewares/validationSignUp');
+const validationsSignUp = require('../middlewares/validationSignUp');
 
-router.get('/login', authController.getLogin);
-router.post('/login', authController.postLogin);
-router.get('/logout', authController.getLogout);
-router.get('/register', authController.getSignUp);
-router.post('/register', multer, validationsSingUp, authController.postSignUp);
+const isAuth = require('../middlewares/is-Auth').isAuth;
+const isNotAuth = require('../middlewares/is-Auth').isNotAuth;
+
+router.get('/login', isNotAuth, authController.getLogin);
+router.post('/login', isNotAuth, authController.postLogin);
+
+router.get('/logout', isAuth, authController.getLogout);
+
+router.get('/register', isNotAuth, authController.getSignUp);
+router.post(
+	'/register',
+	isNotAuth,
+	multer,
+	validationsSignUp,
+	authController.postSignUp
+);
 
 module.exports = router;
