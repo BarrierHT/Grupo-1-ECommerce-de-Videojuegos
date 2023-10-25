@@ -6,6 +6,14 @@ const morgan = require('morgan');
 const session = require('express-session');
 const fs = require('fs');
 
+const db = require('./database/models/index');
+
+const initModels = require('./database/models/init-models');
+
+const models = initModels(db.sequelize);
+
+// console.log(db.sequelize.query());
+
 const mainRoute = require('./routes/mainRoute');
 const productRoute = require('./routes/productRoute');
 const userRoute = require('./routes/userRoute');
