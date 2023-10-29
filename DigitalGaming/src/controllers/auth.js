@@ -1,22 +1,25 @@
-const exp = require('constants');
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcryptjs');
 //const users = require('../models/users');
+
 const { validationResult } = require('express-validator');
 
 // Ruta al archivo JSON de productos
-const usersFilePath = path.join(__dirname, '../data/usuarios.json');
+// const usersFilePath = path.join(__dirname, '../data/usuarios.json');
 
-function readUsersFile() {
-	const usersData = fs.readFileSync(usersFilePath, 'utf8');
-	return JSON.parse(usersData);
-}
+//Modelo de datos
+const User = require('../app').models.user;
 
-function saveUsersToFile(users) {
-	fs.writeFileSync(usersFilePath, JSON.stringify(users), 'utf8');
-}
+// function readUsersFile() {
+// 	const usersData = fs.readFileSync(usersFilePath, 'utf8');
+// 	return JSON.parse(usersData);
+// }
+
+// function saveUsersToFile(users) {
+// 	fs.writeFileSync(usersFilePath, JSON.stringify(users), 'utf8');
+// }
 
 exports.fileRemove = fileUrl => {
 	//Delete a File
@@ -26,9 +29,9 @@ exports.fileRemove = fileUrl => {
 	else console.log('The given path doesnt exist');
 };
 
-let generateID = () => {
-	return uuidv4();
-};
+// let generateID = () => {
+// 	return uuidv4();
+// };
 
 exports.getLogin = (req, res, next) => {
 	res.render('users/login');
@@ -39,19 +42,16 @@ exports.postLogin = async (req, res, next) => {
 
 	//console.log('login: ', email, ' ', password);
 
-	const usersData = readUsersFile();
+	const existingUser = await User.findOne({
+		where: { email: req.body.email },
+	});
 
-	// Verifica las credenciales del usuario
-	const user = usersData.find(user => user.email == email);
-
-	console.log(user);
-
-	if (user) {
-		const hasMatch = await bcrypt.compare(password, user.password);
+	if (existingUser) {
+		const hasMatch = await bcrypt.compare(password, existingUser.password);
 		if (!hasMatch) return res.redirect('/login');
 
 		// Iniciar sesión almacenando la información del usuario en la sesión
-		req.session.user = user;
+		req.session.user = existingUser;
 
 		res.redirect('/');
 	} else res.redirect('/login');
@@ -62,55 +62,96 @@ exports.getSignUp = (req, res, next) => {
 };
 
 exports.postSignUp = async (req, res, next) => {
-	//Logica del formulario de registro de los usuarios.
-	let newIdUser = generateID();
-
 	//Variable con las validaciones
 	const resultValidation = validationResult(req);
 	//console.log(resultValidation.mapped());
 
-	// console.log(req.body);
+	if (resultValidation.errors.length > 0 || req.file == undefined) {
+		console.log('Errors: ', resultValidation.errors.length);
 
-	//   if (!resultValidation.isEmpty() || req.file == undefined) {
-	//     // console.log(resultValidation.errors);
-	//     // console.log(req.file);
-
-	// if (req.file != undefined) this.fileRemove(req.file.location);
-
-	//     //console.log('No validado');
-	//     return res.status(402).redirect('/');
-	//   }
-
-	if (resultValidation.errors.length > 0 || req.file != undefined) {
-		if (req.file != undefined) this.fileRemove(req.file.location);
+		if (req.file != undefined) {
+			this.fileRemove(
+				path.join(
+					__dirname,
+					'..',
+					'public',
+					'img',
+					'users',
+					req.file.filename
+				)
+			);
+			console.log('image not uploaded');
+		}
 
 		res.render('users/register', {
 			errors: resultValidation.mapped(),
 			oldValue: req.body,
 		});
 	} else {
-		const usersData = readUsersFile();
+		try {
+			// Verificar si un usuario con el mismo correo electrónico ya existe
+			//console.log(User);
 
-		// console.log('file: ', req.file);
+			const existingUser = await User.findOne({
+				where: { email: req.body.email },
+			});
 
-		const hashedPassword = await bcrypt.hash(req.body.password, 12);
+			if (existingUser) {
+				console.log('El usuario ya existe');
 
-		let newUser = {
-			id: newIdUser,
-			lastname: req.body.lastname,
-			username: req.body.username,
-			email: req.body.email,
-			['user-image']: '/img/users/' + req.file.filename,
-			password: hashedPassword,
-		};
+				if (req.file != undefined)
+					this.fileRemove(
+						path.join(
+							__dirname,
+							'..',
+							'public',
+							'img',
+							'users',
+							req.file.filename
+						)
+					);
 
-		// console.log('new user: ', newUser);
+				return res.redirect('/');
+				//   return res.status(400).json({ error: 'El usuario ya existe' });
+			}
 
-		usersData.push(newUser);
+			// Hashear la contraseña antes de almacenarla
+			const hashedPassword = await bcrypt.hash(req.body.password, 12);
 
-		saveUsersToFile(usersData);
+			//console.log(req.file);
 
-		return res.redirect('/');
+			// Crear un nuevo usuario en la base de datos
+			const newUser = await User.create({
+				name: req.body.name,
+				last_name: req.body.lastname,
+				email: req.body.email,
+				user_image: '/img/users/' + req.file.filename,
+				password: hashedPassword,
+				rol_id: 3,
+			});
+
+			await newUser.save();
+
+			console.log('new User: ', newUser);
+
+			return res.redirect('/login');
+		} catch (error) {
+			console.error('Error al crear el usuario:', error);
+
+			if (req.file != undefined)
+				this.fileRemove(
+					path.join(
+						__dirname,
+						'..',
+						'public',
+						'img',
+						'users',
+						req.file.filename
+					)
+				);
+
+			return res.redirect('/');
+		}
 	}
 };
 

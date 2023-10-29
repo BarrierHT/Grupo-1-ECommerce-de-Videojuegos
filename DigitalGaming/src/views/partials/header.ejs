@@ -38,10 +38,20 @@
       </a>
     </div>
     <div class="flex align-center w-35 j-content-around">
+
+
       <div class="logo not-tablet cart-icon not-border"></div>
       <div class="logo not-mobile star-icon not-border"></div>
-      <div class="logo not-mobile user-icon pointer"></div>
-      <button class="logo btn-menu pointer"></button>
+
+      <% if(isAuthenticated){ %>
+        <div class="logo not-mobile pointer profile--user"
+          style="background: url(<%=user.user_image%>) no-repeat;  background-size: 100% 100%"></div>
+        <% } %>
+
+          <% if(!isAuthenticated){ %>
+            <div class="logo not-mobile user-icon pointer"></div>
+            <% } %>
+              <button class="logo btn-menu pointer"></button>
     </div>
   </nav>
   <div class="menu-lat bg-dark w-100 h-100">
@@ -54,13 +64,21 @@
     <div class="flex align-center j-content-center">
       <ul
         class="pointer menu-cont text-white text-center flex align-center j-content-center f-direction-column h-100 tamano-title">
-        <li class="menu-elem user-icon menu-user"></li>
-        <li class="menu-elem home-navigate">Home</li>
-        <li class="menu-elem">Catalogo</li>
-        <li class="menu-elem">Categorias</li>
-        <li class="menu-elem">Nosotros</li>
-        <li class="menu-elem">Carrito</li>
-        <li class="menu-elem">Contacto</li>
+
+        <% if(isAuthenticated){ %>
+          <li class="logo not-mobile pointer profile--user"
+            style="background: url(<%=user.user_image%>) no-repeat;  background-size: 100% 100%"></li>
+          <% } %>
+
+            <% if(!isAuthenticated){ %>
+              <li class="menu-elem user-icon menu-user"></li>
+              <% } %>
+                <li class="menu-elem home-navigate">Home</li>
+                <li class="menu-elem">Catalogo</li>
+                <li class="menu-elem">Categorias</li>
+                <li class="menu-elem">Nosotros</li>
+                <li class="menu-elem">Carrito</li>
+                <li class="menu-elem">Contacto</li>
       </ul>
     </div>
   </div>
@@ -78,7 +96,7 @@
             <%= user.name %>
           </span>
           <span class="btn-generic bg-dark pointer link">
-            <%= user.lastname %>
+            <%= user.last_name %>
           </span>
           <span class="btn-generic bg-dark pointer link">
             <%= user.email %>
