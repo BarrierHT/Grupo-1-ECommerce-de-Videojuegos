@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/auth');
+const userController = require('../controllers/user');
+
 const multer = require('../middlewares/multer');
 const validationsSignUp = require('../middlewares/validationSignUp');
 
@@ -20,5 +22,9 @@ router.post(
 	validationsSignUp,
 	authController.postSignUp
 );
+
+router.get('/getUser', userController.getUserByEmail);
+router.delete('/deleteUser', userController.deleteUserByEmail);
+router.put('/updateUser', userController.updateUserByEmail);
 
 module.exports = router;
