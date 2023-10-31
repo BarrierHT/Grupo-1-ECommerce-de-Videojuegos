@@ -7,6 +7,7 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 
 //Modelo del producto
 const Product = require('../app').models.product;
+const Requeriment = require('../app').models.requeriment;
 
 function readProductsFile() {
   const productsData = fs.readFileSync(productsFilePath, 'utf8');
@@ -67,8 +68,8 @@ exports.getEditProduct = (req, res, next) => {
   }
 };
 
-exports.getProductDetail = (req, res, next) => {
-  const productId = req.params.productId;
+exports.getProductDetail = async (req, res, next) => {
+  /*   const productId = req.params.productId;
   // Lógica para obtener los detalles de un producto particular
   const products = readProductsFile();
   const findProduct = products.find((product) => product.id == productId);
@@ -78,6 +79,22 @@ exports.getProductDetail = (req, res, next) => {
     res.status(404).render('404');
   } else {
     res.render('products/productDetail-standart', { findProduct });
+  } */
+  try {
+    const detail = await Product.findByPk(req.params.productId, {
+      include: [
+        {
+          model: Requeriment,
+          required: true,
+          as: 'requeriment',
+        },
+      ],
+    });
+    res.render('products/productDetail-standart', { findProduct: detail });
+    // res.send(detail);
+    //console.log(detail.dataValues.requeriment.dataValues.os_recommended);
+  } catch (error) {
+    return res.status(400).json({ message: error.message });
   }
 };
 
