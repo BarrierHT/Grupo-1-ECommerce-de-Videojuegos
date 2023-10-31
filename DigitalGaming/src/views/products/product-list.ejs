@@ -1,24 +1,28 @@
-         <%- include('../partials/head') %> 
-            
-            <!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
-            <% products.forEach(producto => { %>
-            <article class="products">
-              <a href="/products/<%= producto.id %>">
-              <img src="<%= producto.portada %>" alt="<%= producto.nombre %>-img">
-              </a>
-              <div class="flex j-content-space-betwen portada">
-                <div class="share-img flex align-center">
-                  <img src="\vectors\cart.svg" alt="carrito" class="icon-cart">
-                  <p>Agregar al carrito</p>
-                </div>
-                <p class="share-img descuentos-span bg-purple align-center flex j-content-center"><%= producto.descuento %>% Desc</p>
-              </div>
-              <div class="info flex align-center j-content-space-betwen">
-                <div class="flex f-direction-column name-game">
-                  <h3><%= producto.nombre %></h3>
-                  <p><%= producto.categoria %></p>
-                </div>
-                <p class="precio">$<%= producto.precio.toFixed(2) %></p>
-              </div>
-            </article>
-            <% }); %>
+<%- include('../partials/head') %>
+
+<!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
+<% products.forEach(products => { %>
+<article class="products">
+  <a href="/products/<%= products.id %>">
+    <img src="<%= products.cover %>" alt="<%= products.name %>-img" />
+  </a>
+  <div class="flex j-content-space-betwen portada">
+    <div class="share-img flex align-center">
+      <img src="\vectors\cart.svg" alt="carrito" class="icon-cart" />
+      <p>Agregar al carrito</p>
+    </div>
+    <p
+      class="share-img descuentos-span bg-purple align-center flex j-content-center"
+    >
+      <%= products.discount %>% Desc
+    </p>
+  </div>
+  <div class="info flex align-center j-content-space-betwen">
+    <div class="flex f-direction-column name-game">
+      <h3><%= products.name %></h3>
+      <p><%= products.category %></p>
+    </div>
+    <p class="precio">$<%= products.price %></p>
+  </div>
+</article>
+<% }); %>
