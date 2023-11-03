@@ -9,6 +9,7 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 const Product = require('../app').models.product;
 const Requeriment = require('../app').models.requeriment;
 
+
 function readProductsFile() {
   const productsData = fs.readFileSync(productsFilePath, 'utf8');
   return JSON.parse(productsData);
@@ -18,6 +19,8 @@ function readProductsFile() {
 function saveProductsToFile(products) {
   fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2), 'utf8');
 }
+
+
 
 exports.getIndex = (req, res, next) => {
   const productos = readProductsFile();
@@ -98,44 +101,71 @@ exports.getProductDetail = async (req, res, next) => {
   }
 };
 
-exports.postAddProduct = (req, res, next) => {
+exports.postAddProduct = async (req, res, next) => {
+
   // Lógica para procesar y agregar un nuevo producto
   const productData = req.body;
 
-  // Leer la lista actual de productos desde el archivo JSON
-  const products = readProductsFile();
-
-  // Generar un nuevo ID para el producto (puedes usar alguna estrategia adecuada)
+  // Leer la lista actual de productos
+  const products = Product.getAll();
   const newProductId = generateProductId();
 
-  // Crear un nuevo objeto de producto con los datos del formulario
-  const newProduct = {
-    id: newProductId,
-    nombre: productData.nombre,
-    descripcion: productData.descripcion,
-    precio: parseFloat(productData.precio), // Convierte a número
-    imagen: productData.imagen || 'undefined', // Manejo de valores nulos
-    portada: productData.portada || 'undefined',
-    video: productData.video || 'undefined',
-    categoria: productData.categoria,
-    requisitos: productData.requisitos || { MINIMOS: {}, RECOMENDADOS: {} }, // Manejo de valores nulos
-  };
-
-  // Agregar el nuevo producto a la lista de productos
-  products.push(newProduct);
-
-  // Guardar la lista de productos actualizada en el archivo JSON
-  saveProductsToFile(products);
-
-  //res.send(products);
-
-  res.redirect('/products');
+  try{
+    const newProduct = await Product.create({
+      id: newProductId(),
+      name: productData.nombre,
+      description: productData.descripcion,
+      price: parseFloat(productData.precio),
+      discount: productData.descuento,
+      image: productData.imagen || 'undefined',
+      //portada: productData.portada || 'undefined',
+      video: productData.video || 'undefined',
+      //categoria: productData.categoria,
+      //requisitos: productData.requisitos || { MINIMOS: {}, RECOMENDADOS: {} }
+    });
+    await newProduct.save();
+    console.log('new user: ', newProduct)
+    
+    return res.redirect('/products');
+  } catch (error) {
+    console.error('error al crear el producto', error);
+    return res.status(500).json({ message: 'no se completo la accion' });
+  }
 };
 
-exports.putEditProduct = (req, res, next) => {
+exports.putEditProduct = async (req, res, next) => {
   const productId = req.params.productId;
   const updatedProductData = req.body;
 
+  try {
+    const updatedFormData = {
+      name: updatedProductData.nombre,
+      description: updatedProductData.descripcion,
+      price: parseFloat(updatedProductData.precio),
+      discount: updatedProductData.descuento,
+      image: updatedProductData.image,
+      video: updatedProductData.video
+      
+    };
+    const [updatedRowsCount] = await Product.update(updatedFormData, {
+      where: {
+        id: productId,
+      },
+    });
+
+    if (updatedRowsCount === 1) {
+      console.log('edicion exitosa!');
+      return res.redirect('products/'+ productId);
+    } else {
+      console.log('producto no encontrado');
+      return res.status(404).render('404');
+    }
+  } catch (error) {
+    console.error('Error al editar el producto:', error);
+    return res.status(500).json({ message: 'no se pudo completar la accion' });
+  }
+
+  /* 
   // Leer la lista actual de productos desde el archivo JSON
   const products = readProductsFile();
 
@@ -168,22 +198,42 @@ exports.putEditProduct = (req, res, next) => {
   //res.send(products);
 
   // Redirige a la página de detalles del producto actualizado
-  res.redirect('/products/' + productId);
+  res.redirect('/products/' + productId); */
 };
 
-exports.deleteProduct = (req, res, next) => {
-  const productId = req.params.productId;
+exports.deleteProduct = async (req, res, next) => {
   // console.log(productId);
   // Lógica para eliminar un producto
   // Leer la lista actual de productos desde el archivo JSON
-  const products = readProductsFile();
+  //const products = readProductsFile();
 
   // Filtrar la lista de productos para eliminar el producto con el ID dado
-  const updatedProducts = products.filter(
+  /* const updatedProducts = products.filter(
     (product) => product.id != productId.toString(),
-  );
+  ); */
 
-  if (products.length === updatedProducts.length) {
+  const productId = req.params.productId;
+
+  try {
+    const result = await Product.destroy({
+      where: {
+        id: productId,
+      },
+    });
+
+    if (result === 1) {
+      console.log('producto eliminado');
+      return res.redirect('/products');
+    } else {
+      console.log('no encontrado');
+      return res.status(404);
+    }
+  } catch (error) {
+    console.error('error al eliminar el producto', error);
+    return res.status(500).json({ message: 'no se completo la accion' });
+  }
+
+  /* if (products.length === updatedProducts.length) {
     // Manejar el caso en que el producto no se encuentra
     res.status(404).render('404');
   } else {
@@ -191,7 +241,7 @@ exports.deleteProduct = (req, res, next) => {
     saveProductsToFile(updatedProducts);
 
     res.redirect('/products');
-  }
+  } */
 
   //res.send(updatedProducts);
 };
