@@ -16,7 +16,7 @@ router.get(
 
 router.get('/', shopController.getProducts); //Listado de productos
 
-router.get('/create', isAuth, shopController.getAddProduct); //Form de agregar productos
+router.get('/create', shopController.getAddProduct); //Form de agregar productos
 
 router.get('/:productId', shopController.getProductDetail); //Detalle de un producto particular
 

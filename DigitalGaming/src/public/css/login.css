@@ -114,7 +114,7 @@ input::placeholder {
 }
 @media screen and (min-width: 780px) {
 	.login-container{
-		height: 40rem;
+		height: 32rem;
 		width: 25rem;
 	}
 	.login-box{
