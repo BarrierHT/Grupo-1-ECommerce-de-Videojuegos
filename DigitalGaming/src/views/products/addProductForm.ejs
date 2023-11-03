@@ -10,11 +10,11 @@
             <div class="page-container">
                 <div class="input-container-editProduct text-white size-font-parr">
                         <div class="form">
-                            <form action="/products" method="post" id="form">
+                            <form action="/products/" method="post" id="form" enctype="multipart/form-data">
                             <label for="username">Nombre del Nuevo Producto:</label>
                             <input type="text" id="nameProduct" name="nombre" placeholder="Enter your name new product" required><br><hr>
                             <label for="pay">Categoría:</label>
-                            <select class="select-estilizado" id="options" name="categoria">
+  <!--                           <select class="select-estilizado" id="options" name="categoria">
                               <option value="" disabled selected>Seleccione una categoría</option>
                               <option value="accion">Accion</option>
                               <option value="aventure">Aventura</option>
@@ -24,21 +24,33 @@
                               <option value="simulacion">Simulacion</option>
                               <option value="horror">Horror</option>
                               <option value="otra">Otro</option>
-                          </select>
+                          </select> -->
                           <input type="text" id="otraOption" name="categoria" placeholder="Ingrese otra opción" style="display: none;">
                             <br><hr>
                             <label for="imagen">Imagen:</label>
                             <input class="file-imagen" type="file" name="imagen" id="imagen" accept="image/*">
                             <div id="miniatura" style="display: none;"></div>
                             <br><hr>
-                            <label for="platform">Preferencias de Plataforma:</label>
+                            <label for="portada">Portada:</label>
+                            <input class="file-imagen" type="file" name="portada" id="imagen" accept="image/*">
+                            <div id="miniatura" style="display: none;"></div>
+                            <br><hr>
+                            <label for="video">Video:</label>
+                            <input class="file-imagen" type="file" name="video" id="imagen" accept="image/*">
+                            <div id="miniatura" style="display: none;"></div>
+                            <br><hr>
+                             <label for="descuento">Descuento:</label>
+                            <input class="file-imagen" type="number" name="discount" id="imagen" accept="image/*">
+                            <div id="miniatura" style="display: none;"></div>
+                            <br><hr>
+                           <!--  <label for="platform">Preferencias de Plataforma:</label>
                             <select class="select-estilizado" id="options" name="plataforma">
                                 <option value="" disabled selected>Seleccione una plataforma</option>
                                 <option value="pc">PC</option>
                                 <option value="console">Consola (PlayStation, Xbox, Nintendo Switch)</option>
                                 <option value="moviles">Dispositivos Moviles</option>
                             </select>
-                            <br><hr>
+                            <br><hr> -->
                             <label for="price">Precio $:</label>
                             <input type="number" id="price" name="precio" step="0.01" min="0" placeholder="Enter your price" required>
                             <br><hr>

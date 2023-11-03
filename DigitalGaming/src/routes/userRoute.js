@@ -23,7 +23,7 @@ router.post(
   authController.postSignUp,
 );
 
-router.get('/getUser', userController.getUserByEmail);
+// router.get('/getUser', userController.getUserByEmail);
 //router.delete('/deleteUser', userController.deleteUserByEmail);
 //router.put('/updateUser', userController.updateUserByEmail);
 

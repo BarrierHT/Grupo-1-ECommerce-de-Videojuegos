@@ -12,14 +12,18 @@
         >
           <div class="detail-portada flex align-center j-content-center">
             <span>X</span>
-            <img src="<%= findProduct.cover %>" alt="nfs" class="img" />
+            <img
+              src="/img/productsBD/<%= detail.image %>"
+              alt="nfs"
+              class="img"
+            />
             <span>X</span>
           </div>
           <div
             class="detail-info text-white flex f-direction-column align-center"
           >
             <div class="div-game-title">
-              <H1 class="tamano-title"><%= findProduct.name %></H1>
+              <H1 class="tamano-title"><%= detail.name %></H1>
               <span class="text-subtitle">Pc/Windows</span>
             </div>
             <h3>Elige el formato</h3>
@@ -28,12 +32,12 @@
             >
               <a href="" class="formato bg-dark not-link text-white text-center"
                 >Fisico<span class="price-format bg-white text-dark"
-                  >$<%= findProduct.price %></span
+                  >$<%= detail.price %></span
                 ></a
               >
               <a href="" class="formato bg-dark not-link text-white text-center"
                 >Digital<span class="price-format bg-white text-dark"
-                  >$<%= findProduct.price %></span
+                  >$<%= detail.price %></span
                 ></a
               >
             </section>
@@ -49,19 +53,19 @@
               >COMPRAR AHORA</a
             >
             <form
-              action="/products/<%= findProduct.id %>?_method=DELETE"
+              action="/products/<%= detail.id %>/delete?_method=DELETE"
               method="post"
             >
               <input type="hidden" name="_method" value="DELETE" />
               <button
-                class="btn-generic bg-red not-link text-white text-center"
+                class="btn-generic bg-red not-link text-white text-center pointer"
                 type="submit"
               >
                 Eliminar
               </button>
               <a
                 class="btn-generic bg-limagreen not-link text-white text-center"
-                href="/products/<%= findProduct.id %>/edit"
+                href="/products/<%= detail.id %>/edit"
                 >Editar</a
               >
             </form>
@@ -75,11 +79,11 @@
         class="h-100 detail-description flex f-direction-column align-center j-content-center"
       >
         <article class="text-white article-desc flex f-direction-column">
-          <h1 class="tamano-title"><%= findProduct.name %></h1>
-          <p><%= findProduct.description %></p>
+          <h1 class="tamano-title"><%=detail.name %></h1>
+          <p><%= detail.description %></p>
         </article>
         <video class="detail-video" autoplay muted loop>
-          <source src="<%= findProduct.video %>" />
+          <source src="<%= detail.video %>" />
         </video>
       </section>
       <section class="requisitos h-100 flex f-direction-column w-100">
@@ -99,31 +103,25 @@
                 <thead></thead>
                 <tr>
                   <td>Sistema Operativo:</td>
-                  <td><%= findProduct.requeriment.dataValues.os_minumum %></td>
+                  <td><%= detail.requeriment.dataValues.os_minumum %></td>
                 </tr>
                 <tr>
                   <td>Procesador:</td>
                   <td>
-                    <%= findProduct.requeriment.dataValues.processor_minimum %>
+                    <%= detail.requeriment.dataValues.processor_minimum %>
                   </td>
                 </tr>
                 <tr>
                   <td>Memoria:</td>
-                  <td>
-                    <%= findProduct.requeriment.dataValues.memory_minimum %>
-                  </td>
+                  <td><%= detail.requeriment.dataValues.memory_minimum %></td>
                 </tr>
                 <tr>
                   <td>Gráficos:</td>
-                  <td>
-                    <%= findProduct.requeriment.dataValues.graphic_minimum %>
-                  </td>
+                  <td><%= detail.requeriment.dataValues.graphic_minimum %></td>
                 </tr>
                 <tr>
                   <td>Almacenamiento:</td>
-                  <td>
-                    <%= findProduct.requeriment.dataValues.storage_minimum %>
-                  </td>
+                  <td><%= detail.requeriment.dataValues.storage_minimum %></td>
                 </tr>
               </tbody>
             </table>
@@ -136,35 +134,30 @@
               <tbody class="text-subtitle">
                 <tr>
                   <td>Sistema operativo:</td>
-                  <td>
-                    <%= findProduct.requeriment.dataValues.os_recommended %>
-                  </td>
+                  <td><%= detail.requeriment.dataValues.os_recommended %></td>
                 </tr>
                 <tr>
                   <td>Procesador:</td>
                   <td>
-                    <%= findProduct.requeriment.dataValues.processor_recommended
-                    %>
+                    <%= detail.requeriment.dataValues.processor_recommended %>
                   </td>
                 </tr>
                 <tr>
                   <td>Memoria</td>
                   <td>
-                    <%= findProduct.requeriment.dataValues.memory_recommended %>
+                    <%= detail.requeriment.dataValues.memory_recommended %>
                   </td>
                 </tr>
                 <tr>
                   <td>Gráficos:</td>
                   <td>
-                    <%= findProduct.requeriment.dataValues.graphic_recommended
-                    %>
+                    <%= detail.requeriment.dataValues.graphic_recommended %>
                   </td>
                 </tr>
                 <tr>
                   <td>Almacenamiento:</td>
                   <td>
-                    <%= findProduct.requeriment.dataValues.storage_recommended
-                    %>
+                    <%= detail.requeriment.dataValues.storage_recommended %>
                   </td>
                 </tr>
               </tbody>

@@ -8,7 +8,8 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 //Modelo del producto
 const Product = require('../app').models.product;
 const Requeriment = require('../app').models.requeriment;
-
+const Product_category = require('../app').models.product_category;
+const Product_platform = require('../app').models.product_platform;
 
 function readProductsFile() {
   const productsData = fs.readFileSync(productsFilePath, 'utf8');
@@ -19,8 +20,6 @@ function readProductsFile() {
 function saveProductsToFile(products) {
   fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2), 'utf8');
 }
-
-
 
 exports.getIndex = (req, res, next) => {
   const productos = readProductsFile();
@@ -93,7 +92,7 @@ exports.getProductDetail = async (req, res, next) => {
         },
       ],
     });
-    res.render('products/productDetail-standart', { findProduct: detail });
+    res.render('products/productDetail-standart', { detail: detail });
     // res.send(detail);
     //console.log(detail.dataValues.requeriment.dataValues.os_recommended);
   } catch (error) {
@@ -102,30 +101,28 @@ exports.getProductDetail = async (req, res, next) => {
 };
 
 exports.postAddProduct = async (req, res, next) => {
-
   // Lógica para procesar y agregar un nuevo producto
   const productData = req.body;
 
   // Leer la lista actual de productos
-  const products = Product.getAll();
-  const newProductId = generateProductId();
+  //const newProductId = generateProductId();
 
-  try{
+  try {
     const newProduct = await Product.create({
-      id: newProductId(),
       name: productData.nombre,
       description: productData.descripcion,
       price: parseFloat(productData.precio),
-      discount: productData.descuento,
-      image: productData.imagen || 'undefined',
-      //portada: productData.portada || 'undefined',
-      video: productData.video || 'undefined',
-      //categoria: productData.categoria,
-      //requisitos: productData.requisitos || { MINIMOS: {}, RECOMENDADOS: {} }
+      discount: productData.discount,
+      image: req.files['imagen'][0].filename,
+      cover: req.files['portada'][0].filename,
+      video: req.files['video'][0].filename || 'video.mp4',
+      requeriment_id: null,
     });
-    await newProduct.save();
-    console.log('new user: ', newProduct)
-    
+
+    console.log(req.files);
+    // await newProduct.save();
+    //console.log('new user: ', newProduct);
+
     return res.redirect('/products');
   } catch (error) {
     console.error('error al crear el producto', error);
@@ -144,8 +141,7 @@ exports.putEditProduct = async (req, res, next) => {
       price: parseFloat(updatedProductData.precio),
       discount: updatedProductData.descuento,
       image: updatedProductData.image,
-      video: updatedProductData.video
-      
+      video: updatedProductData.video,
     };
     const [updatedRowsCount] = await Product.update(updatedFormData, {
       where: {
@@ -155,7 +151,7 @@ exports.putEditProduct = async (req, res, next) => {
 
     if (updatedRowsCount === 1) {
       console.log('edicion exitosa!');
-      return res.redirect('products/'+ productId);
+      return res.redirect('products/' + productId);
     } else {
       console.log('producto no encontrado');
       return res.status(404).render('404');
@@ -215,6 +211,18 @@ exports.deleteProduct = async (req, res, next) => {
   const productId = req.params.productId;
 
   try {
+    await Product_category.destroy({
+      where: {
+        product_id: productId,
+      },
+    });
+
+    await Product_platform.destroy({
+      where: {
+        product_id: productId,
+      },
+    });
+
     const result = await Product.destroy({
       where: {
         id: productId,
@@ -246,7 +254,7 @@ exports.deleteProduct = async (req, res, next) => {
   //res.send(updatedProducts);
 };
 
-function generateProductId() {
+/* function generateProductId() {
   // Utiliza uuidv4 para generar un ID único
   return uuidv4();
-}
+} */
