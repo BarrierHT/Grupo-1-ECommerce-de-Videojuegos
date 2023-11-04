@@ -4,6 +4,7 @@ const router = express.Router();
 const shopController = require('../controllers/shop');
 
 const isAuth = require('../middlewares/is-Auth').isAuth;
+const uploadFiles = require('../middlewares/multerProduct');
 
 router.get('/productCart', isAuth, shopController.getCart);
 router.get(
@@ -13,12 +14,11 @@ router.get(
 );
 
 // router.get('/editProductForm/:productId', shopController.getEditProduct);
+router.get('/create', shopController.getAddProduct); //Formulario para crear un producto
+router.post('/', shopController.postAddProduct); //Crear producto
 
 router.get('/', shopController.getProducts); //Listado de productos
 router.get('/:productId', shopController.getProductDetail); //Detalle de un producto particular
-
-router.get('/create', shopController.getAddProduct); //Form de agregar productos
-router.post('/', isAuth, shopController.postAddProduct); //Crear producto
 
 router.get('/:productId/edit', isAuth, shopController.getEditProduct); //Formulario de editar producto
 router.put('/:productId', isAuth, shopController.putEditProduct); //Editar producto
