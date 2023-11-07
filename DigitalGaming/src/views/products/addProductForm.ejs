@@ -10,9 +10,12 @@
             <div class="page-container">
                 <div class="input-container-editProduct text-white size-font-parr">
                         <div class="form">
-                            <form action="/products/" method="post" id="form" enctype="multipart/form-data">
+                            <form action="/products/create" method="POST" id="form" enctype="multipart/form-data">
                             <label for="username">Nombre del Nuevo Producto:</label>
                             <input type="text" id="nameProduct" name="nombre" placeholder="Enter your name new product" required>
+                            <br><hr>
+                            <label for="description">Descripcion:</label>
+                            <textarea class="description-input"type="text" id="description" name="descripcion" placeholder="Enter your description" required></textarea>
                             <br><hr>
                             <label for="price">Precio $:</label>
                             <input type="number" id="price" name="precio" step="0.01" min="0" placeholder="Enter your price" required>
@@ -22,15 +25,15 @@
                            <div id="miniatura" style="display: none;"></div>
                            <br><hr>
                            <label for="categoria">Categorias:</label>
-                           <input type="checkbox" name="categotias[]" id="categoria1" value="">
+                           <input type="checkbox" name="categoria_1" id="categoria_1" value="1">
                            <label for="categoria1">Acción</label>
-                           <input type="checkbox" name="categotias[]" id="categoria2" value="">
+                           <input type="checkbox" name="categoria_2" id="categoria_2" value="2">
                            <label for="categoria2">Aventura</label>
-                           <input type="checkbox" name="categotias[]" id="categoria3" value="">
+                           <input type="checkbox" name="categoria_3" id="categoria_3" value="3">
                            <label for="categoria3">RPG</label>
-                           <input type="checkbox" name="categotias[]" id="categoria4" value="">
+                           <input type="checkbox" name="categoria_4" id="categoria_4" value="4">
                            <label for="categoria1">Estrategia</label>
-                           <input type="checkbox" name="categotias[]" id="categoria5" value="">
+                           <input type="checkbox" name="categoria_5" id="categoria_5" value="5">
                            <label for="categoria1">Deportes</label>
                            <br><hr>
                            <label for="plataforma">Plataforma:</label>
@@ -40,9 +43,6 @@
                             <option value="3">PlayStation</option>
                             <option value="4">Nintendo Switch</option>
                            </select>
-                           <br><hr>
-                           <label for="description">Descripcion:</label>
-                           <textarea class="description-input"type="text" id="description" name="descripcion" placeholder="Enter your description" required></textarea>
                            <br><hr>
                            <label for="reqMinimum">Requisitos Minimos:</label>
                            <input type="text" name="os_m" id="os_m" placeholder="Sistema Operativo">
@@ -67,7 +67,7 @@
                             <div id="miniatura" style="display: none;"></div>
                             <br><hr>
                             <label for="video">Video:</label>
-                            <input class="file-imagen" type="file" name="video" id="imagen" accept="image/*">
+                            <input class="file-imagen" type="file" name="video" id="imagen" accept="video/.mp4">
                             <div id="miniatura" style="display: none;"></div>
                             <br><hr>
                             <button class="btn-edit" type="submit">Agregar Producto</button>

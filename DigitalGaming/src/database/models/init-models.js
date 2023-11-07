@@ -22,48 +22,62 @@ function initModels(sequelize) {
   var rol = _rol(sequelize, DataTypes);
   var user = _user(sequelize, DataTypes);
 
-  product_category.belongsTo(category, {
-    as: 'category',
-    foreignKey: 'category_id',
-  });
-  category.hasMany(product_category, {
-    as: 'product_categories',
-    foreignKey: 'category_id',
-  });
-  product_platform.belongsTo(platform, {
-    as: 'platform',
-    foreignKey: 'platform_id',
-  });
-  platform.hasMany(product_platform, {
-    as: 'product_platforms',
-    foreignKey: 'platform_id',
-  });
-  product_category.belongsTo(product, {
-    as: 'product',
-    foreignKey: 'product_id',
-  });
-  product.hasMany(product_category, {
-    as: 'product_categories',
-    foreignKey: 'product_id',
-  });
-  product_platform.belongsTo(product, {
-    as: 'product',
-    foreignKey: 'product_id',
-  });
-  product.hasMany(product_platform, {
-    as: 'product_platforms',
-    foreignKey: 'product_id',
-  });
+  //--------------Asociaciones del modelo Product----------------------//
   product.belongsTo(requeriment, {
     as: 'requeriment',
     foreignKey: 'requirement_id',
   });
+  product.belongsToMany(category, {
+    as: 'categories',
+    through: 'product_category',
+    foreignKey: 'product_id',
+    otherKey: 'category_id',
+  });
+  product.belongsToMany(platform, {
+    as: 'platforms',
+    through: 'product_platform',
+    foreignKey: 'product_id',
+    otherKey: 'platform_id',
+  });
+  //------------------Asociaciones del modelo Category---------------------//
+  category.belongsToMany(product, {
+    as: 'products',
+    through: 'product_category',
+    foreignKey: 'category_id',
+    otherKey: 'product_id',
+  });
+  //--------------------Asociaciones del modelo Platform------------------//
+  platform.belongsToMany(product, {
+    as: 'products',
+    through: 'product_platform',
+    foreignKey: 'platform_id',
+    otherKey: 'product_id',
+  });
+  //-----------------Asociaciones del modelo Requeriment---------------//
   requeriment.hasMany(product, {
     as: 'products',
     foreignKey: 'requirement_id',
   });
+  //-----------------Asociaciones del modelo User---------------//
   user.belongsTo(rol, { as: 'rol', foreignKey: 'rol_id' });
+  //-----------------Asociaciones del modelo Rol---------------//
   rol.hasMany(user, { as: 'users', foreignKey: 'rol_id' });
+  /*   product_category.belongsTo(category, {
+    as: 'category',
+    foreignKey: 'category_id',
+  }); */
+  /*   product_platform.belongsTo(platform, {
+    as: 'platform',
+    foreignKey: 'platform_id',
+  }); */
+  /*   product_category.belongsTo(product, {
+    as: 'product',
+    foreignKey: 'product_id',
+  }); */
+  /*   product_platform.belongsTo(product, {
+    as: 'product',
+    foreignKey: 'product_id',
+  }); */
 
   return {
     cart,

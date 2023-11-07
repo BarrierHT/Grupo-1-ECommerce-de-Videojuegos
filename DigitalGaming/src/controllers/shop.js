@@ -8,8 +8,8 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 //Modelo del producto
 const Product = require('../app').models.product;
 const Requeriment = require('../app').models.requeriment;
-const Product_category = require('../app').models.product_category;
-const Product_platform = require('../app').models.product_platform;
+const Category = require('../app').models.category;
+const Platform = require('../app').models.platform;
 
 function readProductsFile() {
   const productsData = fs.readFileSync(productsFilePath, 'utf8');
@@ -80,10 +80,51 @@ exports.postAddProduct = async (req, res, next) => {
   // Lógica para procesar y agregar un nuevo producto
   try {
     const productData = req.body;
-    console.log(productData);
 
-    let newProduct = await Product.create({});
+    const platformId = productData.plataforma;
 
+    let categoryAssociate = [
+      parseInt(productData.category_1),
+      parseInt(productData.category_2),
+      parseInt(productData.category_3),
+      parseInt(productData.category_4),
+      parseInt(productData.category_5),
+    ];
+    categoryAssociate = categoryAssociate.filter((item) => {
+      return item != undefined;
+    });
+
+    let newRequeriment = await Requeriment.create({
+      os_recommended: productData.os_r,
+      os_minumum: productData.os_m,
+      processor_recommended: productData.procesador_r,
+      processor_minimun: productData.procesador_m,
+      memory_recommended: productData.memoria_r,
+      memory_minimum: productData.memoria_m,
+      graphic_recommended: productData.graficos_r,
+      graphic_minimum: productData.graficos_m,
+      storage_recommended: productData.almacenamiento_r,
+      storage_minimum: productData.almacenamiento_m,
+    });
+    let newProduct = await Product.create({
+      name: productData.nombre,
+      description: productData.descripcion,
+      price: productData.precio,
+      discount: productData.descuento,
+      image: req.files['imagen'][0].filename,
+      cover: req.files['portada'][0].filename,
+      video: req.files['video'][0].filename,
+      requeriment_id: newRequeriment.id,
+    });
+    await newProduct.addPlatform(Platform.findByPk(platformId));
+
+    let addValuesCategory = categoryAssociate.map((item) => {
+      return Category.findByPk(item);
+    });
+
+    await console.log(newProduct.addCategory(addValuesCategory));
+
+    console.log(req.body);
     return res.redirect('/products');
   } catch (error) {
     console.error('error al crear el producto', error);
@@ -105,7 +146,6 @@ exports.getEditProduct = (req, res, next) => {
     res.render('products/editProductForm', { product });
   }
 };
-
 //Manda los datos del formulario a la base de datos
 exports.putEditProduct = async (req, res, next) => {
   const productId = req.params.productId;
