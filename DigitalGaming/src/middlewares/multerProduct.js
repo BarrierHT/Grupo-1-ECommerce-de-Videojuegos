@@ -14,11 +14,7 @@ const storage = multer.diskStorage({
     }
   },
   destination: (req, file, cb) => {
-    if (file.fieldname === 'imagen' && file.fieldname === 'portada') {
-      cb(null, path.join(__dirname, '../public/img/productsBD'));
-    } else if (file.fieldname === 'video') {
-      cb(null, path.join(__dirname, '../public/videos'));
-    }
+    cb(null, path.join(__dirname, '../public/img/productsBD'));
   },
   filename: (req, file, cb) => {
     cb(
@@ -28,6 +24,6 @@ const storage = multer.diskStorage({
   },
 });
 
-const uploadFiles = multer({ storage });
+const uploadFiles = multer({ storage: storage });
 
 module.exports = uploadFiles;

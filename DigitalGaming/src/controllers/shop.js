@@ -10,6 +10,8 @@ const Product = require('../app').models.product;
 const Requeriment = require('../app').models.requeriment;
 const Category = require('../app').models.category;
 const Platform = require('../app').models.platform;
+const Product_category = require('../app').models.product_category;
+const Product_platform = require('../app').models.product_platform;
 
 function readProductsFile() {
   const productsData = fs.readFileSync(productsFilePath, 'utf8');
@@ -79,26 +81,32 @@ exports.getAddProduct = (req, res, next) => {
 exports.postAddProduct = async (req, res, next) => {
   // Lógica para procesar y agregar un nuevo producto
   try {
-    const productData = req.body;
+    const productData = req.body; //tiene los datos del formulario
 
-    const platformId = productData.plataforma;
+    const platformId = parseInt(productData.plataforma); //toma el valor de la plataforma y lo parse a un integer
 
+    //almacena un array con los valores de la categorias
     let categoryAssociate = [
-      parseInt(productData.category_1),
-      parseInt(productData.category_2),
-      parseInt(productData.category_3),
-      parseInt(productData.category_4),
-      parseInt(productData.category_5),
+      productData.categoria_1,
+      productData.categoria_2,
+      productData.categoria_3,
+      productData.categoria_4,
+      productData.categoria_5,
     ];
+
     categoryAssociate = categoryAssociate.filter((item) => {
       return item != undefined;
     });
+    let parseCategory = categoryAssociate.map((item) => {
+      return parseInt(item);
+    });
 
+    //Variable que almacena el objeto creado para los requerimientos de la pc
     let newRequeriment = await Requeriment.create({
       os_recommended: productData.os_r,
       os_minumum: productData.os_m,
       processor_recommended: productData.procesador_r,
-      processor_minimun: productData.procesador_m,
+      processor_minimum: productData.procesador_m,
       memory_recommended: productData.memoria_r,
       memory_minimum: productData.memoria_m,
       graphic_recommended: productData.graficos_r,
@@ -106,6 +114,7 @@ exports.postAddProduct = async (req, res, next) => {
       storage_recommended: productData.almacenamiento_r,
       storage_minimum: productData.almacenamiento_m,
     });
+    //variable que almacenará la creación del producto con los datos obtenidos en el body
     let newProduct = await Product.create({
       name: productData.nombre,
       description: productData.descripcion,
@@ -114,27 +123,33 @@ exports.postAddProduct = async (req, res, next) => {
       image: req.files['imagen'][0].filename,
       cover: req.files['portada'][0].filename,
       video: req.files['video'][0].filename,
-      requeriment_id: newRequeriment.id,
-    });
-    await newProduct.addPlatform(Platform.findByPk(platformId));
-
-    let addValuesCategory = categoryAssociate.map((item) => {
-      return Category.findByPk(item);
+      requirement_id: newRequeriment.id,
     });
 
-    await console.log(newProduct.addCategory(addValuesCategory));
+    //Variable que almacena el objeto que contiene el registro segun la variable platformId
+    let idPlatform = await Platform.findByPk(platformId);
+    await newProduct.setPlatforms(idPlatform.id);
 
-    console.log(req.body);
-    return res.redirect('/products');
+    //Bucle para crear los registros de la tabla de product_category
+    for (let i = 0; i < parseCategory.length; i++) {
+      const elementCategory = parseCategory[i];
+
+      await Product_category.create({
+        product_id: newProduct.id,
+        category_id: elementCategory,
+      });
+    }
+
+    res.redirect('/products');
   } catch (error) {
     console.error('error al crear el producto', error);
-    return res.status(500).json({ message: 'no se completo la accion' });
+    return res.status(500).json({ message: error });
   }
 };
 
 //Trae el formulario para editar un producto YA CREADO
-exports.getEditProduct = (req, res, next) => {
-  const productId = req.params.productId;
+exports.getEditProduct = async (req, res, next) => {
+  /*   const productId = req.params.productId;
   // Obtener los datos del producto para editar
   const products = readProductsFile();
   const product = products.find((p) => p.id == productId.toString());
@@ -144,35 +159,78 @@ exports.getEditProduct = (req, res, next) => {
     res.status(404).render('404');
   } else {
     res.render('products/editProductForm', { product });
-  }
+  } */
+  const requerimentDestroy = await Product.findByPk(req.params.productId, {
+    include: [
+      {
+        model: Requeriment,
+        required: true,
+        as: 'requeriment',
+      },
+    ],
+  });
+  console.log(requerimentDestroy.requeriment.id);
+  let product = await Product.findByPk(req.params.productId, {
+    include: [
+      {
+        model: Requeriment,
+        required: true,
+        as: 'requeriment',
+      },
+    ],
+  });
+  res.render('products/editProductForm', { product: product });
 };
 //Manda los datos del formulario a la base de datos
 exports.putEditProduct = async (req, res, next) => {
-  const productId = req.params.productId;
-  const updatedProductData = req.body;
-
   try {
-    const updatedFormData = {
-      name: updatedProductData.nombre,
-      description: updatedProductData.descripcion,
-      price: parseFloat(updatedProductData.precio),
-      discount: updatedProductData.descuento,
-      image: updatedProductData.image,
-      video: updatedProductData.video,
-    };
-    const [updatedRowsCount] = await Product.update(updatedFormData, {
-      where: {
-        id: productId,
-      },
+    const productId = req.params.productId;
+    const updatedProductData = req.body;
+    let product = await Product.findByPk(req.params.productId, {
+      include: [
+        {
+          model: Requeriment,
+          required: true,
+          as: 'requeriment',
+        },
+      ],
     });
 
-    if (updatedRowsCount === 1) {
-      console.log('edicion exitosa!');
-      return res.redirect('products/' + productId);
-    } else {
-      console.log('producto no encontrado');
-      return res.status(404).render('404');
-    }
+    await Requeriment.update(
+      {
+        os_recommended: updatedProductData.os_r,
+        os_minumum: updatedProductData.os_m,
+        processor_recommended: updatedProductData.procesador_r,
+        processor_minimum: updatedProductData.procesador_m,
+        memory_recommended: updatedProductData.memoria_r,
+        memory_minimum: updatedProductData.memoria_m,
+        graphic_recommended: updatedProductData.graficos_r,
+        graphic_minimum: updatedProductData.graficos_m,
+        storage_recommended: updatedProductData.almacenamiento_r,
+        storage_minimum: updatedProductData.almacenamiento_m,
+      },
+      {
+        where: {
+          id: product.requeriment.id,
+        },
+      },
+    );
+
+    await Product.update(
+      {
+        name: updatedProductData.nombre,
+        description: updatedProductData.descripcion,
+        price: updatedProductData.precio,
+        discount: updatedProductData.descuento,
+      },
+      {
+        where: {
+          id: productId,
+        },
+      },
+    );
+
+    res.redirect(`/products/${productId}`);
   } catch (error) {
     console.error('Error al editar el producto:', error);
     return res.status(500).json({ message: 'no se pudo completar la accion' });
@@ -181,9 +239,10 @@ exports.putEditProduct = async (req, res, next) => {
 
 //Elimina el producto seleccionado por su ID
 exports.deleteProduct = async (req, res, next) => {
-  const productId = req.params.productId;
-
   try {
+    const productId = req.params.productId;
+    let requerimentDestroy = await Product.findByPk(req.params.productId);
+
     await Product_category.destroy({
       where: {
         product_id: productId,
@@ -196,19 +255,18 @@ exports.deleteProduct = async (req, res, next) => {
       },
     });
 
-    const result = await Product.destroy({
+    await Product.destroy({
       where: {
         id: productId,
       },
     });
 
-    if (result === 1) {
-      console.log('producto eliminado');
-      return res.redirect('/products');
-    } else {
-      console.log('no encontrado');
-      return res.status(404);
-    }
+    await Requeriment.destroy({
+      where: {
+        id: requerimentDestroy.requirement_id,
+      },
+    });
+    res.redirect('/products');
   } catch (error) {
     console.error('error al eliminar el producto', error);
     return res.status(500).json({ message: 'no se completo la accion' });
