@@ -16,15 +16,15 @@ router.get('/logout', isAuth, authController.getLogout);
 
 router.get('/register', isNotAuth, authController.getSignUp);
 router.post(
-	'/register',
-	isNotAuth,
-	multer,
-	validationsSignUp,
-	authController.postSignUp
+  '/register',
+  isNotAuth,
+  multer,
+  validationsSignUp,
+  authController.postSignUp,
 );
 
-router.get('/getUser', userController.getUserByEmail);
-router.delete('/deleteUser', userController.deleteUserByEmail);
-router.put('/updateUser', userController.updateUserByEmail);
+// router.get('/getUser', userController.getUserByEmail);
+//router.delete('/deleteUser', userController.deleteUserByEmail);
+//router.put('/updateUser', userController.updateUserByEmail);
 
 module.exports = router;
