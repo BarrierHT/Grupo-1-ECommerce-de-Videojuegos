@@ -25,6 +25,9 @@ const validationProduct = [
       let arrayNombre = nombreArchivo.split('.');
       let extension = arrayNombre.pop();
 
+      if (!value['imagen']) {
+        throw new Error('Debe proporcionar un archivo');
+      }
       if (extension != 'jpg' && extension != 'png' && extension != 'jpeg') {
         throw new Error('Tiene que ser un archivo de imagen');
       }
@@ -49,9 +52,7 @@ const validationProduct = [
       let arrayNombre = nombreArchivo.split('.');
       let extension = arrayNombre.pop();
 
-      if (nombreArchivo == 0) {
-        throw new Error('Este campo es obligatorio');
-      } else if (extension != 'mkv' && extension != 'mp4') {
+      if (extension != 'mkv' && extension != 'mp4') {
         throw new Error('Tiene que ser un archivo de video');
       }
       return true;
