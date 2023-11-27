@@ -2,6 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
+//Validaciones de los productos
+const { validationResult } = require('express-validator');
+
 // Ruta al archivo JSON de productos
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 
@@ -80,70 +83,81 @@ exports.getAddProduct = (req, res, next) => {
 
 exports.postAddProduct = async (req, res, next) => {
   // Lógica para procesar y agregar un nuevo producto
-  try {
-    const productData = req.body; //tiene los datos del formulario
 
-    const platformId = parseInt(productData.plataforma); //toma el valor de la plataforma y lo parse a un integer
+  const validation = validationResult(req);
 
-    //almacena un array con los valores de la categorias
-    let categoryAssociate = [
-      productData.categoria_1,
-      productData.categoria_2,
-      productData.categoria_3,
-      productData.categoria_4,
-      productData.categoria_5,
-    ];
-
-    categoryAssociate = categoryAssociate.filter((item) => {
-      return item != undefined;
+  if (validation.errors.length > 0) {
+    // console.log('Errors: ', validation.errors.length);
+    res.render('products/addProductForm', {
+      errors: validation.mapped(),
+      oldValue: req.body,
     });
-    let parseCategory = categoryAssociate.map((item) => {
-      return parseInt(item);
-    });
+  } else {
+    try {
+      const productData = req.body; //tiene los datos del formulario
 
-    //Variable que almacena el objeto creado para los requerimientos de la pc
-    let newRequeriment = await Requeriment.create({
-      os_recommended: productData.os_r,
-      os_minumum: productData.os_m,
-      processor_recommended: productData.procesador_r,
-      processor_minimum: productData.procesador_m,
-      memory_recommended: productData.memoria_r,
-      memory_minimum: productData.memoria_m,
-      graphic_recommended: productData.graficos_r,
-      graphic_minimum: productData.graficos_m,
-      storage_recommended: productData.almacenamiento_r,
-      storage_minimum: productData.almacenamiento_m,
-    });
-    //variable que almacenará la creación del producto con los datos obtenidos en el body
-    let newProduct = await Product.create({
-      name: productData.nombre,
-      description: productData.descripcion,
-      price: productData.precio,
-      discount: productData.descuento,
-      image: req.files['imagen'][0].filename,
-      cover: req.files['portada'][0].filename,
-      video: req.files['video'][0].filename,
-      requirement_id: newRequeriment.id,
-    });
+      const platformId = parseInt(productData.plataforma); //toma el valor de la plataforma y lo parse a un integer
 
-    //Variable que almacena el objeto que contiene el registro segun la variable platformId
-    let idPlatform = await Platform.findByPk(platformId);
-    await newProduct.setPlatforms(idPlatform.id);
+      //almacena un array con los valores de la categorias
+      let categoryAssociate = [
+        productData.categoria_1,
+        productData.categoria_2,
+        productData.categoria_3,
+        productData.categoria_4,
+        productData.categoria_5,
+      ];
 
-    //Bucle para crear los registros de la tabla de product_category
-    for (let i = 0; i < parseCategory.length; i++) {
-      const elementCategory = parseCategory[i];
-
-      await Product_category.create({
-        product_id: newProduct.id,
-        category_id: elementCategory,
+      categoryAssociate = categoryAssociate.filter((item) => {
+        return item != undefined;
       });
-    }
+      let parseCategory = categoryAssociate.map((item) => {
+        return parseInt(item);
+      });
 
-    res.redirect('/products');
-  } catch (error) {
-    console.error('error al crear el producto', error);
-    return res.status(500).json({ message: error });
+      //Variable que almacena el objeto creado para los requerimientos de la pc
+      let newRequeriment = await Requeriment.create({
+        os_recommended: productData.os_r,
+        os_minumum: productData.os_m,
+        processor_recommended: productData.procesador_r,
+        processor_minimum: productData.procesador_m,
+        memory_recommended: productData.memoria_r,
+        memory_minimum: productData.memoria_m,
+        graphic_recommended: productData.graficos_r,
+        graphic_minimum: productData.graficos_m,
+        storage_recommended: productData.almacenamiento_r,
+        storage_minimum: productData.almacenamiento_m,
+      });
+      //variable que almacenará la creación del producto con los datos obtenidos en el body
+      let newProduct = await Product.create({
+        name: productData.nombre,
+        description: productData.descripcion,
+        price: productData.precio,
+        discount: productData.descuento,
+        image: req.files['imagen'][0].filename,
+        cover: req.files['portada'][0].filename,
+        video: req.files['video'][0].filename,
+        requirement_id: newRequeriment.id,
+      });
+
+      //Variable que almacena el objeto que contiene el registro segun la variable platformId
+      let idPlatform = await Platform.findByPk(platformId);
+      await newProduct.setPlatforms(idPlatform.id);
+
+      //Bucle para crear los registros de la tabla de product_category
+      for (let i = 0; i < parseCategory.length; i++) {
+        const elementCategory = parseCategory[i];
+
+        await Product_category.create({
+          product_id: newProduct.id,
+          category_id: elementCategory,
+        });
+      }
+
+      res.redirect('/products');
+    } catch (error) {
+      console.error('error al crear el producto', error);
+      return res.status(500).json({ message: error });
+    }
   }
 };
 
