@@ -9,30 +9,45 @@
             <section class="session-sect">
                 <div class="page-container">
                     <form class="login-container" action="/login" method="POST">
-
                         <div class="login-box">
                             <h1 class="tamano-title title-login flex f-direction-column align-center j-content-center">
-                                Inicia Sesión</h1>
+                                Inicia Sesión
+                            </h1>
                             <div class="input-group size-font-parr">
                                 <label for="email">Email <i class="bi bi-person"></i> </label>
-                                <input type="email" id="email" placeholder="email@ejemplo.com" name="email">
+                                <input type="email" id="email" placeholder="email@ejemplo.com" name="email"
+                                    value="<%= locals.oldValue ? oldValue.email : null %>" />
+                                <% if (locals.errors && errors.email) { %>
+                                    <p class="error-msg">
+                                        <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
                             </div>
                             <div class="input-group size-font-parr">
                                 <label for="password">
                                     Contraseña
                                     <i class="bi bi-file-lock"></i>
                                 </label>
-                                <input type="password" id="password" placeholder="Tu contraseña" name="password">
+                                <input type="password" id="password" placeholder="Tu contraseña" name="password" />
+                                <% if (locals.errors && errors.password) { %>
+                                    <p class="error-msg">
+                                        <%= errors.password.msg %>
+                                    </p>
+                                    <% } %>
                             </div>
                             <button type="submit" class="login-btn size-font-parr text-center">Ingresar</button>
                             <div class="signup-text flex f-direction-column">
                                 <span>No tienes una cuenta?</span>
                                 <span class="reg-321 pointer link" data-endpoint="/register">Regístrate!</span>
                             </div>
+                            <% if (locals.errors && errors.general) { %>
+                                <p class="error-msg">
+                                    <%= errors.general.msg %>
+                                </p>
+                                <% } %>
                         </div>
-
-
                     </form>
+
                 </div>
 
             </section>

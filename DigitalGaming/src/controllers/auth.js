@@ -38,23 +38,58 @@ exports.getLogin = (req, res, next) => {
 };
 
 exports.postLogin = async (req, res, next) => {
+	const errors = validationResult(req);
 	const { email, password } = req.body;
 
-	//console.log('login: ', email, ' ', password);
+	// Verifica si hay errores de validación
+	if (!errors.isEmpty()) {
+		return res.render('users/login', {
+			errors: errors.mapped(),
+			oldValue: req.body,
+		});
+	}
 
-	const existingUser = await User.findOne({
-		where: { email: req.body.email },
-	});
+	try {
+		const existingUser = await User.findOne({
+			where: { email: email },
+		});
 
-	if (existingUser) {
-		const hasMatch = await bcrypt.compare(password, existingUser.password);
-		if (!hasMatch) return res.redirect('/login');
+		// Verifica si el usuario existe
+		if (existingUser) {
+			const hasMatch = await bcrypt.compare(
+				password,
+				existingUser.password
+			);
 
-		// Iniciar sesión almacenando la información del usuario en la sesión
-		req.session.user = existingUser;
+			// Verifica si la contraseña coincide
+			if (!hasMatch) {
+				return res.render('users/login', {
+					errors: { password: { msg: 'Contraseña incorrecta' } },
+					oldValue: req.body,
+				});
+			}
 
-		res.redirect('/');
-	} else res.redirect('/login');
+			// Inicia sesión almacenando la información del usuario en la sesión
+			req.session.user = existingUser;
+			return res.redirect('/');
+		} else {
+			return res.render('users/login', {
+				errors: { email: { msg: 'Este email no está registrado' } },
+				oldValue: req.body,
+			});
+		}
+	} catch (error) {
+		// Maneja cualquier error de la base de datos u otros errores
+		console.error(error);
+		return res.render('users/login', {
+			errors: {
+				general: {
+					msg: 'Hubo un error en el servidor. Por favor, inténtalo de nuevo más tarde.',
+				},
+			},
+			oldValue: req.body,
+		});
+	}
 };
 
 exports.getSignUp = (req, res, next) => {
@@ -96,6 +131,8 @@ exports.postSignUp = async (req, res, next) => {
 				where: { email: req.body.email },
 			});
 
+			console.log('EL USUARIO YA EXISTE', existingUser);
+
 			if (existingUser) {
 				console.log('El usuario ya existe');
 
@@ -111,7 +148,10 @@ exports.postSignUp = async (req, res, next) => {
 						)
 					);
 
-				return res.redirect('/');
+				return res.render('users/register', {
+					errors: { email: { msg: 'Este email ya está registrado' } },
+					oldValue: req.body,
+				});
 				//   return res.status(400).json({ error: 'El usuario ya existe' });
 			}
 
@@ -150,7 +190,10 @@ exports.postSignUp = async (req, res, next) => {
 					)
 				);
 
-			return res.redirect('/');
+			return res.render('users/register', {
+				errors: { msg: 'Un error ocurrio' },
+				oldValue: req.body,
+			});
 		}
 	}
 };
