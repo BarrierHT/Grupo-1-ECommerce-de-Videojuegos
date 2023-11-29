@@ -87,7 +87,7 @@ Sin punto a destacar.
      
 ## Sprint 6
 
-**Starfish Retrospective: La importancia de tener Orden**
+**Starfish Retrospective: El tiempo es finito**
 
 1. Empezar a Hacer:
 Se podria reconsiderar los planes que se tenian inicialmente acerca del proyecto con sus distintas ideas que se dieron en su momento, y ver si es conveniente de cara al final de esta o las siguentes etapas
