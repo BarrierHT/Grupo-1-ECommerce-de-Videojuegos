@@ -84,5 +84,23 @@ El pair programing tiene sus ventajas, sim embargo hay que saber cuando y como h
       
 6. Dejar de Hacer:
 Sin punto a destacar.
+     
+## Sprint 6
 
-Con esta retrospectiva, buscamos mejorar nuestra colaboración, comunicación y eficiencia en futuros sprints. Implementaremos estas lecciones aprendidas para asegurarnos de que nuestro equipo continúe creciendo y entregando resultados exitosos en nuestros proyectos.
+**Starfish Retrospective: La importancia de tener Orden**
+
+1. Empezar a Hacer:
+Se podria reconsiderar los planes que se tenian inicialmente acerca del proyecto con sus distintas ideas que se dieron en su momento, y ver si es conveniente de cara al final de esta o las siguentes etapas
+    
+2. Hacer Más:   
+Hacer pruebas de rendimiento y compatibilidad con diversos dispositivos con la ayuda de las herramientas de desarrollo y asi tener un proyecto que se optimo en cuanto a funcionamiento y perder lo menos en cuanto a calidad.
+Asi tambien seria bueno documentar de mejor manera los progresos que se hacen en el transucurso de las sprints
+     
+3. Continuar Haciendo:
+Continuar con el trabajo colaborativo y siempre estar a disposicion del otro en situaciones que retrasen el progeso, y asi mismo aprender en conjunto de los mismos.
+      
+4. Hacer Menos:
+Tomar riesgos
+      
+5. Dejar de Hacer:
+Dejar tareas pendientes sin cumplir con las fechas estimadas
