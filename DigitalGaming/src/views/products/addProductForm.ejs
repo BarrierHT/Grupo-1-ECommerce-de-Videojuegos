@@ -10,7 +10,7 @@
             <div class="page-container">
                 <div class="input-container-editProduct text-white size-font-parr">
                         <div class="form">
-                            <form action="/products/create" method="POST" id="add-product" enctype="multipart/form-data">
+                            <form action="/products/create" method="POST" id="form" enctype="multipart/form-data">
                             <label for="username">Nombre del Nuevo Producto:</label>
                             <input type="text" id="nameProduct" name="nombre" placeholder="Enter your name new product" value=<%= locals.oldValue ? oldValue.nombre : null %>>
                             <% if (locals.errors && errors.nombre) { %>

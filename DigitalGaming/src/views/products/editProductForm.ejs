@@ -10,19 +10,20 @@
             <div class="page-container">
                 <div class="input-container-editProduct">
                         <div class="form text-white size size-font-parr">
-                            <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" id="form">
+                            <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" id="form-edit-prod">
                             <input type="hidden" name="_method" value="PUT">
                             <label for="username">Editar Nombre Del Producto:</label>
-                            <input type="text" id="nameProduct" name="nombre" placeholder="Enter your name new product" value="<%= product.name %>" required>
+                            <input type="text" id="nameProduct" class="name-prod-edit" name="nombre" placeholder="Enter your name new product" value="<%= product.name %>" required>
+                            <label></label>
                             <br><hr>
                             <label for="description">Editar Descripcion:</label>
-                            <textarea class="description-input"type="text" id="description" name="descripcion" placeholder="Enter your description" required><%= product.description %></textarea>
+                            <textarea class="description-input desc-prod-edit"type="text" id="description" name="descripcion" placeholder="Enter your description" required><%= product.description %></textarea>
                             <br><hr>
                             <label for="price">Precio $:</label>
-                            <input type="number" id="price" name="precio" step="0.01" min="0" placeholder="Enter your price" value="<%= product.price %>" required>
+                            <input type="number" id="price" class="price-prod-edit" name="precio" step="0.01" min="0" placeholder="Enter your price" value="<%= product.price %>" required>
                             <br><hr>
                             <label for="descuento">Descuento %:</label>
-                           <input type="number" id="discount" name="descuento" min="0" placeholder="Enter your discount" value="<%= product.discount %>" required>
+                           <input type="number" id="discount" class="desc-prod-edit" name="descuento" min="0" placeholder="Enter your discount" value="<%= product.discount %>" required>
                            <div id="miniatura" style="display: none;"></div>
                            <br><hr>
                            <label for="categoria">Categorias:</label>
@@ -62,7 +63,7 @@
                             <button class="btn-form pointer text-white bg-limagreen" type="submit">Editar Producto</button>
                             <button class="btn-form pointer text-white bg-red" type="button">Cancelar Edicion</button>
                         </form>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
