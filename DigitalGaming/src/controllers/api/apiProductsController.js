@@ -35,9 +35,7 @@ module.exports = {
       products: data,
     });
   },
-};
-
-module.exports = {
+  
   getProductById : async (req, res) => {
 
     const productId = req.params.id;
@@ -59,4 +57,5 @@ module.exports = {
     }
   }
 };
+
 
