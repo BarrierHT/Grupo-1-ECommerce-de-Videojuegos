@@ -37,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
 			user_image: {
 				type: DataTypes.STRING(120),
 				allowNull: true,
-				defaultValue: 'defauli.png',
+				defaultValue: '/defauli.png',
 			},
 		},
 		{
