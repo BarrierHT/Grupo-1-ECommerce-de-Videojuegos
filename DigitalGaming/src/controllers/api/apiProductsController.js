@@ -36,3 +36,27 @@ module.exports = {
     });
   },
 };
+
+module.exports = {
+  getProductById : async (req, res) => {
+
+    const productId = req.params.id;
+
+    try {
+      // Se busca en la base de datos
+      const product = await Product.findByPk(productId);
+  
+      if (!product) {
+        // error 404
+        return res.status(404).json({ message: 'Producto no encontrado' });
+      }
+  
+      // retorno de producto
+      return res.status(200).json(product);
+    } catch (error) {
+      // error al buscar
+      return res.status(500).json({ message: 'Error al buscar el producto', error: error.message });
+    }
+  }
+};
+
