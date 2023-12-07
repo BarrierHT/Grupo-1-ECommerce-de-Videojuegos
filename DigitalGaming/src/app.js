@@ -17,6 +17,10 @@ const productRoute = require('./routes/productRoute');
 const userRoute = require('./routes/userRoute');
 const adminRoute = require('./routes/adminRoute');
 
+//Rutas para las apis
+const apiProducts = require('./routes/api/apiProducts');
+const apiUsers = require('./routes/api/apiUsers');
+
 const override = require('method-override');
 
 require('dotenv').config();
@@ -62,24 +66,11 @@ app.use(morgan('dev'));
 app.use('/', mainRoute);
 app.use('/products', productRoute);
 
-// app.use('/login', (req, res, next) => {
-// 	if (res.locals.isAuthenticated) {
-// 		res.redirect('/productCart');
-// 	} else {
-// 		next();
-// 	}
-// });
-
-// app.use((req, res, next) => {
-// 	if (!res.locals.isAuthenticated) {
-// 		res.redirect('/register');
-// 	} else {
-// 		next();
-// 	}
-// });
-
 app.use(userRoute);
 app.use(adminRoute);
+
+app.use('/api/products', apiProducts);
+app.use('/api/users', apiUsers);
 
 app.use((req, res, next) => {
 	res.render('404');
