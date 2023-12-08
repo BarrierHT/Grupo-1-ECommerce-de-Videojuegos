@@ -4,6 +4,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const session = require('express-session');
+const cors = require('cors');
 const fs = require('fs');
 
 const db = require('./database/models/index');
@@ -27,18 +28,41 @@ require('dotenv').config();
 
 const app = express();
 
-const productsFilePath = path.join(__dirname, './data/productos.json');
+//const productsFilePath = path.join(__dirname, './data/productos.json');
 
-function readProductsFile() {
-	const productsData = fs.readFileSync(productsFilePath, 'utf8');
-	return JSON.parse(productsData);
-}
+// function readProductsFile() {
+// 	const productsData = fs.readFileSync(productsFilePath, 'utf8');
+// 	return JSON.parse(productsData);
+// }
+
+let corsOptions = {
+	origin: '*',
+};
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set(process.env.PORT);
 
 // app.use(express.static(__dirname + '/'));
+
+/*
+  Esto define una función llamada allowCrossDomain, que actúa como un middleware personalizado.
+  La función toma tres argumentos: req (la solicitud), res (la respuesta) y next (una función que
+  permite pasar la solicitud al siguiente middleware
+ 
+let allowCrossDomain = function(req, res, next) {
+	
+		Se establecen varias cabeceras de respuesta (res.header) para permitir que diferentes dominios 
+	   realicen solicitudes a tu servido
+	 
+	  res.header('Access-Control-Allow-Origin', "*");
+	  res.header("Access-Control-Allow-Methods", "OPTIONS, POST, GET, PUT, DELETE");
+	  res.header('Access-Control-Allow-Headers', "*");
+	  res.header("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
+	  next();
+	}
+*/
+app.use(cors(corsOptions));
 app.use(override('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
