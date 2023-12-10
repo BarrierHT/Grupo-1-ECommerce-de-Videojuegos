@@ -1,0 +1,24 @@
+<%- include('../partials/head') %> <%- include('../partials/header') %>
+        <main>
+            <section class="recomendados-section w-100 bg-dkblue flex f-direction-column">
+                <div class="container-cards flex align-center j-content-center w-100">
+                    <!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
+                    <% categories.forEach(category=> { %>
+                        <article class="products text-white">
+                            <div class="info flex align-center j-content-space-betwen">
+                                <div class="flex f-direction-column name-game">
+                                    <h3>
+                                        <%= category.name %>
+                                    </h3>
+                                </div>
+                            </div>
+                        </article>
+                        <% }); %>
+                </div>
+            </section>
+        </main>
+
+        <%- include('../partials/footer') %>
+            </body>
+
+            </html>

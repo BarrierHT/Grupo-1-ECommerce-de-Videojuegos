@@ -10,6 +10,9 @@ const fs = require('fs');
 const db = require('./database/models/index');
 const initModels = require('./database/models/init-models');
 exports.models = initModels(db.sequelize);
+const Product = initModels(db.sequelize).product;
+const Category = initModels(db.sequelize).category;
+const ProductCategory = initModels(db.sequelize).product_category;
 
 // console.log(db.sequelize.query());
 
@@ -27,13 +30,6 @@ const override = require('method-override');
 require('dotenv').config();
 
 const app = express();
-
-//const productsFilePath = path.join(__dirname, './data/productos.json');
-
-// function readProductsFile() {
-// 	const productsData = fs.readFileSync(productsFilePath, 'utf8');
-// 	return JSON.parse(productsData);
-// }
 
 let corsOptions = {
 	origin: '*',
@@ -100,19 +96,45 @@ app.use((req, res, next) => {
 	res.render('404');
 });
 
-app.use((err, req, res, next) => {
-	//ERROR MIDDLEWARE
-	console.log('Error(middleware): ', err);
-	const status = err.statusCode || 500;
-	const message = err.message || 'Server error';
-	const data = err.data || {};
-	// return res.status(status).json({ message, data })
+app.use(async (err, req, res, next) => {
+	try {
+		console.log('Error(middleware): ', err);
+		const status = err.statusCode || 500;
+		const message = err.message || 'Server error';
+		const data = err.data || {};
 
-	return res.status(status).render('index', {
-		message,
-		data,
-		productos: readProductsFile().slice(0, 8),
-	});
+		const productsFetched = await Product.findAll({
+			include: [
+				{
+					model: Category,
+					as: 'categories', // Utiliza el alias aquí
+					through: {
+						model: ProductCategory,
+						attributes: [], // Evitar traer todos los campos de la tabla intermedia
+					},
+					attributes: ['name'], // Solo traer el nombre de la categoría
+				},
+			],
+		});
+
+		//console.log('PRODUCTOS FETCHED: ', productsFetched);
+
+		const formattedProducts = productsFetched.map(product => ({
+			...product.toJSON(),
+			categories: product.categories.map(category => category.name),
+		}));
+
+		//console.log('products: ', formattedProducts);
+
+		return res.status(status).render('index', {
+			message,
+			data,
+			productos: formattedProducts,
+		});
+	} catch (error) {
+		console.error('Error fetching data:', error);
+		return res.status(500).json({ message: 'Server error' });
+	}
 });
 
 app.listen(app.get(process.env.PORT) || 3000);
