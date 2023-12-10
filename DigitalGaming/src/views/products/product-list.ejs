@@ -1,41 +1,41 @@
 <%- include('../partials/head') %> <%- include('../partials/header') %>
-<main>
-  <section class="recomendados-section w-100 bg-dkblue flex f-direction-column">
-    <div class="container-cards flex align-center j-content-center w-100">
-      <!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
-      <% products.forEach(products => { %>
-      <article class="products text-white">
-        <a href="/products/<%= products.id %>">
-          <img
-            src="img/productsBD/<%= products.cover %>"
-            alt="<%= products.name %>-img"
-          />
-        </a>
-        <div class="flex j-content-space-betwen portada">
-          <div class="share-img flex align-center">
-            <img
-              src="\vectors\cart.svg"
-              alt="carrito"
-              class="icon-cart"
-              id="icon-cart"
-            />
-            <p>Agregar al carrito</p>
-          </div>
-          <p
-            class="share-img descuentos-span bg-purple align-center flex j-content-center"
-          >
-            <%= products.discount %>% Desc
-          </p>
+    <main>
+      <section class="recomendados-section w-100 bg-dkblue flex f-direction-column">
+        <div class="container-cards flex align-center j-content-center w-100">
+          <!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
+          <% products.forEach(products=> { %>
+            <article class="products text-white">
+              <a href="/products/<%= products.id %>">
+                <img src="<%= products.cover %>" alt="<%= products.name %>-img" />
+              </a>
+              <div class="flex j-content-space-betwen portada">
+                <div class="share-img flex align-center">
+                  <img src="\vectors\cart.svg" alt="carrito" class="icon-cart" id="icon-cart" />
+                  <p>Agregar al carrito</p>
+                </div>
+                <p class="share-img descuentos-span bg-purple align-center flex j-content-center">
+                  <%= products.discount %>% Desc
+                </p>
+              </div>
+              <div class="info flex align-center j-content-space-betwen">
+                <div class="flex f-direction-column name-game">
+                  <h3>
+                    <%= products.name %>
+                  </h3>
+                  <p>
+                    <%= products.category %>
+                  </p>
+                </div>
+                <p class="precio">$<%= products.price %>
+                </p>
+              </div>
+            </article>
+            <% }); %>
         </div>
-        <div class="info flex align-center j-content-space-betwen">
-          <div class="flex f-direction-column name-game">
-            <h3><%= products.name %></h3>
-            <p><%= products.category %></p>
-          </div>
-          <p class="precio">$<%= products.price %></p>
-        </div>
-      </article>
-      <% }); %>
-    </div>
-  </section>
-</main>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+      </body>
+
+      </html>
