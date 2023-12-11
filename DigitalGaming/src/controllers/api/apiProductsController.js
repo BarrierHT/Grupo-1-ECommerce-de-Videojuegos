@@ -35,10 +35,9 @@ module.exports = {
       products: data,
     });
   },
-  
   getProductById : async (req, res) => {
 
-    const productId = req.params.id;
+    const productId = req.params.idProduct;
 
     try {
       // Se busca en la base de datos
@@ -46,16 +45,26 @@ module.exports = {
   
       if (!product) {
         // error 404
-        return res.status(404).json({ message: 'Producto no encontrado' });
+        return res.status(404).json({ 
+          status: 404,
+          message: 'Producto no encontrado'
+        });
       }
-  
+
       // retorno de producto
-      return res.status(200).json(product);
+
+      const ProductData = {
+        id : product.id,
+        name : product.name,
+        description : product.description
+      }
+      return res.status(200).json(ProductData);
     } catch (error) {
       // error al buscar
       return res.status(500).json({ message: 'Error al buscar el producto', error: error.message });
     }
   }
 };
+
 
 
