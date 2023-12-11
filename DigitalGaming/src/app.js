@@ -4,11 +4,15 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const session = require('express-session');
+const cors = require('cors');
 const fs = require('fs');
 
 const db = require('./database/models/index');
 const initModels = require('./database/models/init-models');
 exports.models = initModels(db.sequelize);
+const Product = initModels(db.sequelize).product;
+const Category = initModels(db.sequelize).category;
+const ProductCategory = initModels(db.sequelize).product_category;
 
 // console.log(db.sequelize.query());
 
@@ -27,18 +31,34 @@ require('dotenv').config();
 
 const app = express();
 
-const productsFilePath = path.join(__dirname, './data/productos.json');
-
-function readProductsFile() {
-	const productsData = fs.readFileSync(productsFilePath, 'utf8');
-	return JSON.parse(productsData);
-}
+let corsOptions = {
+	origin: '*',
+};
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set(process.env.PORT);
 
 // app.use(express.static(__dirname + '/'));
+
+/*
+  Esto define una función llamada allowCrossDomain, que actúa como un middleware personalizado.
+  La función toma tres argumentos: req (la solicitud), res (la respuesta) y next (una función que
+  permite pasar la solicitud al siguiente middleware
+ 
+let allowCrossDomain = function(req, res, next) {
+	
+		Se establecen varias cabeceras de respuesta (res.header) para permitir que diferentes dominios 
+	   realicen solicitudes a tu servido
+	 
+	  res.header('Access-Control-Allow-Origin', "*");
+	  res.header("Access-Control-Allow-Methods", "OPTIONS, POST, GET, PUT, DELETE");
+	  res.header('Access-Control-Allow-Headers', "*");
+	  res.header("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
+	  next();
+	}
+*/
+app.use(cors(corsOptions));
 app.use(override('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -76,19 +96,45 @@ app.use((req, res, next) => {
 	res.render('404');
 });
 
-app.use((err, req, res, next) => {
-	//ERROR MIDDLEWARE
-	console.log('Error(middleware): ', err);
-	const status = err.statusCode || 500;
-	const message = err.message || 'Server error';
-	const data = err.data || {};
-	// return res.status(status).json({ message, data })
+app.use(async (err, req, res, next) => {
+	try {
+		console.log('Error(middleware): ', err);
+		const status = err.statusCode || 500;
+		const message = err.message || 'Server error';
+		const data = err.data || {};
 
-	return res.status(status).render('index', {
-		message,
-		data,
-		productos: readProductsFile().slice(0, 8),
-	});
+		const productsFetched = await Product.findAll({
+			include: [
+				{
+					model: Category,
+					as: 'categories', // Utiliza el alias aquí
+					through: {
+						model: ProductCategory,
+						attributes: [], // Evitar traer todos los campos de la tabla intermedia
+					},
+					attributes: ['name'], // Solo traer el nombre de la categoría
+				},
+			],
+		});
+
+		//console.log('PRODUCTOS FETCHED: ', productsFetched);
+
+		const formattedProducts = productsFetched.map(product => ({
+			...product.toJSON(),
+			categories: product.categories.map(category => category.name),
+		}));
+
+		//console.log('products: ', formattedProducts);
+
+		return res.status(status).render('index', {
+			message,
+			data,
+			productos: formattedProducts,
+		});
+	} catch (error) {
+		console.error('Error fetching data:', error);
+		return res.status(500).json({ message: 'Server error' });
+	}
 });
 
 app.listen(app.get(process.env.PORT) || 3000);

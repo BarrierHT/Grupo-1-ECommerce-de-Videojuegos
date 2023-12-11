@@ -2,34 +2,41 @@
   <nav class="w-100 nav-proj flex align-center j-content-space-betwen">
     <div class="flex align-center w-35 j-content-around">
       <img src="/vectors/favicon.svg" alt="logo" class="logo home-navigate pointer">
-      <span class="size-font-parr link pointer not-mobile" data-endpoint="/dashboard">ADMIN</span>
-      <div class="not-tablet flag-icon pointer flex f-direction-column align-center">
-        <img src="/vectors/Pais.svg" alt="pais - AR" class="logo">
-      </div>
-      <div class="categ-nav flex text-white not-tablet align-center pointer">
-        <p class="size-font-parr">Categorias</p>
-        <span class="flex icon-double-bott"></span>
-        <section class="despcat bg-dark w-100">
-          <div class="content-cat w-100 flex align-center j-content-center ">
-            <article class="card-caregorinav flex">
-              <img src="/img/portada-marioarcade.jpg" alt="arcade mario">
-              <h1 class="tamano-title tlt-card flex align-center j-content-center">ARCADE</h1>
-            </article>
-            <article class="card-caregorinav flex">
-              <img src="/img/portada-alienav.jpg" alt="terror aliens">
-              <h1 class="tamano-title tlt-card flex align-center j-content-center">TERROR</h1>
-            </article>
-            <article class="card-caregorinav flex">
-              <img src="/img/portada-ufcdeportes.jpg" alt="arcade mario">
-              <h1 class="tamano-title tlt-card flex align-center j-content-center">DEPORTES</h1>
-            </article>
-            <article class="card-caregorinav flex">
-              <img src="/img/portada-assetonav.jpg" alt="arcade mario">
-              <h1 class="tamano-title tlt-card flex align-center j-content-center">SIMULACION</h1>
-            </article>
-          </div>
-        </section>
-      </div>
+
+      <% if(user !=undefined) {%>
+        <% if(user.rol.name=="Administrador" ) {%>
+          <span class="size-font-parr link pointer not-mobile" data-endpoint="/dashboard">ADMIN</span>
+          <% } }%>
+
+
+
+            <div class="not-tablet flag-icon pointer flex f-direction-column align-center">
+              <img src="/vectors/Pais.svg" alt="pais - AR" class="logo">
+            </div>
+            <div class="categ-nav flex text-white not-tablet align-center pointer">
+              <p class="size-font-parr">Categorias</p>
+              <span class="flex icon-double-bott"></span>
+              <section class="despcat bg-dark w-100">
+                <div class="content-cat w-100 flex align-center j-content-center ">
+                  <article class="card-caregorinav flex">
+                    <img src="/img/portada-marioarcade.jpg" alt="arcade mario">
+                    <h1 class="tamano-title tlt-card flex align-center j-content-center">ARCADE</h1>
+                  </article>
+                  <article class="card-caregorinav flex">
+                    <img src="/img/portada-alienav.jpg" alt="terror aliens">
+                    <h1 class="tamano-title tlt-card flex align-center j-content-center">TERROR</h1>
+                  </article>
+                  <article class="card-caregorinav flex">
+                    <img src="/img/portada-ufcdeportes.jpg" alt="arcade mario">
+                    <h1 class="tamano-title tlt-card flex align-center j-content-center">DEPORTES</h1>
+                  </article>
+                  <article class="card-caregorinav flex">
+                    <img src="/img/portada-assetonav.jpg" alt="arcade mario">
+                    <h1 class="tamano-title tlt-card flex align-center j-content-center">SIMULACION</h1>
+                  </article>
+                </div>
+              </section>
+            </div>
     </div>
     <div class="cont-barfind">
       <input type="text" placeholder="Buscar" class="search-input text-white" id="searchbarra">
@@ -40,8 +47,10 @@
     <div class="flex align-center w-35 j-content-around">
 
 
-      <div class="logo not-tablet cart-icon not-border"></div>
-      <div class="logo not-mobile star-icon not-border"></div>
+
+      <a href="/products/productCart" class="logo not-tablet cart-icon not-border"></a>
+
+      <div class="logo not-mobile star-icon not-border pointer"></div>
 
       <% if(isAuthenticated){ %>
         <div class="logo not-mobile pointer profile--user"
@@ -92,18 +101,24 @@
       <% } %>
 
         <% if(isAuthenticated){ %>
-          <span class="btn-generic bg-dark pointer link">
+          <span class="btn-generic bg-dark">
             <%= user.name %>
           </span>
-          <span class="btn-generic bg-dark pointer link">
-            <%= user.last_name %>
-          </span>
-          <span class="btn-generic bg-dark pointer link">
+
+          <span class="btn-generic bg-dark">
             <%= user.email %>
           </span>
 
-          <span class="btn-generic bg-limagreen pointer link" data-endpoint="/logout">Logout</span>
-          <% } %>
+          <span class="btn-generic bg-dark">
+            Rol: <%= user.rol.name %>
+          </span>
+
+
+          <% if(user.rol.name=="Administrador" ) {%>
+            <span class="btn-generic bg-limagreen pointer link" data-endpoint="/products/create">Agregar producto</span>
+            <% } %>
+              <span class="btn-generic bg-limagreen pointer link" data-endpoint="/logout">Logout</span>
+              <% } %>
 
   </div>
   </nav>

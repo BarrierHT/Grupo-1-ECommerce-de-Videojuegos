@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-  <title>Digital Gaming</title>
-  <%- include('./partials/head') %>
+<title>Digital Gaming</title>
+<%- include('./partials/head') %>
+
   <body>
     <%- include('./partials/header') %>
       <main class="main text-white">
@@ -20,21 +21,26 @@
               <h1 class="dh-title text-center">DIGITAL GAMING</h1>
             </div>
             <ul class="menu-select flex f-direction-column j-content-center" id="list-select">
-              <li class="sub-tl">Encontra los juegos que queres con los mejores precios del mercado y descubrí un nuevo universo!</li>
+              <li class="sub-tl">Encontra los juegos que queres con los mejores precios del mercado y descubrí un nuevo
+                universo!</li>
               <li class="select bg-dark flex pointer align-center">
-                <div class="icon-cont flex align-center j-content-center bg-limagreen"><img src="/vectors/pc-display.svg" alt="Pc icon"></div>
+                <div class="icon-cont flex align-center j-content-center bg-limagreen"><img
+                    src="/vectors/pc-display.svg" alt="Pc icon"></div>
                 <p>Pc/Windows</p>
               </li>
               <li class="select bg-dark flex pointer align-center">
-                <div class="icon-cont flex align-center j-content-center bg-red"><img src="/vectors/nintendo-switch.svg" alt=""></div>
+                <div class="icon-cont flex align-center j-content-center bg-red"><img src="/vectors/nintendo-switch.svg"
+                    alt=""></div>
                 <p>Nintendo</p>
               </li>
               <li class="select bg-dark flex pointer align-center">
-                <div class="icon-cont flex align-center j-content-center bg-blue"><img src="/vectors/joystick.svg" alt=""></div>
+                <div class="icon-cont flex align-center j-content-center bg-blue"><img src="/vectors/joystick.svg"
+                    alt=""></div>
                 <p>PS/Xbox</p>
               </li>
               <li class="select bg-dark flex pointer align-center">
-                <div class="icon-cont flex align-center j-content-center bg-yellow"><img src="/vectors/caret-right.svg" alt=""></div>
+                <div class="icon-cont flex align-center j-content-center bg-yellow"><img src="/vectors/caret-right.svg"
+                    alt=""></div>
                 <p>Start</p>
               </li>
             </ul>
@@ -54,35 +60,45 @@
           <div class="recomendados flex align-center j-content-space-betwen ">
             <div class="titles w-100">
               <h3 class="tamano-title">RECOMENDADOS</h3>
-              <p class="size-font-parr">Echa un vistazo a lo mejor de nuestro catalogo y aprovecha todas nuestras ofertas</p>
+              <p class="size-font-parr">Echa un vistazo a lo mejor de nuestro catalogo y aprovecha todas nuestras
+                ofertas</p>
             </div>
-            <span class="btn-vermas btn-generic bg-purple text-white pointer fw-bold text-center">Ver Más</span>
+            <a href="/products" class="btn-vermas btn-generic bg-purple text-white pointer fw-bold text-center">Ver
+              Más</a>
+
           </div>
           <div class="container-cards flex align-center j-content-center w-100">
             <!-- TEMPLATE QUE RECIBE LOS DATOS DEL JSON -->
-            <% productos.forEach(producto => { %>
-            
-            <a href="/products/<%= producto.id %>" class="antiancor text-white">
-              <article class="products pointer">
-                <img src="<%= producto.portada %>" alt="<%= producto.nombre %>-img">
-                <div class="flex j-content-space-betwen portada">
-                  <div class="share-img flex align-center">
-                    <img src="\vectors\cart.svg" alt="carrito" id="icon-cart" class="icon-cart">
-                    <p>Agregar al carrito</p>
+            <% productos.forEach(producto=> { %>
+
+              <a href="/products/<%= producto.id %>" class="antiancor text-white">
+                <article class="products pointer">
+                  <img src="<%= producto.image %>" alt="<%= producto.name %>-img">
+                  <div class="flex j-content-space-betwen portada">
+                    <div class="share-img flex align-center">
+                      <img src="\vectors\cart.svg" alt="carrito" id="icon-cart" class="icon-cart">
+                      <p>Agregar al carrito</p>
+                    </div>
+                    <p class="share-img descuentos-span bg-purple align-center flex j-content-center text-center ">
+                      <%= producto.discount %>% Desc
+                    </p>
                   </div>
-                  <p class="share-img descuentos-span bg-purple align-center flex j-content-center text-center "><%= producto.descuento %>% Desc</p>
-                </div>
-                <div class="info flex align-center j-content-space-betwen">
-                  <div class="flex f-direction-column name-game">
-                    <h3><%= producto.nombre %></h3>
-                    <p><%= producto.categoria %></p>
+                  <div class="info flex align-center j-content-space-betwen">
+                    <div class="flex f-direction-column name-game">
+                      <h3>
+                        <%= producto.name %>
+                      </h3>
+                      <p>
+                        <%# producto.categoria %>
+                      </p>
+                    </div>
+                    <p class="precio">$<%= producto.price %>
+                    </p>
                   </div>
-                  <p class="precio">$<%= producto.precio.toFixed(2) %></p>
-                </div>
-              </article>
-            </a>
-            <% }); %>
-        
+                </article>
+              </a>
+              <% }); %>
+
           </div>
         </section>
         <section class="present-view-section w-100 flex">
@@ -139,9 +155,12 @@
           <div class="recomendados flex align-center j-content-space-betwen ">
             <div class="titles">
               <h3 class="tamano-title">CATEGORIAS</h3>
-              <p class="size-font-parr">Descubre un mundo de emocionantes videojuegos en nuestras categorias seleccionadas. ¡La diversión comienza aquí!</p>
+              <p class="size-font-parr">Descubre un mundo de emocionantes videojuegos en nuestras categorias
+                seleccionadas. ¡La diversión comienza aquí!</p>
             </div>
-            <span class="btn-vermas btn-generic bg-purple text-white pointer fw-bold text-center">Ver Más</span>
+            <a href="/categories" class="btn-vermas btn-generic bg-purple text-white pointer fw-bold text-center">
+              VER MÁS
+            </a>
           </div>
           <div class="categories flex align-center j-content-space-betwen f-direction-column">
             <article class="categories-card flex j-content-space-betwen ">

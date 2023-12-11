@@ -1,104 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %> 
+<%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/productForm.css">
     <title>Detalles Productos</title>
-<body>
-    <%- include('../partials/header') %>
-    <main>
-        <section class="bg-dkblue">
-            <div class="page-container">
-                <div class="input-container-editProduct text-white size-font-parr">
-                        <div class="form">
-                            <form action="/products/create" method="POST" id="form" enctype="multipart/form-data">
-                            <label for="username">Nombre del Nuevo Producto:</label>
-                            <input type="text" id="nameProduct" name="nombre" placeholder="Enter your name new product" value=<%= locals.oldValue ? oldValue.nombre : null %>>
-                            <% if (locals.errors && errors.nombre) { %>
-                                <h6 style="color: #E73535;"><%= errors.nombre.msg %></h6>
-                            <% } %>
-                            <br><hr>
-                            <label for="description">Descripcion:</label>
-                            <textarea class="description-input"type="text" id="description" name="descripcion" placeholder="Enter your description" ><%= locals.oldValue ? oldValue.descripcion : null %></textarea>
-                            <% if (locals.errors && errors.descripcion) { %>
-                                <h6 style="color: #E73535;"><%= errors.descripcion.msg %></h6>
-                            <% } %>
-                            <br><hr>
-                            <label for="price">Precio $:</label>
-                            <input type="number" id="price" name="precio" step="0.01" min="0" placeholder="Enter your price" value=<%= locals.oldValue ? oldValue.precio : null %>>
-                            <% if (locals.errors && errors.precio) { %>
-                                <h6 style="color: #E73535;"><%= errors.precio.msg %></h6>
-                            <% } %>
-                            <br><hr>
-                            <label for="descuento">Descuento %:</label>
-                           <input type="number" id="discount" name="descuento" min="0" placeholder="Enter your discount" >
-                           <div id="miniatura" style="display: none;"></div>
-                           <br><hr>
-                           <label for="categoria">Categorias:</label>
-                           <input type="checkbox" name="categoria_1" id="categoria_1" value="1">
-                           <label for="categoria1">Acción</label>
-                           <input type="checkbox" name="categoria_2" id="categoria_2" value="2">
-                           <label for="categoria2">Aventura</label>
-                           <input type="checkbox" name="categoria_3" id="categoria_3" value="3">
-                           <label for="categoria3">RPG</label>
-                           <input type="checkbox" name="categoria_4" id="categoria_4" value="4">
-                           <label for="categoria1">Estrategia</label>
-                           <input type="checkbox" name="categoria_5" id="categoria_5" value="5">
-                           <label for="categoria1">Deportes</label>
-                           <br><hr>
-                           <label for="plataforma">Plataforma:</label>
-                           <select name="plataforma" id="plataforma">
-                            <option value="1">PC</option>
-                            <option value="2">Xbox</option>
-                            <option value="3">PlayStation</option>
-                            <option value="4">Nintendo Switch</option>
-                           </select>
-                           <br><hr>
-                           <label for="reqMinimum">Requisitos Minimos:</label>
-                           <input type="text" name="os_m" id="os_m" placeholder="Sistema Operativo">
-                           <input type="text" name="procesador_m" id="procesador_m" placeholder="Procesador">
-                           <input type="text" name="memoria_m" id="procesador_m" placeholder="Memoria">
-                           <input type="text" name="graficos_m" id="graficos_m" placeholder="Gráficos">
-                           <input type="text" name="almacenamiento_m" id="almacenamiento_m" placeholder="Almacenamiento">
-                           <br><hr>
-                            <label for="reqRecommended">Requisitos Recomendados:</label>
-                           <input type="text" name="os_r" id="os_r" placeholder="Sistema Operativo">
-                           <input type="text" name="procesador_r" id="procesador_r" placeholder="Procesador">
-                           <input type="text" name="memoria_r" id="procesador_r" placeholder="Memoria">
-                           <input type="text" name="graficos_r" id="graficos_r" placeholder="Gráficos">
-                           <input type="text" name="almacenamiento_r" id="almacenamiento_r" placeholder="Almacenamiento">
-                           <br><hr>
-                            <label for="imagen">Imagen:</label>
-                            <input class="file-imagen" type="file" name="imagen" id="imagen" accept="image/*">
-                            <div id="miniatura" style="display: none;"></div>
-                            <% if (locals.errors && errors.imagen) { %>
-                                <h6 style="color: #E73535;"><%= errors.imagen.msg %></h6>
-                            <% } %>
-                            <br><hr>
-                            <label for="portada">Portada:</label>
-                            <input class="file-imagen" type="file" name="portada" id="imagen" accept="image/*">
-                            <div id="miniatura" style="display: none;"></div>
-                            <% if (locals.errors && errors.portada) { %>
-                                <h6 style="color: #E73535;"><%= errors.portada.msg %></h6>
-                            <% } %>
-                            <br><hr>
-                            <label for="video">Video:</label>
-                            <input class="file-imagen" type="file" name="video" id="imagen" accept="video/.mp4">
-                            <div id="miniatura" style="display: none;"></div>
-                            <% if (locals.errors && errors.video) { %>
-                                <h6 style="color: #E73535;"><%= errors.video.msg %></h6>
-                            <% } %>
-                            <br><hr>
-                            <button class="btn-form pointer text-white bg-limagreen" type="submit">Agregar Producto</button>
-                            <button class="btn-form pointer text-white bg-red" type="button">Cancelar Edicion</button>
-                        </form>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main>
+                <section class="bg-dkblue">
+                    <div class="page-container">
+                        <div class="input-container-editProduct text-white size-font-parr">
+                            <div class="form">
+                                <form action="/products/create" method="POST" id="form" enctype="multipart/form-data">
+                                    <label for="username">Nombre del Nuevo Producto:</label>
+                                    <input type="text" id="nameProduct" name="nombre"
+                                        placeholder="Enter your name new product" value=<%=locals.oldValue ?
+                                        oldValue.nombre : null %>>
+                                    <% if (locals.errors && errors.nombre) { %>
+                                        <h6 style="color: #E73535;">
+                                            <%= errors.nombre.msg %>
+                                        </h6>
+                                        <% } %>
+                                            <br>
+                                            <hr>
+                                            <label for="description">Descripcion:</label>
+                                            <textarea class="description-input" type="text" id="description"
+                                                name="descripcion"
+                                                placeholder="Enter your description"><%= locals.oldValue ? oldValue.descripcion : null %></textarea>
+                                            <% if (locals.errors && errors.descripcion) { %>
+                                                <h6 style="color: #E73535;">
+                                                    <%= errors.descripcion.msg %>
+                                                </h6>
+                                                <% } %>
+                                                    <br>
+                                                    <hr>
+                                                    <label for="price">Precio $:</label>
+                                                    <input type="number" id="price" name="precio" step="0.01" min="0"
+                                                        placeholder="Enter your price" value=<%=locals.oldValue ?
+                                                        oldValue.precio : null %>>
+                                                    <% if (locals.errors && errors.precio) { %>
+                                                        <h6 style="color: #E73535;">
+                                                            <%= errors.precio.msg %>
+                                                        </h6>
+                                                        <% } %>
+                                                            <br>
+                                                            <hr>
+                                                            <label for="descuento">Descuento %:</label>
+                                                            <input type="number" id="discount" name="descuento" min="0"
+                                                                placeholder="Enter your discount">
+                                                            <div id="miniatura" style="display: none;"></div>
+                                                            <br>
+                                                            <hr>
+                                                            <label for="categoria">Categorias:</label>
+                                                            <input type="checkbox" name="categoria_1" id="categoria_1"
+                                                                value="1">
+                                                            <label for="categoria1">Acción</label>
+                                                            <input type="checkbox" name="categoria_2" id="categoria_2"
+                                                                value="2">
+                                                            <label for="categoria2">Aventura</label>
+                                                            <input type="checkbox" name="categoria_3" id="categoria_3"
+                                                                value="3">
+                                                            <label for="categoria3">RPG</label>
+                                                            <input type="checkbox" name="categoria_4" id="categoria_4"
+                                                                value="4">
+                                                            <label for="categoria1">Estrategia</label>
+                                                            <input type="checkbox" name="categoria_5" id="categoria_5"
+                                                                value="5">
+                                                            <label for="categoria1">Deportes</label>
+                                                            <br>
+                                                            <hr>
+                                                            <label for="plataforma">Plataforma:</label>
+                                                            <select name="plataforma" id="plataforma">
+                                                                <option value="1">PC</option>
+                                                                <option value="2">Xbox</option>
+                                                                <option value="3">PlayStation</option>
+                                                                <option value="4">Nintendo Switch</option>
+                                                            </select>
+                                                            <br>
+                                                            <hr>
+                                                            <label for="reqMinimum">Requisitos Minimos:</label>
+                                                            <input type="text" name="os_m" id="os_m"
+                                                                placeholder="Sistema Operativo">
+                                                            <input type="text" name="procesador_m" id="procesador_m"
+                                                                placeholder="Procesador">
+                                                            <input type="text" name="memoria_m" id="procesador_m"
+                                                                placeholder="Memoria">
+                                                            <input type="text" name="graficos_m" id="graficos_m"
+                                                                placeholder="Gráficos">
+                                                            <input type="text" name="almacenamiento_m"
+                                                                id="almacenamiento_m" placeholder="Almacenamiento">
+                                                            <br>
+                                                            <hr>
+                                                            <label for="reqRecommended">Requisitos Recomendados:</label>
+                                                            <input type="text" name="os_r" id="os_r"
+                                                                placeholder="Sistema Operativo">
+                                                            <input type="text" name="procesador_r" id="procesador_r"
+                                                                placeholder="Procesador">
+                                                            <input type="text" name="memoria_r" id="procesador_r"
+                                                                placeholder="Memoria">
+                                                            <input type="text" name="graficos_r" id="graficos_r"
+                                                                placeholder="Gráficos">
+                                                            <input type="text" name="almacenamiento_r"
+                                                                id="almacenamiento_r" placeholder="Almacenamiento">
+                                                            <br>
+                                                            <hr>
+                                                            <label for="imagen">Imagen:</label>
+                                                            <input class="file-imagen" type="file" name="imagen"
+                                                                id="imagen" accept="image/*">
+                                                            <div id="miniatura" style="display: none;"></div>
+                                                            <% if (locals.errors && errors.imagen) { %>
+                                                                <h6 style="color: #E73535;">
+                                                                    <%= errors.imagen.msg %>
+                                                                </h6>
+                                                                <% } %>
+                                                                    <br>
+                                                                    <hr>
+                                                                    <label for="portada">Portada:</label>
+                                                                    <input class="file-imagen" type="file"
+                                                                        name="portada" id="imagen" accept="image/*">
+                                                                    <div id="miniatura" style="display: none;"></div>
+                                                                    <% if (locals.errors && errors.portada) { %>
+                                                                        <h6 style="color: #E73535;">
+                                                                            <%= errors.portada.msg %>
+                                                                        </h6>
+                                                                        <% } %>
+                                                                            <br>
+                                                                            <hr>
+                                                                            <label for="video">Video:</label>
+                                                                            <input class="file-imagen" type="file"
+                                                                                name="video" id="imagen"
+                                                                                accept="video/.mp4">
+                                                                            <div id="miniatura" style="display: none;">
+                                                                            </div>
+                                                                            <% if (locals.errors && errors.video) { %>
+                                                                                <h6 style="color: #E73535;">
+                                                                                    <%= errors.video.msg %>
+                                                                                </h6>
+                                                                                <% } %>
+                                                                                    <br>
+                                                                                    <hr>
+                                                                                    <button
+                                                                                        class="btn-form pointer text-white bg-limagreen"
+                                                                                        type="submit">Agregar
+                                                                                        Producto</button>
+                                                                                    <button
+                                                                                        class="btn-form pointer text-white bg-red">
+                                                                                        <a href="/" class="text-white ">
+                                                                                            Cancelar</a>
+                                                                                    </button>
+
+                                </form>
+                            </div>
                         </div>
-                </div>
-            </div>
-        </div>
-        </section>
-    
-    </main>
-    <%- include('../partials/footer') %>
-</body>
+                    </div>
+                    </div>
+                </section>
+
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
 
 </html>

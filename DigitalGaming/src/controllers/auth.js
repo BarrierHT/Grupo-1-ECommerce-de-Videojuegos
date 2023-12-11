@@ -52,6 +52,7 @@ exports.postLogin = async (req, res, next) => {
 	try {
 		const existingUser = await User.findOne({
 			where: { email: email },
+			include: ['rol'],
 		});
 
 		// Verifica si el usuario existe
@@ -71,6 +72,8 @@ exports.postLogin = async (req, res, next) => {
 
 			// Inicia sesión almacenando la información del usuario en la sesión
 			req.session.user = existingUser;
+
+			console.log(existingUser.rol);
 			return res.redirect('/');
 		} else {
 			return res.render('users/login', {
@@ -168,6 +171,7 @@ exports.postSignUp = async (req, res, next) => {
 				user_image: '/img/users/' + req.file.filename,
 				password: hashedPassword,
 				rol_id: 3,
+				//Crear administrador manualmente
 			});
 
 			await newUser.save();

@@ -1,76 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %> 
+<%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/productForm.css">
     <title>Detalles Productos</title>
-<body>
-    <%- include('../partials/header') %>
-    <main>
-        <section class="bg-dkblue">
-            <div class="page-container">
-                <div class="input-container-editProduct">
-                        <div class="form text-white size size-font-parr">
-                            <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" id="form-edit-prod">
-                            <input type="hidden" name="_method" value="PUT">
-                            <label for="username">Editar Nombre Del Producto:</label>
-                            <input type="text" id="nameProduct" class="name-prod-edit" name="nombre" placeholder="Enter your name new product" value="<%= product.name %>" required>
-                            <label></label>
-                            <br><hr>
-                            <label for="description">Editar Descripcion:</label>
-                            <textarea class="description-input desc-prod-edit"type="text" id="description" name="descripcion" placeholder="Enter your description" required><%= product.description %></textarea>
-                            <br><hr>
-                            <label for="price">Precio $:</label>
-                            <input type="number" id="price" class="price-prod-edit" name="precio" step="0.01" min="0" placeholder="Enter your price" value="<%= product.price %>" required>
-                            <br><hr>
-                            <label for="descuento">Descuento %:</label>
-                           <input type="number" id="discount" class="desc-prod-edit" name="descuento" min="0" placeholder="Enter your discount" value="<%= product.discount %>" required>
-                           <div id="miniatura" style="display: none;"></div>
-                           <br><hr>
-                           <label for="categoria">Categorias:</label>
-                           <input type="checkbox" name="categoria_1" id="categoria_1" value="1">
-                           <label for="categoria1">Acción</label>
-                           <input type="checkbox" name="categoria_2" id="categoria_2" value="2">
-                           <label for="categoria2">Aventura</label>
-                           <input type="checkbox" name="categoria_3" id="categoria_3" value="3">
-                           <label for="categoria3">RPG</label>
-                           <input type="checkbox" name="categoria_4" id="categoria_4" value="4">
-                           <label for="categoria1">Estrategia</label>
-                           <input type="checkbox" name="categoria_5" id="categoria_5" value="5">
-                           <label for="categoria1">Deportes</label>
-                           <br><hr>
-                           <label for="plataforma">Plataforma:</label>
-                           <select name="plataforma" id="plataforma">
-                            <option value="1">PC</option>
-                            <option value="2">Xbox</option>
-                            <option value="3">PlayStation</option>
-                            <option value="4">Nintendo Switch</option>
-                           </select>
-                           <br><hr>
-                           <label for="reqMinimum">Requisitos Minimos:</label>
-                           <input type="text" name="os_m" id="os_m" placeholder="Sistema Operativo" value="<%= product.requeriment.os_minumum %>">
-                           <input type="text" name="procesador_m" id="procesador_m" placeholder="Procesador" value="<%= product.requeriment.processor_minimum %>">
-                           <input type="text" name="memoria_m" id="procesador_m" placeholder="Memoria" value="<%= product.requeriment.memory_minimum %>">
-                           <input type="text" name="graficos_m" id="graficos_m" placeholder="Gráficos" value="<%= product.requeriment.graphic_minimum %>">
-                           <input type="text" name="almacenamiento_m" id="almacenamiento_m" placeholder="Almacenamiento" value="<%= product.requeriment.storage_minimum %>">
-                           <br><hr>
-                            <label for="reqRecommended">Requisitos Recomendados:</label>
-                           <input type="text" name="os_r" id="os_r" placeholder="Sistema Operativo" value="<%= product.requeriment.os_recommended %>">
-                           <input type="text" name="procesador_r" id="procesador_r" placeholder="Procesador" value="<%= product.requeriment.processor_recommended %>">
-                           <input type="text" name="memoria_r" id="procesador_r" placeholder="Memoria" value="<%= product.requeriment.memory_recommended %>">
-                           <input type="text" name="graficos_r" id="graficos_r" placeholder="Gráficos" value="<%= product.requeriment.graphic_recommended %>">
-                           <input type="text" name="almacenamiento_r" id="almacenamiento_r" placeholder="Almacenamiento" value="<%= product.requeriment.storage_recommended %>">
-                           <br><hr>
-                            <button class="btn-form pointer text-white bg-limagreen" type="submit">Editar Producto</button>
-                            <button class="btn-form pointer text-white bg-red" type="button">Cancelar Edicion</button>
-                        </form>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main>
+                <section class="bg-dkblue">
+                    <div class="page-container">
+                        <div class="input-container-editProduct">
+                            <div class="form text-white size size-font-parr">
+                                <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" id="form">
+                                    <input type="hidden" name="_method" value="PUT">
+                                    <label for="username">Editar Nombre Del Producto:</label>
+                                    <input type="text" id="nameProduct" name="nombre"
+                                        placeholder="Enter your name new product" value="<%= product.name %>" required>
+                                    <br>
+                                    <hr>
+                                    <label for="description">Editar Descripcion:</label>
+                                    <textarea class="description-input" type="text" id="description" name="descripcion"
+                                        placeholder="Enter your description"
+                                        required><%= product.description %></textarea>
+                                    <br>
+                                    <hr>
+                                    <label for="price">Precio $:</label>
+                                    <input type="number" id="price" name="precio" step="0.01" min="0"
+                                        placeholder="Enter your price" value="<%= product.price %>" required>
+                                    <br>
+                                    <hr>
+                                    <label for="descuento">Descuento %:</label>
+                                    <input type="number" id="discount" name="descuento" min="0"
+                                        placeholder="Enter your discount" value="<%= product.discount %>" required>
+                                    <div id="miniatura" style="display: none;"></div>
+                                    <br>
+                                    <hr>
+                                    <label for="categoria">Categorias:</label>
+                                    <input type="checkbox" name="categoria_1" id="categoria_1" value="1">
+                                    <label for="categoria1">Acción</label>
+                                    <input type="checkbox" name="categoria_2" id="categoria_2" value="2">
+                                    <label for="categoria2">Aventura</label>
+                                    <input type="checkbox" name="categoria_3" id="categoria_3" value="3">
+                                    <label for="categoria3">RPG</label>
+                                    <input type="checkbox" name="categoria_4" id="categoria_4" value="4">
+                                    <label for="categoria1">Estrategia</label>
+                                    <input type="checkbox" name="categoria_5" id="categoria_5" value="5">
+                                    <label for="categoria1">Deportes</label>
+                                    <br>
+                                    <hr>
+                                    <label for="plataforma">Plataforma:</label>
+                                    <select name="plataforma" id="plataforma">
+                                        <option value="1">PC</option>
+                                        <option value="2">Xbox</option>
+                                        <option value="3">PlayStation</option>
+                                        <option value="4">Nintendo Switch</option>
+                                    </select>
+                                    <br>
+                                    <hr>
+                                    <label for="reqMinimum">Requisitos Minimos:</label>
+                                    <input type="text" name="os_m" id="os_m" placeholder="Sistema Operativo"
+                                        value="<%= product.requeriment.os_minumum %>">
+                                    <input type="text" name="procesador_m" id="procesador_m" placeholder="Procesador"
+                                        value="<%= product.requeriment.processor_minimum %>">
+                                    <input type="text" name="memoria_m" id="procesador_m" placeholder="Memoria"
+                                        value="<%= product.requeriment.memory_minimum %>">
+                                    <input type="text" name="graficos_m" id="graficos_m" placeholder="Gráficos"
+                                        value="<%= product.requeriment.graphic_minimum %>">
+                                    <input type="text" name="almacenamiento_m" id="almacenamiento_m"
+                                        placeholder="Almacenamiento" value="<%= product.requeriment.storage_minimum %>">
+                                    <br>
+                                    <hr>
+                                    <label for="reqRecommended">Requisitos Recomendados:</label>
+                                    <input type="text" name="os_r" id="os_r" placeholder="Sistema Operativo"
+                                        value="<%= product.requeriment.os_recommended %>">
+                                    <input type="text" name="procesador_r" id="procesador_r" placeholder="Procesador"
+                                        value="<%= product.requeriment.processor_recommended %>">
+                                    <input type="text" name="memoria_r" id="procesador_r" placeholder="Memoria"
+                                        value="<%= product.requeriment.memory_recommended %>">
+                                    <input type="text" name="graficos_r" id="graficos_r" placeholder="Gráficos"
+                                        value="<%= product.requeriment.graphic_recommended %>">
+                                    <input type="text" name="almacenamiento_r" id="almacenamiento_r"
+                                        placeholder="Almacenamiento"
+                                        value="<%= product.requeriment.storage_recommended %>">
+                                    <br>
+                                    <hr>
+                                    <button class="btn-form pointer text-white bg-limagreen" type="submit">Editar
+                                        Producto</button>
+                                    <button class="btn-form pointer text-white bg-red">
+                                        <a href="/" class="text-white ">
+                                            Cancelar</a>
+                                    </button>
+
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        </section>
-    
-    </main>
-    <%- include('../partials/footer') %>
-</body>
+                    </div>
+                </section>
+
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
 
 </html>
