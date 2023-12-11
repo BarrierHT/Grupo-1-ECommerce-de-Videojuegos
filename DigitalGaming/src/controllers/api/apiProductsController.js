@@ -41,7 +41,9 @@ module.exports = {
 
     try {
       // Se busca en la base de datos
-      const product = await Product.findByPk(productId);
+      const product = await Product.findByPk(productId, {
+        include: ['requeriment']
+      });
   
       if (!product) {
         // error 404
@@ -52,13 +54,7 @@ module.exports = {
       }
 
       // retorno de producto
-
-      const ProductData = {
-        id : product.id,
-        name : product.name,
-        description : product.description
-      }
-      return res.status(200).json(ProductData);
+      return res.status(200).json(product);
     } catch (error) {
       // error al buscar
       return res.status(500).json({ message: 'Error al buscar el producto', error: error.message });
