@@ -100,7 +100,28 @@ Asi tambien seria bueno documentar de mejor manera los progresos que se hacen en
 Continuar con el trabajo colaborativo y siempre estar a disposicion del otro en situaciones que retrasen el progeso, y asi mismo aprender en conjunto de los mismos.
       
 4. Hacer Menos:
-Tomar riesgos
+Tomar riesgos.
       
 5. Dejar de Hacer:
-Dejar tareas pendientes sin cumplir con las fechas estimadas
+Dejar tareas pendientes sin cumplir con las fechas estimadas.
+
+## Sprint 7
+
+**Starfish Retrospective: Aprendiendo de nuestros errores y fortaleciendo el orden y los tiempos**
+
+1. Empezar a Hacer:
+Reconocemos la importancia de mantener un orden en la planificación de tareas, y este sprint demostró que podemos mejorar en este aspecto. Debemos empezar a establecer un cronograma de tareas aún más detallado desde el principio de cada sprint para aprovechar al máximo el tiempo disponible.
+
+2. Hacer Más:
+La mejora en la comunicación del equipo fue un paso positivo. Proponemos hacer más énfasis en esta área, posiblemente a través de canales regulares de actualización y un mayor uso de herramientas de colaboración en línea. Esto asegurará una comprensión continua de las tareas y desafíos.
+
+3. Continuar Haciendo:
+La distribución ordenada de tareas ha demostrado ser efectiva nuevamente. Continuemos con esta práctica para garantizar que cada miembro del equipo tenga roles claros y responsabilidades bien definidas. Esta organización ha sido crucial para nuestro éxito en sprints anteriores.
+
+4. Hacer Menos:
+En este sprint, no tuvimos mayores problemas relacionados con la subestimación del tiempo o ajustes de última hora. Sigamos haciendo menos de estas prácticas y mantengamos la atención en la planificación y ejecución ordenada de tareas. La experiencia pasada nos muestra que este enfoque es más efectivo.
+
+5. Dejar de Hacer:
+Considerando que las tareas eran manejables y logramos mantenernos a tiempo, no hay acciones específicas que necesitemos dejar de hacer en este sprint. Sigamos evaluando nuestras prácticas continuamente para asegurarnos de mantener el ritmo positivo.
+
+Con esta retrospectiva, celebramos el éxito del equipo en la mejora del tiempo de trabajo y la finalización oportuna, a pesar de los desafíos previos.
