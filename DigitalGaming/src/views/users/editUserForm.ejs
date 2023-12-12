@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/register.css" />
+    <title>Editar Usuario</title>
+
+    <body class="bg-dkblue">
+        <%- include('../partials/header') %>
+            <main class="main-register flex j-content-center">
+                <section class="input-container-register">
+                    <div class="register">
+                        <h1 class="tamano-title">Editar Usuario</h1><br />
+                        <hr />
+                        <div class="form size-font-parr">
+                            <form action="/users/updateUser?_method=PUT" method="POST">
+                                <input type="hidden" name="_method" value="PUT" />
+
+                                <label for="lastname" class="w-100">Apellido: <i
+                                        class="bi bi-person-lines-fill"></i></label>
+                                <input type="text" id="lastname" name="lastname" placeholder="Enter your lastname"
+                                    value="<%= userFound.last_name %>" /><br />
+                                <hr />
+                                <label for="name" class="w-100">Nombre: <i class="bi bi-person-video2"></i></label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name"
+                                    value="<%= userFound.name %>" /><br />
+
+                                <input type="hidden" value="<%=userFound.email%>" name="email">
+
+                                <!-- <label for="imagen">Imagen: <i class="bi bi-file-earmark-image"></i></label>
+                                <input class="file-imagen" type="file" name="imagen" id="imagen" accept="image/*" /> -->
+                                <br />
+                                <hr />
+                                <button class="register-btn" type="submit">Guardar Cambios</button>
+                            </form>
+                            <form method="POST" action="/users/deleteUser?_method=DELETE">
+                                <input type="hidden" name="_method" value="DELETE" />
+                                <input type="hidden" value="<%=userFound.email%>" name="email">
+                                <button class="register-btn" type="submit">Borrar Cuenta</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include('../partials/footer') %> <%- include('../partials/js') %>
+    </body>
+
+</html>

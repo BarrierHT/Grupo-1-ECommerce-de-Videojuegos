@@ -183,9 +183,9 @@ exports.postAddProduct = async (req, res, next) => {
 				description: productData.descripcion,
 				price: productData.precio,
 				discount: productData.descuento,
-				image: '/img/users/' + req.files['imagen'][0].filename,
-				cover: '/img/users/' + req.files['portada'][0].filename,
-				video: '/img/users/' + req.files['video'][0].filename,
+				image: '/img/productsBD/' + req.files['imagen'][0].filename,
+				cover: '/img/productsBD/' + req.files['portada'][0].filename,
+				video: '/img/productsBD/' + req.files['video'][0].filename,
 				requirement_id: newRequeriment.id,
 			});
 
