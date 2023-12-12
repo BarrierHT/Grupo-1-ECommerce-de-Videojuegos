@@ -92,7 +92,7 @@
                         <%# producto.categoria %>
                       </p>
                     </div>
-                    <p class="precio">$<%= producto.price %>
+                    <p class="precio">$<%= discountAdd(producto.price, producto.discount) %>
                     </p>
                   </div>
                 </article>

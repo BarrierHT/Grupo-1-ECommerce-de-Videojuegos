@@ -25,9 +25,6 @@ const validationProduct = [
       let arrayNombre = nombreArchivo.split('.');
       let extension = arrayNombre.pop();
 
-      if (!value['imagen']) {
-        throw new Error('Debe proporcionar un archivo');
-      }
       if (extension != 'jpg' && extension != 'png' && extension != 'jpeg') {
         throw new Error('Tiene que ser un archivo de imagen');
       }
