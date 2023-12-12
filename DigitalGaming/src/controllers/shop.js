@@ -44,39 +44,39 @@ function calcularDesc(propPrice, propDiscount) {
 }
 
 exports.getIndex = async (req, res, next) => {
-  try {
-    const productsFetched = await Product.findAll({
-      include: [
-        {
-          model: Category,
-          as: 'categories', // Utiliza el alias aquí
-          through: {
-            model: Product_category,
-            attributes: [], // Evitar traer todos los campos de la tabla intermedia
-          },
-          attributes: ['name'], // Solo traer el nombre de la categoría
-        },
-      ],
-    });
+	try {
+		const productsFetched = await Product.findAll({
+			include: [
+				{
+					model: Category,
+					as: 'categories', // Utiliza el alias aquí
+					through: {
+						model: Product_category,
+						attributes: [], // Evitar traer todos los campos de la tabla intermedia
+					},
+					attributes: ['name'], // Solo traer el nombre de la categoría
+				},
+			],
+		});
 
-    //console.log('PRODUCTOS FETCHED: ', productsFetched);
+		//console.log('PRODUCTOS FETCHED: ', productsFetched);
 
-    const formattedProducts = productsFetched.map((product) => ({
-      ...product.toJSON(),
-      categories: product.categories.map((category) => category.name),
-    }));
+		const formattedProducts = productsFetched.map(product => ({
+			...product.toJSON(),
+			categories: product.categories.map(category => category.name),
+		}));
 
-    //console.log('products: ', formattedProducts);
+		//console.log('products: ', formattedProducts);
 
-    res.render('index.ejs', {
-      productos: formattedProducts,
-      discountAdd: calcularDesc,
-    });
-  } catch (error) {
-    throw error('Error fetching data:', error);
-  }
+		res.render('index.ejs', {
+			productos: formattedProducts,
+			discountAdd: calcularDesc,
+		});
+	} catch (error) {
+		throw new Error('Error fetching data:', error);
+	}
 
-  // console.log(productosLimitados.length);
+	// console.log(productosLimitados.length);
 };
 
 exports.getCart = (req, res, next) => {
