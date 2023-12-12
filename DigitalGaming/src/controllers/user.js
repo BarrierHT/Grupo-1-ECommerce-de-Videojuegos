@@ -1,55 +1,98 @@
+const User = require('../app').models.user;
+
+exports.getEmailEditUser = async (req, res, next) => {
+	return res.render('users/editEmailUser');
+};
+
+exports.getEditUser = async (req, res, next) => {
+	try {
+		const { email } = req.body;
+
+		// console.log(email);
+
+		const user = await User.findOne({
+			where: {
+				email: email,
+			},
+		});
+
+		//console.log(user);
+
+		if (!user) {
+			throw new Error('User not found');
+		}
+
+		return res.render('users/editUserForm', { userFound: user });
+	} catch (error) {
+		next(error);
+	}
+};
+
 exports.deleteUserByEmail = async (req, res, next) => {
-    try {
-        const email = req.body.email; // Obtén el correo electrónico del cuerpo de la solicitud
+	try {
+		// console.log('bar DELETING', req.body);
 
-        const user = await User.findOne({
-            where: {
-                email: email,
-            },
-        });
+		const email = req.body.email; // Obtén el correo electrónico del cuerpo de la solicitud
 
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
-        }
+		const user = await User.findOne({
+			where: {
+				email: email,
+			},
+		});
 
-        // Elimina el usuario de la base de datos
-        await user.destroy();
+		// console.log('bar DELETING', req.body);
 
-        return res.status(200).json({ message: 'User deleted successfully' });
-    } catch (error) {
-        return res.status(400).json({ message: error.message });
-    }
+		if (!user) {
+			return res.status(404).json({ message: 'User not found' });
+		}
+
+		// console.log('DELETING ', user);
+
+		// Elimina el usuario de la base de datos
+		await user.destroy();
+
+		return res.status(200).json({ message: 'User deleted successfully' });
+	} catch (error) {
+		return res.status(400).json({ message: error.message });
+	}
 };
 
 exports.updateUserByEmail = async (req, res, next) => {
-    try {
-        const email = req.body.email; // Obtén el correo electrónico del cuerpo de la solicitud
-        const newData = req.body; // Los nuevos datos que quieres actualizar
+	try {
+		// console.log('foo UPDATING');
 
-        const user = await User.findOne({
-            where: {
-                email: email,
-            },
-        });
+		const email = req.body.email; // Obtén el correo electrónico del cuerpo de la solicitud
+		const { name, lastname } = req.body; // Los nuevos datos que quieres actualizar
 
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
-        }
+		const user = await User.findOne({
+			where: {
+				email: email,
+			},
+		});
 
-        // Actualiza los campos del usuario con los nuevos datos
-        for (const key in newData) {
-            if (newData.hasOwnProperty(key)) {
-                user[key] = newData[key];
-            }
-        }
+		if (!user) {
+			return res.status(404).json({ message: 'User not found' });
+		}
+		console.log('UPDATING ', user.dataValues);
+		// console.log('UPDATING ', newData);
 
-        // Guarda los cambios en la base de datos
-        await user.save();
+		// Actualiza los campos del usuario con los nuevos datos
+		// for (const key in newData) {
+		// 	if (newData.hasOwnProperty(key)) {
+		// 		user[key] = newData[key];
+		// 	}
+		// }
 
-        return res
-            .status(200)
-            .json({ message: 'User updated successfully', user });
-    } catch (error) {
-        return res.status(400).json({ message: error.message });
-    }
+		user['name'] = name;
+		user['lastname'] = lastname;
+
+		// Guarda los cambios en la base de datos
+		await user.save();
+
+		return res
+			.status(200)
+			.json({ message: 'User updated successfully', user });
+	} catch (error) {
+		return res.status(400).json({ message: error.message });
+	}
 };

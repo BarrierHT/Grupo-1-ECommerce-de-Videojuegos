@@ -33,6 +33,7 @@ const app = express();
 
 let corsOptions = {
 	origin: '*',
+	methods: ['OPTIONS, POST, GET, PUT, DELETE'],
 };
 
 app.set('views', path.join(__dirname, 'views'));
@@ -86,7 +87,7 @@ app.use(morgan('dev'));
 app.use('/', mainRoute);
 app.use('/products', productRoute);
 
-app.use(userRoute);
+app.use('/users', userRoute);
 app.use(adminRoute);
 
 app.use('/api/products', apiProducts);
